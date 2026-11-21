@@ -1,0 +1,711 @@
+{
+  "benchmark_checkout": "680aa485c48fbaac4ac7f8a4ac253ff161415a60",
+  "nsys": "NVIDIA Nsight Systems version 2026.5.1.18-265138582488v0",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "torch_cuda": "13.4",
+    "torch_runtime": "2.14.0a0+4fdf77b940.nv26.08",
+    "cudnn": 92500,
+    "tf32_matmul": true,
+    "packages": {
+      "torch": "2.14.0a0+4fdf77b940.nv26.8.63802676",
+      "triton": "3.8.0+git4c7e62b7.nv26.8",
+      "llmcompressor": "0.1.dev1+gf7d824c",
+      "compressed-tensors": "0.20.2a20261103",
+      "transformers": "5.21.0",
+      "datasets": "5.0.1",
+      "huggingface-hub": "1.33.0",
+      "accelerate": "1.16.0",
+      "auto-round": "0.16.1",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.1",
+      "numpy": "2.1.0",
+      "scipy": "1.18.0",
+      "pydantic": "2.13.4",
+      "loguru": "0.8.0",
+      "pillow": "12.3.0",
+      "pyyaml": "6.0.1",
+      "requests": "2.34.2",
+      "tqdm": "4.70.0",
+      "nvidia-ml-py": "13.610.43",
+      "setuptools-scm": "8.2.0"
+    }
+  },
+  "model_revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+  "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+  "runs": [
+    {
+      "run": "warmup",
+      "oneshot_s": 7.192403241991997,
+      "weight_observe_s": 4.121816807705909,
+      "before": {
+        "utc": "2026-11-21T18:15:19.921424+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      },
+      "after": {
+        "utc": "2026-11-21T18:15:39.310354+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      }
+    },
+    {
+      "run": "run1",
+      "oneshot_s": 6.054621986113489,
+      "weight_observe_s": 3.3107516757640987,
+      "before": {
+        "utc": "2026-11-21T18:15:40.316608+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      },
+      "after": {
+        "utc": "2026-11-21T18:15:59.975414+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      }
+    },
+    {
+      "run": "run2",
+      "oneshot_s": 6.006372407078743,
+      "weight_observe_s": 3.2954656898174437,
+      "before": {
+        "utc": "2026-11-21T18:15:59.983905+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      },
+      "after": {
+        "utc": "2026-11-21T18:16:19.698130+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      }
+    },
+    {
+      "run": "run3",
+      "oneshot_s": 6.173512257635593,
+      "weight_observe_s": 3.342162310540676,
+      "before": {
+        "utc": "2026-11-21T18:16:19.704341+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      },
+      "after": {
+        "utc": "2026-11-21T18:16:38.032522+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      }
+    },
+    {
+      "run": "trace",
+      "oneshot_s": 100.17603156808764,
+      "weight_observe_s": 95.8626667328924,
+      "before": {
+        "utc": "2026-11-21T18:16:38.037963+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "total_MiB": 81559,
+        "processes": []
+      },
+      "after": {
+        "utc": "2026-11-21T18:19:30.878279+00:00",
+        "index": 0,
+        "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+        "name": "NVIDIA H100 80GB HBM3",
+        "util_pct": 0,
+        "used_MiB": 482,
+        "total_MiB": 81559,
+        "processes": []
+      }
+    }
+  ],
+  "baseline_summary_s": {
+    "oneshot_s": {
+      "median": 6.054621986113489,
+      "range": [
+        6.006372407078743,
+        6.173512257635593
+      ]
+    },
+    "weight_observe_s": {
+      "median": 3.3107516757640987,
+      "range": [
+        3.2954656898174437,
+        3.342162310540676
+      ]
+    }
+  },
+  "shared_gpu_reference_s": {
+    "observer_auto": 7.375575022072299,
+    "oneshot_auto": 13.941609032452106
+  },
+  "server_trace_relative_to_original_checkout": "../llm-compressor-moe-benchmark-observer-artifacts/hourly-run/observer-trace.nsys-rep",
+  "finding": "The three unprofiled idle-H100 runs had a median weight_observe of 3.311 s. Inside the separate weight_observe NVTX windows, kernels were active for 65.2 ms and synchronous CUDA API calls occupied 14.9 ms of host time. The nested validator's API residence was 8.0 ms.",
+  "trace": {
+    "GPTQ/weight_observe": {
+      "inclusive_host_ms": 95861.726899,
+      "gpu_active_in_window_ms": 69.428442,
+      "no_gpu_activity_ms": 95792.298457,
+      "kernel_active_ms": 65.162556,
+      "memcpy_active_ms": 4.265886,
+      "memset_active_ms": 0.0,
+      "on_cpu_in_gpu_gap_ms": 1361.964615,
+      "sync_api_residence_ms": 14.854578,
+      "off_cpu_in_sync_api_ms": 0.0,
+      "calls": 11,
+      "launch_api_count": 14840,
+      "scheduler_available": true,
+      "top_kernels_clipped": [
+        {
+          "name": "_grid_search_observer_triton_packed_kernel",
+          "calls": 280,
+          "sum_ms": 40.151496
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+          "calls": 1400,
+          "sum_ms": 3.300223
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::FillFunctor<c10::BFloat16>, std::array<char *, (unsigned long)1>, (bool)0>(int, T2, T3)",
+          "calls": 1400,
+          "sum_ms": 1.385632
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::maximum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+          "calls": 840,
+          "sum_ms": 1.272351
+        },
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<bool, at::native::func_wrapper_t<bool, at::native::and_kernel_cuda(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(bool, bool) (instance 1)]>, unsigned int, bool, (int)4, (int)4>>(T3)",
+          "calls": 560,
+          "sum_ms": 1.226336
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+          "calls": 840,
+          "sum_ms": 1.019264
+        },
+        {
+          "name": "void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+          "calls": 560,
+          "sum_ms": 0.975232
+        },
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MinNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+          "calls": 280,
+          "sum_ms": 0.936544
+        },
+        {
+          "name": "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)",
+          "calls": 280,
+          "sum_ms": 0.932448
+        },
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MaxNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+          "calls": 280,
+          "sum_ms": 0.86896
+        }
+      ],
+      "copies_clipped": [
+        {
+          "name": "Memcpy Device-to-Host",
+          "calls": 1680,
+          "sum_ms": 3.818238
+        },
+        {
+          "name": "Memcpy Host-to-Device",
+          "calls": 562,
+          "sum_ms": 0.447648
+        }
+      ],
+      "gpu_gap_sampled_leaf_count": 1411,
+      "gpu_gap_top_cpu_sample_leaves": [
+        [
+          "_PyEval_EvalFrameDefault",
+          35
+        ],
+        [
+          "0x7fe2a1c1d154",
+          35
+        ],
+        [
+          "0x7fe2a1c1cf79",
+          29
+        ],
+        [
+          "0x7fe2a1c1cfa6",
+          29
+        ],
+        [
+          "0x7fe2a1c1d14a",
+          29
+        ],
+        [
+          "0x7fe2a1c1d12c",
+          29
+        ],
+        [
+          "0x7fe2a1c1d0c3",
+          28
+        ],
+        [
+          "0x7fe2a1c1cf4c",
+          28
+        ],
+        [
+          "0x7fe2a1c1ced0",
+          26
+        ],
+        [
+          "0x7fe2a1c1d11a",
+          26
+        ]
+      ],
+      "top_sync_and_copy_apis": [
+        {
+          "name": "cudaStreamSynchronize_v3020",
+          "calls": 2242,
+          "sum_ms": 14.854578
+        },
+        {
+          "name": "cudaMemcpyAsync_v3020",
+          "calls": 2242,
+          "sum_ms": 14.042786
+        }
+      ],
+      "gpu_overlap_with_sync_by_launch_ms": {
+        "this_invocation": 4.188108
+      },
+      "top_work_during_sync": [
+        {
+          "origin": "this_invocation",
+          "name": "Memcpy Device-to-Host",
+          "union_ms": 3.765854
+        },
+        {
+          "origin": "this_invocation",
+          "name": "Memcpy Host-to-Device",
+          "union_ms": 0.422254
+        }
+      ]
+    },
+    "GPTQ/_get_validated_importance": {
+      "inclusive_host_ms": 141.967834,
+      "gpu_active_in_window_ms": 7.568093,
+      "no_gpu_activity_ms": 134.399741,
+      "kernel_active_ms": 5.016607,
+      "memcpy_active_ms": 2.551486,
+      "memset_active_ms": 0.0,
+      "on_cpu_in_gpu_gap_ms": 133.769796,
+      "sync_api_residence_ms": 7.95549,
+      "off_cpu_in_sync_api_ms": 0.0,
+      "calls": 280,
+      "launch_api_count": 3080,
+      "scheduler_available": true,
+      "top_kernels_clipped": [
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<bool, at::native::func_wrapper_t<bool, at::native::and_kernel_cuda(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(bool, bool) (instance 1)]>, unsigned int, bool, (int)4, (int)4>>(T3)",
+          "calls": 560,
+          "sum_ms": 1.226336
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::AUnaryFunctor<float, float, bool, at::native::<unnamed>::CompareEqFunctor<float>>, std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+          "calls": 560,
+          "sum_ms": 0.722207
+        },
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<bool, at::native::func_wrapper_t<bool, at::native::or_kernel_cuda(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(bool, bool) (instance 1)]>, unsigned int, bool, (int)4, (int)4>>(T3)",
+          "calls": 280,
+          "sum_ms": 0.62736
+        },
+        {
+          "name": "void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+          "calls": 280,
+          "sum_ms": 0.54592
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+          "calls": 280,
+          "sum_ms": 0.409056
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<bool, bool, bool, at::native::binary_internal::MulFunctor<bool>>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+          "calls": 280,
+          "sum_ms": 0.404384
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, void at::native::compare_scalar_kernel<float>(at::TensorIteratorBase &, at::native::<unnamed>::OpType, T1)::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+          "calls": 280,
+          "sum_ms": 0.365984
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)4, at::native::AbsFunctor<float>, std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+          "calls": 280,
+          "sum_ms": 0.360768
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<float, float, bool, at::native::<unnamed>::CompareEqFunctor<float>>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+          "calls": 280,
+          "sum_ms": 0.354592
+        }
+      ],
+      "copies_clipped": [
+        {
+          "name": "Memcpy Device-to-Host",
+          "calls": 1120,
+          "sum_ms": 2.551486
+        }
+      ],
+      "gpu_gap_sampled_leaf_count": 141,
+      "gpu_gap_top_cpu_sample_leaves": [
+        [
+          "0xffffffffb6200be0",
+          11
+        ],
+        [
+          "0x7fe1d84d08b5",
+          5
+        ],
+        [
+          "0x7fe1d86f67d1",
+          4
+        ],
+        [
+          "__pthread_mutex_unlock",
+          4
+        ],
+        [
+          "0x7fe1d8690de1",
+          3
+        ],
+        [
+          "__pthread_mutex_trylock",
+          3
+        ],
+        [
+          "0x7fe1d84ccd52",
+          2
+        ],
+        [
+          "0x7fe2a5309f55",
+          2
+        ],
+        [
+          "0x7fe1ced998f6",
+          2
+        ],
+        [
+          "_init",
+          2
+        ]
+      ],
+      "top_sync_and_copy_apis": [
+        {
+          "name": "cudaStreamSynchronize_v3020",
+          "calls": 1120,
+          "sum_ms": 7.95549
+        },
+        {
+          "name": "cudaMemcpyAsync_v3020",
+          "calls": 1120,
+          "sum_ms": 6.011106
+        }
+      ],
+      "gpu_overlap_with_sync_by_launch_ms": {
+        "this_invocation": 2.522821
+      },
+      "top_work_during_sync": [
+        {
+          "origin": "this_invocation",
+          "name": "Memcpy Device-to-Host",
+          "union_ms": 2.522821
+        }
+      ],
+      "longest_validator_wait_examples": [
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "start_ns": 111035399071,
+          "end_ns": 111035416412,
+          "correlation": 237172,
+          "aten": [
+            "aten::_local_scalar_dense",
+            "aten::item"
+          ],
+          "validator_start_ns": 111035383251,
+          "overlapping_work": [
+            [
+              "this_invocation",
+              "Memcpy Device-to-Host",
+              7
+            ]
+          ]
+        },
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "start_ns": 113419399127,
+          "end_ns": 113419414896,
+          "correlation": 1151860,
+          "aten": [
+            "aten::_local_scalar_dense",
+            "aten::item"
+          ],
+          "validator_start_ns": 113419384501,
+          "overlapping_work": [
+            [
+              "this_invocation",
+              "Memcpy Device-to-Host",
+              7
+            ]
+          ]
+        },
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "start_ns": 113053166881,
+          "end_ns": 113053182528,
+          "correlation": 1012330,
+          "aten": [
+            "aten::_local_scalar_dense",
+            "aten::item"
+          ],
+          "validator_start_ns": 113053130771,
+          "overlapping_work": [
+            [
+              "this_invocation",
+              "Memcpy Device-to-Host",
+              7
+            ]
+          ]
+        },
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "start_ns": 111002208148,
+          "end_ns": 111002222596,
+          "correlation": 221122,
+          "aten": [
+            "aten::_local_scalar_dense",
+            "aten::is_nonzero",
+            "aten::item"
+          ],
+          "validator_start_ns": 111001984326,
+          "overlapping_work": [
+            [
+              "this_invocation",
+              "Memcpy Device-to-Host",
+              7
+            ]
+          ]
+        },
+        {
+          "api": "cudaStreamSynchronize_v3020",
+          "start_ns": 111705315822,
+          "end_ns": 111705330193,
+          "correlation": 497334,
+          "aten": [
+            "aten::_local_scalar_dense",
+            "aten::is_nonzero",
+            "aten::item"
+          ],
+          "validator_start_ns": 111705081226,
+          "overlapping_work": [
+            [
+              "this_invocation",
+              "Memcpy Device-to-Host",
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    "GPTQ/scale_search": {
+      "inclusive_host_ms": 95664.428738,
+      "gpu_active_in_window_ms": 60.502879,
+      "no_gpu_activity_ms": 95603.925859,
+      "kernel_active_ms": 58.788479,
+      "memcpy_active_ms": 1.7144,
+      "memset_active_ms": 0.0,
+      "on_cpu_in_gpu_gap_ms": 1174.895466,
+      "sync_api_residence_ms": 6.899088,
+      "off_cpu_in_sync_api_ms": 0.0,
+      "calls": 280,
+      "launch_api_count": 10920,
+      "scheduler_available": true,
+      "top_kernels_clipped": [
+        {
+          "name": "_grid_search_observer_triton_packed_kernel",
+          "calls": 280,
+          "sum_ms": 40.151496
+        },
+        {
+          "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+          "calls": 1120,
+          "sum_ms": 2.891167
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::FillFunctor<c10::BFloat16>, std::array<char *, (unsigned long)1>, (bool)0>(int, T2, T3)",
+          "calls": 1400,
+          "sum_ms": 1.385632
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::maximum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+          "calls": 840,
+          "sum_ms": 1.272351
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+          "calls": 840,
+          "sum_ms": 1.019264
+        },
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MinNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+          "calls": 280,
+          "sum_ms": 0.936544
+        },
+        {
+          "name": "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)",
+          "calls": 280,
+          "sum_ms": 0.932448
+        },
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MaxNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+          "calls": 280,
+          "sum_ms": 0.86896
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::minimum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+          "calls": 560,
+          "sum_ms": 0.854176
+        },
+        {
+          "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::MaxNanFunctor<float>>, unsigned int, float, (int)4, (int)4>>(T3)",
+          "calls": 280,
+          "sum_ms": 0.797631
+        }
+      ],
+      "copies_clipped": [
+        {
+          "name": "Memcpy Device-to-Host",
+          "calls": 560,
+          "sum_ms": 1.266752
+        },
+        {
+          "name": "Memcpy Host-to-Device",
+          "calls": 562,
+          "sum_ms": 0.447648
+        }
+      ],
+      "gpu_gap_sampled_leaf_count": 1210,
+      "gpu_gap_top_cpu_sample_leaves": [
+        [
+          "0x7fe2a1c1d154",
+          35
+        ],
+        [
+          "0x7fe2a1c1cf79",
+          29
+        ],
+        [
+          "0x7fe2a1c1cfa6",
+          29
+        ],
+        [
+          "0x7fe2a1c1d14a",
+          29
+        ],
+        [
+          "0x7fe2a1c1d12c",
+          29
+        ],
+        [
+          "0x7fe2a1c1d0c3",
+          28
+        ],
+        [
+          "0x7fe2a1c1cf4c",
+          28
+        ],
+        [
+          "0x7fe2a1c1ced0",
+          26
+        ],
+        [
+          "0x7fe2a1c1d11a",
+          26
+        ],
+        [
+          "0x7fe2a1c1d033",
+          25
+        ]
+      ],
+      "top_sync_and_copy_apis": [
+        {
+          "name": "cudaMemcpyAsync_v3020",
+          "calls": 1122,
+          "sum_ms": 8.03168
+        },
+        {
+          "name": "cudaStreamSynchronize_v3020",
+          "calls": 1122,
+          "sum_ms": 6.899088
+        }
+      ],
+      "gpu_overlap_with_sync_by_launch_ms": {
+        "this_invocation": 1.665287
+      },
+      "top_work_during_sync": [
+        {
+          "origin": "this_invocation",
+          "name": "Memcpy Device-to-Host",
+          "union_ms": 1.243033
+        },
+        {
+          "origin": "this_invocation",
+          "name": "Memcpy Host-to-Device",
+          "union_ms": 0.422254
+        }
+      ]
+    }
+  }
+}
