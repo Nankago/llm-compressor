@@ -1,0 +1,3 @@
+mode,repetitions,batch_size:count,per_item_modules,batched_modules,calib_forward_outside_gptq_hook,propagate_forward,hook_setup,accumulate,prepare_batch,quant_setup,factor,weight_update,writeback,unattributed_wall_s,oneshot_wall_s,peak_allocated_MiB,peak_reserved_MiB
+auto,3,"2:20,8:10,16:10",120,160,0.96386,0.406833,0.042939,0.201117,0.003131,0.024039,0.899882,0.430722,0.070882,10.862959,13.905463,162.490723,210.0
+None,3,1:280,280,0,0.994157,0.423578,0.057577,0.179612,0.005593,0.036845,1.685974,1.15647,0.525007,10.921599,15.996888,106.76709,132.0

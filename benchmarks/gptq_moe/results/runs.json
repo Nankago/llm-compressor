@@ -1,0 +1,2683 @@
+{
+  "01-auto": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": "auto",
+    "start_utc": "2026-11-21T15:58:10.287042+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6395 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.768205963075161,
+    "oneshot_wall_s": 13.850551340728998,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.9563197055812918,
+      "propagate_forward": 0.40606294417381283,
+      "hook_setup": 0.03329033632716101,
+      "accumulate": 0.1727806401178249,
+      "prepare_batch": 0.0031307840012013916,
+      "quant_setup": 0.021607327297329903,
+      "factor": 0.8982247333526611,
+      "weight_update": 0.43084237313270557,
+      "writeback": 0.06533391961455344
+    },
+    "unattributed_wall_s": 10.862958577130456,
+    "peak_allocated_bytes": 170383872,
+    "peak_reserved_bytes": 220200960,
+    "batch_histogram": {
+      "2": 20,
+      "16": 10,
+      "8": 10
+    },
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "propagate_forward": 88,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 40,
+      "quant_setup": 40,
+      "fused_block_update": 150,
+      "writeback": 40
+    },
+    "caps_subgraph_representative_limit": [
+      [
+        1,
+        "model.layers.0.self_attn.q_proj",
+        1652
+      ],
+      [
+        1,
+        "model.layers.0.self_attn.k_proj",
+        2203
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.gate_proj",
+        911
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.down_proj",
+        550
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.q_proj",
+        1606
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.k_proj",
+        2141
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.q_proj",
+        1606
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.k_proj",
+        2141
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.q_proj",
+        1606
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.k_proj",
+        2141
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.q_proj",
+        1606
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.k_proj",
+        2141
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.q_proj",
+        1606
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.k_proj",
+        2141
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.q_proj",
+        1606
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.k_proj",
+        2141
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.q_proj",
+        1606
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.k_proj",
+        2141
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.q_proj",
+        1606
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.k_proj",
+        2141
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.q_proj",
+        1606
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.k_proj",
+        2141
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.down_proj",
+        535
+      ]
+    ],
+    "batch_records": "batches-auto-5a3e325735cb.jsonl"
+  },
+  "02-none": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": null,
+    "start_utc": "2026-11-21T15:58:38.644561+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6473 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.7306269817054272,
+    "oneshot_wall_s": 16.003523846156895,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.9782182714845936,
+      "propagate_forward": 0.4275048937052489,
+      "hook_setup": 0.055057568418561686,
+      "accumulate": 0.17961193751171145,
+      "prepare_batch": 0.0055605760049074904,
+      "quant_setup": 0.036844799973070615,
+      "factor": 1.685974498271942,
+      "weight_update": 1.1863982604742056,
+      "writeback": 0.5267539515495298
+    },
+    "unattributed_wall_s": 10.921599088763124,
+    "peak_allocated_bytes": 111953408,
+    "peak_reserved_bytes": 138412032,
+    "batch_histogram": {
+      "1": 280
+    },
+    "module_count_by_cholesky": {
+      "per_item": 280
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "propagate_forward": 88,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 280,
+      "quant_setup": 280,
+      "fused_block_update": 1080,
+      "writeback": 280
+    },
+    "caps_subgraph_representative_limit": [],
+    "batch_records": "batches-none-2ae4e9bcc245.jsonl"
+  },
+  "03-none": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": null,
+    "start_utc": "2026-11-21T15:59:08.862580+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6473 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.802335361018777,
+    "oneshot_wall_s": 15.929844558238983,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 1.0217360357581626,
+      "propagate_forward": 0.42357753436453655,
+      "hook_setup": 0.07442003251635408,
+      "accumulate": 0.20853904020413808,
+      "prepare_batch": 0.007731135917827488,
+      "quant_setup": 0.03610208009555931,
+      "factor": 1.6858297963142395,
+      "weight_update": 1.1516509194374085,
+      "writeback": 0.514525887325406
+    },
+    "unattributed_wall_s": 10.805732096305352,
+    "peak_allocated_bytes": 111953408,
+    "peak_reserved_bytes": 138412032,
+    "batch_histogram": {
+      "1": 280
+    },
+    "module_count_by_cholesky": {
+      "per_item": 280
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "propagate_forward": 88,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 280,
+      "quant_setup": 280,
+      "fused_block_update": 1080,
+      "writeback": 280
+    },
+    "caps_subgraph_representative_limit": [],
+    "batch_records": "batches-none-2ae4e9bcc245.jsonl"
+  },
+  "04-auto": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": "auto",
+    "start_utc": "2026-11-21T15:59:39.131099+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6395 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.8373509049415588,
+    "oneshot_wall_s": 13.905463452450931,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.9638603187305849,
+      "propagate_forward": 0.4151862082481384,
+      "hook_setup": 0.057228224404855546,
+      "accumulate": 0.20905231992155388,
+      "prepare_batch": 0.003117376001551747,
+      "quant_setup": 0.02403888097405433,
+      "factor": 0.8998818864822387,
+      "weight_update": 0.4307223284244538,
+      "writeback": 0.07432460775971413
+    },
+    "unattributed_wall_s": 10.828051301503786,
+    "peak_allocated_bytes": 170383872,
+    "peak_reserved_bytes": 220200960,
+    "batch_histogram": {
+      "2": 20,
+      "16": 10,
+      "8": 10
+    },
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "propagate_forward": 88,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 40,
+      "quant_setup": 40,
+      "fused_block_update": 150,
+      "writeback": 40
+    },
+    "caps_subgraph_representative_limit": [
+      [
+        1,
+        "model.layers.0.self_attn.q_proj",
+        1652
+      ],
+      [
+        1,
+        "model.layers.0.self_attn.k_proj",
+        2203
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.gate_proj",
+        911
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.down_proj",
+        550
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.q_proj",
+        1606
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.k_proj",
+        2141
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.q_proj",
+        1606
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.k_proj",
+        2141
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.q_proj",
+        1606
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.k_proj",
+        2141
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.q_proj",
+        1606
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.k_proj",
+        2141
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.q_proj",
+        1606
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.k_proj",
+        2141
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.q_proj",
+        1606
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.k_proj",
+        2141
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.q_proj",
+        1606
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.k_proj",
+        2141
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.q_proj",
+        1606
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.k_proj",
+        2141
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.q_proj",
+        1606
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.k_proj",
+        2141
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.down_proj",
+        535
+      ]
+    ],
+    "batch_records": "batches-auto-5a3e325735cb.jsonl"
+  },
+  "05-auto": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": "auto",
+    "start_utc": "2026-11-21T16:00:08.060961+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6395 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.8435939084738493,
+    "oneshot_wall_s": 13.923939940519631,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.9853682829239346,
+      "propagate_forward": 0.4068331543654203,
+      "hook_setup": 0.04293852845206925,
+      "accumulate": 0.20111660631746045,
+      "prepare_batch": 0.0032794879954308274,
+      "quant_setup": 0.024120448626577855,
+      "factor": 0.9043483815193175,
+      "weight_update": 0.13774246430397039,
+      "writeback": 0.07088217613101007
+    },
+    "unattributed_wall_s": 11.14731040988444,
+    "peak_allocated_bytes": 170383872,
+    "peak_reserved_bytes": 220200960,
+    "batch_histogram": {
+      "2": 20,
+      "16": 10,
+      "8": 10
+    },
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "propagate_forward": 88,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 40,
+      "quant_setup": 40,
+      "fused_block_update": 150,
+      "writeback": 40
+    },
+    "caps_subgraph_representative_limit": [
+      [
+        1,
+        "model.layers.0.self_attn.q_proj",
+        1652
+      ],
+      [
+        1,
+        "model.layers.0.self_attn.k_proj",
+        2203
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.gate_proj",
+        911
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.down_proj",
+        550
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.q_proj",
+        1606
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.k_proj",
+        2141
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.q_proj",
+        1606
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.k_proj",
+        2141
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.q_proj",
+        1606
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.k_proj",
+        2141
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.q_proj",
+        1606
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.k_proj",
+        2141
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.q_proj",
+        1606
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.k_proj",
+        2141
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.q_proj",
+        1606
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.k_proj",
+        2141
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.q_proj",
+        1606
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.k_proj",
+        2141
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.q_proj",
+        1606
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.k_proj",
+        2141
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.q_proj",
+        1606
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.k_proj",
+        2141
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.down_proj",
+        535
+      ]
+    ],
+    "batch_records": "batches-auto-5a3e325735cb.jsonl"
+  },
+  "06-none": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": null,
+    "start_utc": "2026-11-21T16:00:35.167499+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6473 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.7226232308894396,
+    "oneshot_wall_s": 15.996888256631792,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.9941572068072816,
+      "propagate_forward": 0.4210404175519942,
+      "hook_setup": 0.057576640335145035,
+      "accumulate": 0.16985142339765952,
+      "prepare_batch": 0.005592607999220498,
+      "quant_setup": 0.036949311479926084,
+      "factor": 1.6892037138938905,
+      "weight_update": 1.1564697449207306,
+      "writeback": 0.5250073600411417
+    },
+    "unattributed_wall_s": 10.9410398302048,
+    "peak_allocated_bytes": 111953408,
+    "peak_reserved_bytes": 138412032,
+    "batch_histogram": {
+      "1": 280
+    },
+    "module_count_by_cholesky": {
+      "per_item": 280
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "propagate_forward": 88,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 280,
+      "quant_setup": 280,
+      "fused_block_update": 1080,
+      "writeback": 280
+    },
+    "caps_subgraph_representative_limit": [],
+    "batch_records": "batches-none-2ae4e9bcc245.jsonl"
+  },
+  "observer-auto": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": "auto",
+    "start_utc": "2026-11-21T16:06:00.448508+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6395 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.7952676778659225,
+    "oneshot_wall_s": 13.941609032452106,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.9696555727992796,
+      "weight_observe": 7.375575022072299,
+      "propagate_forward": 0.40853878188133236,
+      "imatrix_input_hook": 0.3639810549896199,
+      "hook_setup": 0.04525638466375026,
+      "accumulate": 0.20545049452036715,
+      "prepare_batch": 0.003111520029604436,
+      "quant_setup": 0.021621280051767812,
+      "factor": 0.8967341709136961,
+      "weight_update": 0.13725340771675112,
+      "writeback": 0.06851158413290977
+    },
+    "unattributed_wall_s": 3.445919758680729,
+    "peak_allocated_bytes": 170383872,
+    "peak_reserved_bytes": 220200960,
+    "batch_histogram": {
+      "2": 20,
+      "16": 10,
+      "8": 10
+    },
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "weight_observe": 11,
+      "propagate_forward": 88,
+      "imatrix_input_hook": 2240,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 40,
+      "quant_setup": 40,
+      "fused_block_update": 150,
+      "writeback": 40
+    },
+    "caps_subgraph_representative_limit": [
+      [
+        1,
+        "model.layers.0.self_attn.q_proj",
+        1652
+      ],
+      [
+        1,
+        "model.layers.0.self_attn.k_proj",
+        2203
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.gate_proj",
+        911
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.down_proj",
+        550
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.q_proj",
+        1606
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.k_proj",
+        2141
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.q_proj",
+        1606
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.k_proj",
+        2141
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.q_proj",
+        1606
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.k_proj",
+        2141
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.q_proj",
+        1606
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.k_proj",
+        2141
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.q_proj",
+        1606
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.k_proj",
+        2141
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.q_proj",
+        1606
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.k_proj",
+        2141
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.q_proj",
+        1606
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.k_proj",
+        2141
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.q_proj",
+        1606
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.k_proj",
+        2141
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.q_proj",
+        1606
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.k_proj",
+        2141
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.down_proj",
+        535
+      ]
+    ],
+    "batch_records": "batches-auto-5a3e325735cb.jsonl"
+  },
+  "observer-none": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": null,
+    "start_utc": "2026-11-21T16:06:28.741762+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6473 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.7418564092367887,
+    "oneshot_wall_s": 16.08949024695903,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 1.0315683495518833,
+      "weight_observe": 7.329379529431695,
+      "propagate_forward": 0.4331189110279082,
+      "imatrix_input_hook": 0.3431275841817272,
+      "hook_setup": 0.08635276816319412,
+      "accumulate": 0.22297833611257326,
+      "prepare_batch": 0.005511200003325941,
+      "quant_setup": 0.03929993617534637,
+      "factor": 1.6864111652374265,
+      "weight_update": 0.891256801605225,
+      "writeback": 0.5175599996447562
+    },
+    "unattributed_wall_s": 3.5029256658239696,
+    "peak_allocated_bytes": 111953408,
+    "peak_reserved_bytes": 138412032,
+    "batch_histogram": {
+      "1": 280
+    },
+    "module_count_by_cholesky": {
+      "per_item": 280
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "weight_observe": 11,
+      "propagate_forward": 88,
+      "imatrix_input_hook": 2240,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 280,
+      "quant_setup": 280,
+      "fused_block_update": 1080,
+      "writeback": 280
+    },
+    "caps_subgraph_representative_limit": [],
+    "batch_records": "batches-none-2ae4e9bcc245.jsonl"
+  },
+  "preflight-auto": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 1,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200
+    ],
+    "input_ids_sha256_le_i64": "066b385e08f615ab0dd83ed7d3ac5ae7debc746f8ea62c0dd44c969654211606",
+    "mode": "auto",
+    "start_utc": "2026-11-21T15:56:15.686613+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 93 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6395 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.881124165840447,
+    "oneshot_wall_s": 13.84966523759067,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.5268915179851464,
+      "propagate_forward": 0.039563455842435355,
+      "hook_setup": 0.024548415960278326,
+      "accumulate": 0.07855718262866135,
+      "prepare_batch": 0.003252096006646752,
+      "quant_setup": 0.021750784635543818,
+      "factor": 0.9582681951522825,
+      "weight_update": 0.3538946833610534,
+      "writeback": 0.075106368213892
+    },
+    "unattributed_wall_s": 11.76783253780473,
+    "peak_allocated_bytes": 170383872,
+    "peak_reserved_bytes": 220200960,
+    "batch_histogram": {
+      "2": 20,
+      "16": 10,
+      "8": 10
+    },
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 11,
+      "propagate_forward": 11,
+      "hook_setup": 280,
+      "accumulate": 280,
+      "prepare_batch": 40,
+      "quant_setup": 40,
+      "fused_block_update": 150,
+      "writeback": 40
+    },
+    "caps_subgraph_representative_limit": [
+      [
+        1,
+        "model.layers.0.self_attn.q_proj",
+        1652
+      ],
+      [
+        1,
+        "model.layers.0.self_attn.k_proj",
+        2203
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.gate_proj",
+        911
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.down_proj",
+        550
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.q_proj",
+        1606
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.k_proj",
+        2141
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.q_proj",
+        1606
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.k_proj",
+        2141
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.q_proj",
+        1606
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.k_proj",
+        2141
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.q_proj",
+        1606
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.k_proj",
+        2141
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.q_proj",
+        1606
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.k_proj",
+        2141
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.q_proj",
+        1606
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.k_proj",
+        2141
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.q_proj",
+        1606
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.k_proj",
+        2141
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.q_proj",
+        1606
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.k_proj",
+        2141
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.q_proj",
+        1606
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.k_proj",
+        2141
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.down_proj",
+        535
+      ]
+    ],
+    "batch_records": "batches-auto-5a3e325735cb.jsonl"
+  },
+  "profile-auto": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200,
+      2944,
+      2432,
+      1408,
+      512,
+      5760,
+      3328,
+      1152
+    ],
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "mode": "auto",
+    "start_utc": "2026-11-21T16:01:15.794805+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6395 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.806229897774756,
+    "oneshot_wall_s": 14.674627815373242,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 1.1492116769501002,
+      "propagate_forward": 0.4301333441734314,
+      "hook_setup": 0.1755238076571904,
+      "accumulate": 0.3463105281330646,
+      "prepare_batch": 0.0031166400071233505,
+      "quant_setup": 0.026469471924006942,
+      "factor": 0.9029190468788146,
+      "weight_update": 0.1405693757534027,
+      "writeback": 0.07278083175420762
+    },
+    "unattributed_wall_s": 11.427593092141901,
+    "peak_allocated_bytes": 170383872,
+    "peak_reserved_bytes": 220200960,
+    "batch_histogram": {
+      "2": 20,
+      "16": 10,
+      "8": 10
+    },
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 88,
+      "propagate_forward": 88,
+      "hook_setup": 2240,
+      "accumulate": 2240,
+      "prepare_batch": 40,
+      "quant_setup": 40,
+      "fused_block_update": 150,
+      "writeback": 40
+    },
+    "caps_subgraph_representative_limit": [
+      [
+        1,
+        "model.layers.0.self_attn.q_proj",
+        1652
+      ],
+      [
+        1,
+        "model.layers.0.self_attn.k_proj",
+        2203
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.gate_proj",
+        911
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.down_proj",
+        550
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.q_proj",
+        1606
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.k_proj",
+        2141
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.q_proj",
+        1606
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.k_proj",
+        2141
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.q_proj",
+        1606
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.k_proj",
+        2141
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.q_proj",
+        1606
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.k_proj",
+        2141
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.q_proj",
+        1606
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.k_proj",
+        2141
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.q_proj",
+        1606
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.k_proj",
+        2141
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.q_proj",
+        1606
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.k_proj",
+        2141
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.q_proj",
+        1606
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.k_proj",
+        2141
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.q_proj",
+        1606
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.k_proj",
+        2141
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.down_proj",
+        535
+      ]
+    ],
+    "host_profile": {
+      "own_s": [
+        {
+          "function": "~:0 <method 'read' of '_io.BufferedReader' objects>",
+          "calls": 897,
+          "own_s": 2.437110697,
+          "cumulative_s": 2.437110697
+        },
+        {
+          "function": "~:0 <built-in method torch.tensor>",
+          "calls": 2524,
+          "own_s": 2.4009895980000002,
+          "cumulative_s": 2.4009895980000002
+        },
+        {
+          "function": "llmcompressor/observers/imatrix.py:195 _get_validated_importance",
+          "calls": 280,
+          "own_s": 2.0193057750000003,
+          "cumulative_s": 2.673234395
+        },
+        {
+          "function": "~:0 <method 'to' of 'torch._C.TensorBase' objects>",
+          "calls": 21517,
+          "own_s": 1.6927234660000001,
+          "cumulative_s": 1.7622471620000002
+        },
+        {
+          "function": "~:0 <method 'item' of 'torch._C.TensorBase' objects>",
+          "calls": 962,
+          "own_s": 0.9751039950000001,
+          "cumulative_s": 0.9751039950000001
+        },
+        {
+          "function": "~:0 <method 'update' of '_hashlib.HASH' objects>",
+          "calls": 880,
+          "own_s": 0.6275440280000001,
+          "cumulative_s": 0.6275440280000001
+        },
+        {
+          "function": "~:0 <built-in method torch._C._linalg.linalg_cholesky>",
+          "calls": 130,
+          "own_s": 0.41244416100000003,
+          "cumulative_s": 0.41244416100000003
+        },
+        {
+          "function": "ast.py:34 parse",
+          "calls": 12,
+          "own_s": 0.27271581300000003,
+          "cumulative_s": 0.27642705900000003
+        },
+        {
+          "function": "~:0 <built-in method torch._C._nn.linear>",
+          "calls": 4640,
+          "own_s": 0.219826605,
+          "cumulative_s": 0.219826605
+        },
+        {
+          "function": "~:0 <method 'tolist' of 'torch._C.TensorBase' objects>",
+          "calls": 160,
+          "own_s": 0.169843971,
+          "cumulative_s": 0.169843971
+        },
+        {
+          "function": "~:0 <method 'matmul' of 'torch._C.TensorBase' objects>",
+          "calls": 2240,
+          "own_s": 0.10583648500000001,
+          "cumulative_s": 0.10583648500000001
+        },
+        {
+          "function": "~:0 <built-in method torch.cholesky_inverse>",
+          "calls": 130,
+          "own_s": 0.090160746,
+          "cumulative_s": 0.090160746
+        },
+        {
+          "function": "llmcompressor/modifiers/gptq/helpers.py:42 accumulate_hessian",
+          "calls": 2240,
+          "own_s": 0.077225026,
+          "cumulative_s": 0.23391850800000002
+        },
+        {
+          "function": "~:0 <built-in method builtins.isinstance>",
+          "calls": 419536,
+          "own_s": 0.07550919,
+          "cumulative_s": 0.137653413
+        },
+        {
+          "function": "llmcompressor/modeling/moe/linear_experts.py:553 forward",
+          "calls": 160,
+          "own_s": 0.069348121,
+          "cumulative_s": 1.2805933600000001
+        },
+        {
+          "function": "llmcompressor/modifiers/gptq/helpers.py:300 factorize_hessian",
+          "calls": 40,
+          "own_s": 0.065507069,
+          "cumulative_s": 0.9603198110000001
+        },
+        {
+          "function": "~:0 <method 'pow' of 'torch._C.TensorBase' objects>",
+          "calls": 2577,
+          "own_s": 0.062918017,
+          "cumulative_s": 0.063423878
+        },
+        {
+          "function": "~:0 <method 'index_add_' of 'torch._C.TensorBase' objects>",
+          "calls": 1280,
+          "own_s": 0.06113648000000001,
+          "cumulative_s": 0.06113648000000001
+        },
+        {
+          "function": "module.py:1971 __setattr__",
+          "calls": 24685,
+          "own_s": 0.059089905000000005,
+          "cumulative_s": 0.15861761600000002
+        },
+        {
+          "function": "module.py:1954 __getattr__",
+          "calls": 58464,
+          "own_s": 0.048254672000000005,
+          "cumulative_s": 0.054605881
+        },
+        {
+          "function": "~:0 <built-in method torch.topk>",
+          "calls": 160,
+          "own_s": 0.047221421,
+          "cumulative_s": 0.047221421
+        },
+        {
+          "function": "llmcompressor/observers/imatrix.py:131 _hook",
+          "calls": 4480,
+          "own_s": 0.045995659,
+          "cumulative_s": 0.21244599
+        },
+        {
+          "function": "~:0 <method 'sum' of 'torch._C.TensorBase' objects>",
+          "calls": 2440,
+          "own_s": 0.0455532,
+          "cumulative_s": 0.0455532
+        },
+        {
+          "function": "~:0 <method 'nonzero' of 'torch._C.TensorBase' objects>",
+          "calls": 10,
+          "own_s": 0.042726669,
+          "cumulative_s": 0.042726669
+        },
+        {
+          "function": "~:0 <function Event.record at 0x7f5863df3c40>",
+          "calls": 9632,
+          "own_s": 0.041613652,
+          "cumulative_s": 0.041613652
+        },
+        {
+          "function": "~:0 <built-in method torch._C._accelerator_getMemoryInfo>",
+          "calls": 280,
+          "own_s": 0.038224073000000004,
+          "cumulative_s": 0.038224073000000004
+        },
+        {
+          "function": "~:0 <built-in method torch._C._linalg.linalg_cholesky_ex>",
+          "calls": 130,
+          "own_s": 0.037296517,
+          "cumulative_s": 0.037296517
+        },
+        {
+          "function": "memory.py:112 flatten",
+          "calls": 45080,
+          "own_s": 0.037100289,
+          "cumulative_s": 0.047379353000000006
+        },
+        {
+          "function": "llmcompressor/observers/grid_search.py:225 _grid_search_observer_triton",
+          "calls": 280,
+          "own_s": 0.036735539000000005,
+          "cumulative_s": 4.871463766000001
+        },
+        {
+          "function": "~:0 <built-in method builtins.getattr>",
+          "calls": 131228,
+          "own_s": 0.033615382,
+          "cumulative_s": 0.06697395
+        },
+        {
+          "function": "module.py:2836 named_modules",
+          "calls": 96748,
+          "own_s": 0.032751161,
+          "cumulative_s": 0.037672969
+        },
+        {
+          "function": "~:0 <built-in method torch.isfinite>",
+          "calls": 280,
+          "own_s": 0.032544358,
+          "cumulative_s": 0.032544358
+        },
+        {
+          "function": "module.py:1794 inner",
+          "calls": 4480,
+          "own_s": 0.032014271000000004,
+          "cumulative_s": 1.116795083
+        },
+        {
+          "function": "helpers.py:52 calculate_qparams",
+          "calls": 560,
+          "own_s": 0.029814457000000003,
+          "cumulative_s": 1.3348434420000002
+        },
+        {
+          "function": "~:0 <built-in method torch.zeros>",
+          "calls": 1922,
+          "own_s": 0.029477437000000002,
+          "cumulative_s": 0.029499195000000002
+        },
+        {
+          "function": "~:0 <built-in method torch.cat>",
+          "calls": 1617,
+          "own_s": 0.027086662,
+          "cumulative_s": 0.027466820000000003
+        },
+        {
+          "function": "module.py:1782 _call_impl",
+          "calls": 8509,
+          "own_s": 0.025874448,
+          "cumulative_s": 9.636573910000001
+        },
+        {
+          "function": "llmcompressor/modeling/moe/linear_experts.py:208 _group_tokens_by_expert",
+          "calls": 160,
+          "own_s": 0.024404757000000003,
+          "cumulative_s": 0.23993667000000002
+        },
+        {
+          "function": "registry.py:922 eager_router",
+          "calls": 470,
+          "own_s": 0.023435346000000003,
+          "cumulative_s": 0.025532541000000002
+        },
+        {
+          "function": "~:0 <method 'softmax' of 'torch._C.TensorBase' objects>",
+          "calls": 320,
+          "own_s": 0.023298887,
+          "cumulative_s": 0.023298887
+        }
+      ],
+      "cumulative_s": [
+        {
+          "function": "_base.py:646 __exit__",
+          "calls": 23,
+          "own_s": 0.000319666,
+          "cumulative_s": 15.712478234
+        },
+        {
+          "function": "llmcompressor/entrypoints/oneshot.py:138 wrapper",
+          "calls": 3,
+          "own_s": 0.00010703100000000001,
+          "cumulative_s": 14.674235679
+        },
+        {
+          "function": "llmcompressor/entrypoints/oneshot.py:409 oneshot",
+          "calls": 2,
+          "own_s": 4.1073000000000005e-05,
+          "cumulative_s": 14.651429632000001
+        },
+        {
+          "function": "llmcompressor/entrypoints/oneshot.py:235 __call__",
+          "calls": 1,
+          "own_s": 3.4284e-05,
+          "cumulative_s": 14.480631824000001
+        },
+        {
+          "function": "llmcompressor/entrypoints/oneshot.py:271 apply_recipe_modifiers",
+          "calls": 1,
+          "own_s": 0.00012762,
+          "cumulative_s": 14.480588128
+        },
+        {
+          "function": "thread.py:219 shutdown",
+          "calls": 23,
+          "own_s": 0.0011152360000000001,
+          "cumulative_s": 14.251342112000001
+        },
+        {
+          "function": "contextlib.py:567 __exit__",
+          "calls": 92,
+          "own_s": 0.00093749,
+          "cumulative_s": 13.744233744
+        },
+        {
+          "function": "llmcompressor/pipelines/sequential/helpers.py:861 wrapper",
+          "calls": 1,
+          "own_s": 0.000169547,
+          "cumulative_s": 13.565395891000001
+        },
+        {
+          "function": "llmcompressor/pipelines/sequential/pipeline.py:82 __call__",
+          "calls": 1,
+          "own_s": 1.8501e-05,
+          "cumulative_s": 13.565221849
+        },
+        {
+          "function": "llmcompressor/core/session_functions.py:76 event",
+          "calls": 13,
+          "own_s": 8.9373e-05,
+          "cumulative_s": 10.446839405
+        },
+        {
+          "function": "llmcompressor/core/session.py:165 event",
+          "calls": 13,
+          "own_s": 0.000247236,
+          "cumulative_s": 10.446733360000001
+        },
+        {
+          "function": "llmcompressor/core/lifecycle.py:151 event",
+          "calls": 13,
+          "own_s": 0.00030582600000000004,
+          "cumulative_s": 10.446447903000001
+        },
+        {
+          "function": "llmcompressor/modifiers/modifier.py:114 update_event",
+          "calls": 13,
+          "own_s": 0.000184272,
+          "cumulative_s": 10.446053311
+        },
+        {
+          "function": "module.py:1774 _wrapped_call_impl",
+          "calls": 8509,
+          "own_s": 0.014320592,
+          "cumulative_s": 9.641324026000001
+        },
+        {
+          "function": "llmcompressor/core/session_functions.py:156 sequential_epoch_end",
+          "calls": 11,
+          "own_s": 8.3175e-05,
+          "cumulative_s": 9.637074973
+        },
+        {
+          "function": "module.py:1782 _call_impl",
+          "calls": 8509,
+          "own_s": 0.025874448,
+          "cumulative_s": 9.636573910000001
+        },
+        {
+          "function": "llmcompressor/modifiers/gptq/base.py:242 on_sequential_epoch_end",
+          "calls": 11,
+          "own_s": 0.00036848800000000004,
+          "cumulative_s": 9.635553163
+        },
+        {
+          "function": "_contextlib.py:120 decorate_context",
+          "calls": 857,
+          "own_s": 0.006287214,
+          "cumulative_s": 8.268351787
+        },
+        {
+          "function": "llmcompressor/observers/base.py:125 forward",
+          "calls": 280,
+          "own_s": 0.0017949840000000001,
+          "cumulative_s": 7.593978436
+        },
+        {
+          "function": "llmcompressor/observers/imatrix.py:165 update_statistics_from_observed",
+          "calls": 280,
+          "own_s": 0.0013662490000000002,
+          "cumulative_s": 7.577300604
+        },
+        {
+          "function": "llmcompressor/modifiers/quantization/calibration.py:104 observe",
+          "calls": 291,
+          "own_s": 0.0010111920000000002,
+          "cumulative_s": 7.575350277
+        },
+        {
+          "function": "threading.py:1115 join",
+          "calls": 23,
+          "own_s": 9.3343e-05,
+          "cumulative_s": 6.2795271040000005
+        },
+        {
+          "function": "threading.py:1153 _wait_for_tstate_lock",
+          "calls": 23,
+          "own_s": 0.00046328300000000004,
+          "cumulative_s": 5.474939513000001
+        },
+        {
+          "function": "impl_backend.py:114 wrapper",
+          "calls": 430,
+          "own_s": 0.00247715,
+          "cumulative_s": 4.924895562000001
+        },
+        {
+          "function": "llmcompressor/observers/grid_search.py:225 _grid_search_observer_triton",
+          "calls": 280,
+          "own_s": 0.036735539000000005,
+          "cumulative_s": 4.871463766000001
+        },
+        {
+          "function": "jit.py:374 <lambda>",
+          "calls": 430,
+          "own_s": 0.002641004,
+          "cumulative_s": 3.4223377050000003
+        },
+        {
+          "function": "jit.py:726 run",
+          "calls": 430,
+          "own_s": 0.010072219,
+          "cumulative_s": 3.4196967010000003
+        },
+        {
+          "function": "instrument.py:38 wrapper",
+          "calls": 4776,
+          "own_s": 0.015483622,
+          "cumulative_s": 3.2001671760000003
+        },
+        {
+          "function": "llmcompressor/observers/imatrix.py:182 _prepare_importance",
+          "calls": 280,
+          "own_s": 0.007465617000000001,
+          "cumulative_s": 2.6896586680000003
+        },
+        {
+          "function": "llmcompressor/observers/imatrix.py:195 _get_validated_importance",
+          "calls": 280,
+          "own_s": 2.0193057750000003,
+          "cumulative_s": 2.673234395
+        },
+        {
+          "function": "~:0 <method 'read' of '_io.BufferedReader' objects>",
+          "calls": 897,
+          "own_s": 2.437110697,
+          "cumulative_s": 2.437110697
+        },
+        {
+          "function": "~:0 <built-in method torch.tensor>",
+          "calls": 2524,
+          "own_s": 2.4009895980000002,
+          "cumulative_s": 2.4009895980000002
+        },
+        {
+          "function": "subprocess.py:417 check_output",
+          "calls": 4,
+          "own_s": 3.7986000000000005e-05,
+          "cumulative_s": 2.2860344130000003
+        },
+        {
+          "function": "subprocess.py:506 run",
+          "calls": 4,
+          "own_s": 6.206400000000001e-05,
+          "cumulative_s": 2.2859905630000004
+        },
+        {
+          "function": "driver.py:36 active",
+          "calls": 1305,
+          "own_s": 0.000233216,
+          "cumulative_s": 2.281922401
+        },
+        {
+          "function": "driver.py:30 default",
+          "calls": 1,
+          "own_s": 6.859000000000001e-06,
+          "cumulative_s": 2.2816891850000003
+        },
+        {
+          "function": "driver.py:8 _create_driver",
+          "calls": 1,
+          "own_s": 3.2200000000000003e-05,
+          "cumulative_s": 2.2816823260000003
+        },
+        {
+          "function": "driver.py:341 __init__",
+          "calls": 1,
+          "own_s": 1.8156e-05,
+          "cumulative_s": 2.281608732
+        },
+        {
+          "function": "driver.py:100 __init__",
+          "calls": 1,
+          "own_s": 2.0949000000000002e-05,
+          "cumulative_s": 2.281576023
+        },
+        {
+          "function": "subprocess.py:1165 communicate",
+          "calls": 4,
+          "own_s": 3.682e-05,
+          "cumulative_s": 2.279406206
+        }
+      ]
+    },
+    "batch_records": "batches-auto-5a3e325735cb.jsonl"
+  },
+  "smoke-auto": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 1,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200
+    ],
+    "input_ids_sha256_le_i64": "066b385e08f615ab0dd83ed7d3ac5ae7debc746f8ea62c0dd44c969654211606",
+    "mode": "auto",
+    "start_utc": "2026-11-21T15:57:13.368887+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6395 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.6828104797750711,
+    "oneshot_wall_s": 12.822136029601097,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.5016820436101407,
+      "propagate_forward": 0.04632678375765681,
+      "hook_setup": 0.02409123171516692,
+      "accumulate": 0.1008367669507861,
+      "prepare_batch": 0.003128511955961586,
+      "quant_setup": 0.02605580766499042,
+      "factor": 0.8990607070922851,
+      "weight_update": 0.14414127922058104,
+      "writeback": 0.0651478717625141
+    },
+    "unattributed_wall_s": 11.011665025871014,
+    "peak_allocated_bytes": 170383872,
+    "peak_reserved_bytes": 220200960,
+    "batch_histogram": {
+      "2": 20,
+      "16": 10,
+      "8": 10
+    },
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 11,
+      "propagate_forward": 11,
+      "hook_setup": 280,
+      "accumulate": 280,
+      "prepare_batch": 40,
+      "quant_setup": 40,
+      "fused_block_update": 150,
+      "writeback": 40
+    },
+    "caps_subgraph_representative_limit": [
+      [
+        1,
+        "model.layers.0.self_attn.q_proj",
+        1652
+      ],
+      [
+        1,
+        "model.layers.0.self_attn.k_proj",
+        2203
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.gate_proj",
+        911
+      ],
+      [
+        1,
+        "model.layers.0.mlp.experts.0.down_proj",
+        550
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.q_proj",
+        1606
+      ],
+      [
+        2,
+        "model.layers.1.self_attn.k_proj",
+        2141
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        2,
+        "model.layers.1.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.q_proj",
+        1606
+      ],
+      [
+        3,
+        "model.layers.2.self_attn.k_proj",
+        2141
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        3,
+        "model.layers.2.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.q_proj",
+        1606
+      ],
+      [
+        4,
+        "model.layers.3.self_attn.k_proj",
+        2141
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        4,
+        "model.layers.3.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.q_proj",
+        1606
+      ],
+      [
+        5,
+        "model.layers.4.self_attn.k_proj",
+        2141
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        5,
+        "model.layers.4.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.q_proj",
+        1606
+      ],
+      [
+        6,
+        "model.layers.5.self_attn.k_proj",
+        2141
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        6,
+        "model.layers.5.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.q_proj",
+        1606
+      ],
+      [
+        7,
+        "model.layers.6.self_attn.k_proj",
+        2141
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        7,
+        "model.layers.6.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.q_proj",
+        1606
+      ],
+      [
+        8,
+        "model.layers.7.self_attn.k_proj",
+        2141
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        8,
+        "model.layers.7.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.q_proj",
+        1606
+      ],
+      [
+        9,
+        "model.layers.8.self_attn.k_proj",
+        2141
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        9,
+        "model.layers.8.mlp.experts.0.down_proj",
+        535
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.q_proj",
+        1606
+      ],
+      [
+        10,
+        "model.layers.9.self_attn.k_proj",
+        2141
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.gate_proj",
+        886
+      ],
+      [
+        10,
+        "model.layers.9.mlp.experts.0.down_proj",
+        535
+      ]
+    ],
+    "batch_records": "batches-auto-5a3e325735cb.jsonl"
+  },
+  "smoke-none": {
+    "upstream": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 1,
+    "sequence_length": 128,
+    "token_offsets": [
+      3200
+    ],
+    "input_ids_sha256_le_i64": "066b385e08f615ab0dd83ed7d3ac5ae7debc746f8ea62c0dd44c969654211606",
+    "mode": null,
+    "start_utc": "2026-11-21T15:57:40.929779+00:00",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 7459 MiB, 100 %"
+    ],
+    "gpu_after": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 6473 MiB, 100 %"
+    ],
+    "setup_wall_s": 1.791695193387568,
+    "oneshot_wall_s": 14.783340837806463,
+    "cuda_event_s": {
+      "calib_forward_outside_gptq_hook": 0.5084842255683614,
+      "propagate_forward": 0.041482303727418186,
+      "hook_setup": 0.0268451196996029,
+      "accumulate": 0.10858403311111033,
+      "prepare_batch": 0.00975107219070196,
+      "quant_setup": 0.036013951919972906,
+      "factor": 1.681227488517761,
+      "weight_update": 1.1607835431098945,
+      "writeback": 0.5218083195388319
+    },
+    "unattributed_wall_s": 10.688360780422808,
+    "peak_allocated_bytes": 111953408,
+    "peak_reserved_bytes": 138412032,
+    "batch_histogram": {
+      "1": 280
+    },
+    "module_count_by_cholesky": {
+      "per_item": 280
+    },
+    "rtn_fallback_modules": [],
+    "calls": {
+      "calib_forward_outside_gptq_hook": 11,
+      "propagate_forward": 11,
+      "hook_setup": 280,
+      "accumulate": 280,
+      "prepare_batch": 280,
+      "quant_setup": 280,
+      "fused_block_update": 1080,
+      "writeback": 280
+    },
+    "caps_subgraph_representative_limit": [],
+    "batch_records": "batches-none-2ae4e9bcc245.jsonl"
+  }
+}
