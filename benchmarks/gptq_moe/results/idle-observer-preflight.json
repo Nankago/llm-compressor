@@ -1,0 +1,266 @@
+{
+  "base_commit": "feea7730452f676ff159c56faf831a8bf7b5a959",
+  "nsys_version": "NVIDIA Nsight Systems version 2026.5.1.18-265138582488v0",
+  "status": "no_idle_h100_during_preflight",
+  "sample_utc": [
+    "2026-11-21T16:13:35.060877+00:00",
+    "2026-11-21T16:13:37.066725+00:00",
+    "2026-11-21T16:13:39.069525+00:00",
+    "2026-11-21T16:15:09.442218+00:00",
+    "2026-11-21T16:15:11.445046+00:00",
+    "2026-11-21T16:15:13.447643+00:00"
+  ],
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37828,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        82,
+        83,
+        66,
+        80,
+        78,
+        80
+      ]
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-7c656bd0-6ea6-c24c-073b-436439a6bfb6",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37516,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        100,
+        100,
+        100,
+        87,
+        92,
+        94
+      ]
+    },
+    {
+      "index": 2,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37517,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        79,
+        80,
+        81,
+        85,
+        85,
+        87
+      ]
+    },
+    {
+      "index": 3,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-c045c2f2-bbe2-7e99-eba9-00e115b1ee28",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37979,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        77,
+        79,
+        65,
+        79,
+        81,
+        81
+      ]
+    },
+    {
+      "index": 4,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-f73f7672-d319-981a-7ee6-d2d48aabf849",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37904,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        84,
+        85,
+        82,
+        57,
+        58,
+        53
+      ]
+    },
+    {
+      "index": 5,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-bdb5544f-9a2c-77f1-60c9-3f85c9cef831",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37587,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        67,
+        70,
+        69,
+        61,
+        61,
+        62
+      ]
+    },
+    {
+      "index": 6,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-3e037d15-9f23-936b-7dea-adc2b47c4fa8",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37786,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        73,
+        65,
+        67,
+        69,
+        73,
+        73
+      ]
+    },
+    {
+      "index": 7,
+      "name": "NVIDIA H100 80GB HBM3",
+      "uuid": "GPU-19285b7b-3594-82c6-1d4f-641df350a083",
+      "total_MiB": 81559,
+      "processes": [
+        {
+          "type": "compute",
+          "pid": 37667,
+          "name": "VLLM::EngineCore",
+          "used_MiB": 73612
+        }
+      ],
+      "used_MiB": [
+        74100,
+        74100,
+        74100,
+        74100,
+        74100,
+        74100
+      ],
+      "util_pct": [
+        69,
+        70,
+        71,
+        55,
+        63,
+        64
+      ]
+    }
+  ],
+  "idle_gpu_runs": 0,
+  "cpu_marker_smoke": {
+    "capture": "cpu-markers.nsys-rep",
+    "device": "CPU",
+    "ordered_nvtx_ranges": [
+      "GPTQ/weight_observe",
+      "GPTQ/_get_validated_importance",
+      "GPTQ/scale_search"
+    ],
+    "nested_under_first": true
+  }
+}

@@ -67,3 +67,20 @@ On another host, choose one visible GPU. The model download is pinned. For an of
 - [summary.csv](results/summary.csv) contains the median for every disjoint stage in seconds, wall time and process peak memory.
 - [runs.json](results/runs.json) contains the raw per-run values, token offsets, batch caps, endpoint GPU readings, fallback lists, call counts, and the diagnostic profile. Each record points to its exact batch layout. Identical layouts are stored once.
 - [Auto batch records](results/batches-auto-5a3e325735cb.jsonl) and [None batch records](results/batches-none-2ae4e9bcc245.jsonl) give ordered module names, projection types, individual weight/H shapes, stacked H shape, subgraph, actual branch and number of first-Cholesky calls.
+
+## Idle-H100 observer follow-up
+
+Two preflight checks on this server found an existing vLLM process on every H100. Each process held 73,612 MiB. The six samples and the process inventory are recorded in [idle-observer-preflight.json](results/idle-observer-preflight.json). The baseline commit was `feea7730452f676ff159c56faf831a8bf7b5a959`. The 7.376 s shared-GPU observation and 2.67 s inclusive validation profile above remain the available comparison measurements at preflight.
+
+From the same environment as the original benchmark, run the following once. The output directory must be new. Omit the local-model option to download the pinned checkpoint.
+
+```bash
+python benchmarks/gptq_moe/idle_observer.py --wait-hourly \
+    --out /path/outside/git/observer-run --model-dir /path/to/pinned/snapshot
+```
+
+The runner samples availability once per hour while all devices are occupied. For an apparently idle H100 it confirms zero utilization and an empty compute and graphics process list twice more, two seconds apart. It fixes that UUID, records per-run before/after GPU inventories, and runs one 8×128 warmup followed by three unprofiled auto repetitions and one dedicated Nsight Systems capture. Every run reloads the checkpoint in a fresh process using the existing `--observer-details` timing boundaries. All five processes share one private on-disk Triton cache. Raw run JSON, summary medians and ranges, logs, the full `observer-trace.nsys-rep` and its SQLite export stay in the output directory.
+
+The trace-only entry point wraps the imported GPTQ weight-observation function, the imatrix importance validator and the scale-search dispatch invoked by that observer. A CPU-only Nsight smoke on an actual imatrix observer verified all three range labels and the nesting of the validator and scale-search calls under weight observation. CUDA runtime/driver calls, kernels, copies, ATen NVTX, OS runtime, thread scheduling, GIL events and sampled Python stacks are requested for the separate GPU capture.
+
+To interpret a wait, select the host thread inside `GPTQ/_get_validated_importance`, locate the scalar-read ATen range or synchronous API, and inspect kernels and DtoH copies overlapping the API interval. Follow each activity's process and correlation ID back to its launch, then check the launch timestamp against that invocation's validator range. An earlier launch can execute inside the validator's wall interval. Count kernel time as the union of clipped device spans, and report host waits separately. Use on-CPU samples and scheduling events to assess GPU gaps between launches. A gap alone does not identify Python overhead.
