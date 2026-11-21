@@ -84,3 +84,12 @@ The runner samples availability once per hour while all devices are occupied. Fo
 The trace-only entry point wraps the imported GPTQ weight-observation function, the imatrix importance validator and the scale-search dispatch invoked by that observer. A CPU-only Nsight smoke on an actual imatrix observer verified all three range labels and the nesting of the validator and scale-search calls under weight observation. CUDA runtime/driver calls, kernels, copies, ATen NVTX, OS runtime, thread scheduling, GIL events and sampled Python stacks are requested for the separate GPU capture.
 
 To interpret a wait, select the host thread inside `GPTQ/_get_validated_importance`, locate the scalar-read ATen range or synchronous API, and inspect kernels and DtoH copies overlapping the API interval. Follow each activity's process and correlation ID back to its launch, then check the launch timestamp against that invocation's validator range. An earlier launch can execute inside the validator's wall interval. Count kernel time as the union of clipped device spans, and report host waits separately. Use on-CPU samples and scheduling events to assess GPU gaps between launches. A gap alone does not identify Python overhead.
+
+Once a complete capture is available, generate the compact result with:
+
+```bash
+python benchmarks/gptq_moe/record_idle_results.py /path/outside/git/observer-run \
+    benchmarks/gptq_moe/results/idle-observer.json
+```
+
+The summary checks the model, calibration digest, batch histogram, probe calls and GPU endpoint inventories against the workload. It reports distinct host ranges for weight observation, validation and scale search. GPU active times use unions over streams within each host window. Per-kernel rankings count overlapping execution intervals and sum their clipped durations. Explicit synchronizations and synchronous copies form the host API residence metric. Async copy API durations are listed independently. The examples carry API and validator timestamps, enclosing scalar-read ATen labels, GPU stream and launch origin. Scheduled-out intervals during an API are evidence of host descheduling; a GPU dependency may also involve polling on CPU. The sampled CPU leaf symbols in GPU gaps can distinguish interpreter frames from native dispatch when enough samples are captured. Missing scheduling data or samples limits that attribution. The scalar validator is nested inside weight observation, and GPU/API overlap is reported on both timelines.
