@@ -1,0 +1,1561 @@
+{
+  "source_commit": "c81852cbfc04fca46f5f85a9d88a60525efb4385",
+  "upstream_base": "f7d824cee12ff15bfa719ba8a7ea8ace7566df67",
+  "kl_source_commit": "8e7e6ad781a416b967b3c4a498d8469d97224d61",
+  "granite": {
+    "model": "ibm-granite/granite-3.1-1b-a400m-base",
+    "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+    "weight_sha256": {
+      "model-00001-of-00002.safetensors": "6933b6375074dc6cc4c0b98c9e126cd5fc899ef0cd80db0a932a232c6393c9cd",
+      "model-00002-of-00002.safetensors": "271870f88e36f28ca87e86e11fa971b0b3e268fb9ac4495d42c66fdd1bc9d060"
+    },
+    "seed": 42,
+    "samples": 64,
+    "sequence_length": 1024,
+    "input_ids_sha256_le_i64": "9784cb0bc0b32cfa39a4714d5e5270f376993cc219cc37ebb258b7977f65cc6d",
+    "module_count_by_cholesky": {
+      "per_item": 48,
+      "batched": 2352
+    },
+    "observer_source_sha256": "e3db871ad78d8fc2b72d144dac8163f028777fde347f8b71190fc3cbc1f4f228",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "2, GPU-824ec5b7-85a1-18e4-4b08-d8f41f920b49, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 81076 MiB, 0 %"
+    ],
+    "runs": [
+      {
+        "pair": 0,
+        "warmup": true,
+        "order": [
+          "off",
+          "on"
+        ],
+        "off": {
+          "start_utc": "2026-11-22T16:21:11.446212+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 45.78083966765553,
+          "first_s": 30.529646162986804,
+          "second_s": 0.0,
+          "observer_s": 5.544113333566112,
+          "peak_allocated_bytes": 1261061632,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 0,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.97733005695045,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:20:56.321516+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:21:59.549627+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 126,
+            "returncode": 0
+          }
+        },
+        "on": {
+          "start_utc": "2026-11-22T16:22:14.534603+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 54.20403612032533,
+          "first_s": 29.97606616383794,
+          "second_s": 9.886473212510344,
+          "observer_s": 4.693728208387268,
+          "peak_allocated_bytes": 1263158784,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 1600,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.92081231623888,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:21:59.552672+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:23:10.879485+00:00",
+              "util_pct": 2,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 142,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": 8.4231964526698,
+        "wall_saved_percent": 15.539795660182001
+      },
+      {
+        "pair": 1,
+        "warmup": false,
+        "order": [
+          "on",
+          "off"
+        ],
+        "on": {
+          "start_utc": "2026-11-22T16:23:26.520995+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 55.475947828032076,
+          "first_s": 30.430051523596017,
+          "second_s": 10.00027497497201,
+          "observer_s": 4.727793602637947,
+          "peak_allocated_bytes": 1263158784,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 1600,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.929298991337419,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:23:11.883513+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:24:28.660955+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 153,
+            "returncode": 0
+          }
+        },
+        "off": {
+          "start_utc": "2026-11-22T16:24:43.555399+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 44.964600797742605,
+          "first_s": 31.264334642231493,
+          "second_s": 0.0,
+          "observer_s": 4.810355382394045,
+          "peak_allocated_bytes": 1261061632,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 0,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.838679542765021,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:24:28.664666+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:25:34.861115+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 132,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": 10.511347030289471,
+        "wall_saved_percent": 18.947575376040845
+      },
+      {
+        "pair": 2,
+        "warmup": false,
+        "order": [
+          "off",
+          "on"
+        ],
+        "off": {
+          "start_utc": "2026-11-22T16:25:48.601154+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 44.708957749418914,
+          "first_s": 31.031089669108344,
+          "second_s": 0.0,
+          "observer_s": 4.6921360704656685,
+          "peak_allocated_bytes": 1261061632,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 0,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.80385509878397,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:25:34.863990+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:26:35.693657+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 121,
+            "returncode": 0
+          }
+        },
+        "on": {
+          "start_utc": "2026-11-22T16:26:48.513628+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 55.7586259348318,
+          "first_s": 30.71283614516258,
+          "second_s": 10.495599642664196,
+          "observer_s": 4.7073296750281015,
+          "peak_allocated_bytes": 1263158784,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 1600,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.771479323506355,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:26:35.699429+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:27:46.512809+00:00",
+              "util_pct": 7,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 141,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": 11.049668185412884,
+        "wall_saved_percent": 19.816966433726765
+      },
+      {
+        "pair": 3,
+        "warmup": false,
+        "order": [
+          "on",
+          "off"
+        ],
+        "on": {
+          "start_utc": "2026-11-22T16:28:02.396309+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 54.84487428609282,
+          "first_s": 30.456973001867517,
+          "second_s": 10.08713034236432,
+          "observer_s": 4.791433941081165,
+          "peak_allocated_bytes": 1263158784,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 1600,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.889468387700617,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:27:47.516483+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:28:59.643207+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 144,
+            "returncode": 0
+          }
+        },
+        "off": {
+          "start_utc": "2026-11-22T16:29:14.523523+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 44.804647859185934,
+          "first_s": 31.110806347131735,
+          "second_s": 0.0,
+          "observer_s": 4.816706443527712,
+          "peak_allocated_bytes": 1261061632,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 0,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.924774522893131,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:28:59.646911+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:30:01.952696+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 124,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": 10.040226426906884,
+        "wall_saved_percent": 18.306590283228736
+      },
+      {
+        "pair": 4,
+        "warmup": false,
+        "order": [
+          "off",
+          "on"
+        ],
+        "off": {
+          "start_utc": "2026-11-22T16:30:16.837248+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 43.90947011951357,
+          "first_s": 30.56280866333843,
+          "second_s": 0.0,
+          "observer_s": 4.7218099820017825,
+          "peak_allocated_bytes": 1261061632,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 0,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 4.910760089755058,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:30:02.121331+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:31:02.765923+00:00",
+              "util_pct": 7,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 121,
+            "returncode": 0
+          }
+        },
+        "on": {
+          "start_utc": "2026-11-22T16:31:18.841952+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 55.4714409513399,
+          "first_s": 30.311600274384002,
+          "second_s": 9.996923906415697,
+          "observer_s": 4.724101784618572,
+          "peak_allocated_bytes": 1263158784,
+          "peak_reserved_bytes": 1988100096,
+          "first_calls": 1600,
+          "second_calls": 1600,
+          "observer_calls": 25,
+          "fallbacks": 0,
+          "setup_s": 5.091026147827506,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:31:03.768819+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:32:16.471680+00:00",
+              "util_pct": 7,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 145,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": 11.56197083182633,
+        "wall_saved_percent": 20.843105269193575
+      }
+    ],
+    "quality": {
+      "identity": {
+        "format_version": 2,
+        "reference_model": "ibm-granite/granite-3.1-1b-a400m-base",
+        "reference_revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+        "tokenizer": {
+          "sha256": "0cf8794d1adea69b9a3b49df1b915072e5fa15f95b503b989a35980966bfbe23",
+          "class": "TokenizersBackend",
+          "length": 49152,
+          "pad_id": 0
+        },
+        "vocab_size": 49152,
+        "rows": 32,
+        "tokens_scored": 3732,
+        "inputs_sha256": "6300915d39754a701ccf8e31ebbdabce52149694d7ed2feaa7105c9fb4c3d515",
+        "positions_sha256": "41805ae0b1ee4e7cad10beefd1c89e8512a9e09b8fd57281f8128031ff8faa1a"
+      },
+      "source": {
+        "on": {
+          "model": "ibm-granite/granite-3.1-1b-a400m-base",
+          "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+          "scheme": "W4A16",
+          "calibration_sha256": "9784cb0bc0b32cfa39a4714d5e5270f376993cc219cc37ebb258b7977f65cc6d",
+          "propagate_error": true
+        },
+        "off": {
+          "model": "ibm-granite/granite-3.1-1b-a400m-base",
+          "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+          "scheme": "W4A16",
+          "calibration_sha256": "9784cb0bc0b32cfa39a4714d5e5270f376993cc219cc37ebb258b7977f65cc6d",
+          "propagate_error": false
+        }
+      },
+      "checkpoint_sha256": {
+        "on": "8c9f1a5e56dd9dc35f84ee78c73993b947580b32284b9c66e51dd0e9ce61c428",
+        "off": "7fff71abbd6fcbab4070639ed322761df097cf0b7bb9efcd606f71d30214c67a"
+      },
+      "backend": {
+        "on": {
+          "decoder": "compressed-tensors -> BF16; Transformers native Granite experts",
+          "bits": 4,
+          "packed_modules": 2400,
+          "expert_projections": 2304,
+          "source": {
+            "model": "ibm-granite/granite-3.1-1b-a400m-base",
+            "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+            "scheme": "W4A16",
+            "calibration_sha256": "9784cb0bc0b32cfa39a4714d5e5270f376993cc219cc37ebb258b7977f65cc6d",
+            "propagate_error": true
+          }
+        },
+        "off": {
+          "decoder": "compressed-tensors -> BF16; Transformers native Granite experts",
+          "bits": 4,
+          "packed_modules": 2400,
+          "expert_projections": 2304,
+          "source": {
+            "model": "ibm-granite/granite-3.1-1b-a400m-base",
+            "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+            "scheme": "W4A16",
+            "calibration_sha256": "9784cb0bc0b32cfa39a4714d5e5270f376993cc219cc37ebb258b7977f65cc6d",
+            "propagate_error": false
+          }
+        }
+      },
+      "bitwise_comparison": {
+        "changed": {
+          "weight": 0,
+          "weight_packed": 2300,
+          "weight_scale": 2300,
+          "weight_shape": 0
+        },
+        "total": {
+          "weight": 74,
+          "weight_packed": 2400,
+          "weight_scale": 2400,
+          "weight_shape": 2400
+        }
+      },
+      "exact_kl_nats": {
+        "BF16": 0.0,
+        "on": 0.19851348898663312,
+        "off": 0.1853651677379796
+      },
+      "perplexity": {
+        "BF16": 11.121833530203643,
+        "on": 13.272952751365962,
+        "off": 13.156701372694911
+      },
+      "position_counts": [
+        127,
+        120,
+        127,
+        127,
+        127,
+        127,
+        127,
+        127,
+        88,
+        127,
+        116,
+        127,
+        63,
+        127,
+        127,
+        69,
+        127,
+        127,
+        127,
+        127,
+        65,
+        127,
+        127,
+        110,
+        127,
+        127,
+        127,
+        127,
+        127,
+        98,
+        127,
+        82
+      ],
+      "sequence_kl_sums": {
+        "BF16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "on": [
+          20.935386967535557,
+          24.56713443244198,
+          16.688142291618718,
+          20.573246908368017,
+          20.805716214346205,
+          31.420851626384003,
+          31.497337029270934,
+          27.69404695033319,
+          35.80283311602342,
+          25.825166909899522,
+          14.264391050145258,
+          18.11057361915349,
+          15.436915944885618,
+          15.917263019790138,
+          18.39853690365043,
+          21.178644215829568,
+          18.458643402017074,
+          27.499504176118236,
+          59.19793563838958,
+          23.47946171132859,
+          24.666922495724954,
+          19.589387620933174,
+          20.403839240444995,
+          22.628469049466897,
+          24.562480541917598,
+          14.344612577778648,
+          15.181787548820747,
+          23.177836661302795,
+          22.482532695947043,
+          24.728642514785037,
+          24.16320235183225,
+          17.170895471631084
+        ],
+        "off": [
+          21.86827088509643,
+          20.570612919063276,
+          14.061403176181429,
+          19.408690133696382,
+          19.152041709597352,
+          28.38575078400765,
+          31.227209268756898,
+          29.970534898008633,
+          33.64394535533501,
+          25.566915387789678,
+          14.83655018098182,
+          22.31955305651745,
+          10.647593933637317,
+          15.926893477785011,
+          18.463803609558752,
+          17.814599527079288,
+          16.59529388890021,
+          24.46041425453174,
+          48.95372036465095,
+          20.653648615742313,
+          28.485601391355225,
+          17.348702998998924,
+          18.247103647899795,
+          21.348467397831186,
+          18.56248335377834,
+          13.829895739655235,
+          16.015633988619747,
+          22.43541763965655,
+          20.793481395428415,
+          26.11752143532246,
+          16.626736362518677,
+          17.444315220157684
+        ]
+      },
+      "cached_exact_kl_nats": {
+        "BF16": 0.0,
+        "on": 0.198513505671893,
+        "off": 0.18536518153469994
+      },
+      "off_minus_on_kl_bootstrap95": [
+        -0.02230422727284636,
+        -0.004538033179857925
+      ],
+      "arc_easy": {
+        "sha256": "4160597d618ae851c7eb04e281574f3f654776216ac6b6641588d64527b47177",
+        "questions": 2376,
+        "correct": {
+          "BF16": 1663,
+          "on": 1613,
+          "off": 1560
+        },
+        "paired": {
+          "on0_off1": 94,
+          "on1_off1": 1466,
+          "on0_off0": 669,
+          "on1_off0": 147
+        }
+      }
+    }
+  },
+  "tinymoe": {
+    "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+    "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+    "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+    "seed": 42,
+    "samples": 8,
+    "sequence_length": 128,
+    "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+    "module_count_by_cholesky": {
+      "per_item": 120,
+      "batched": 160
+    },
+    "observer_source_sha256": "e3db871ad78d8fc2b72d144dac8163f028777fde347f8b71190fc3cbc1f4f228",
+    "gpu_before": [
+      "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+      "3, GPU-c045c2f2-bbe2-7e99-eba9-00e115b1ee28, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 81076 MiB, 0 %"
+    ],
+    "runs": [
+      {
+        "pair": 0,
+        "warmup": true,
+        "order": [
+          "off",
+          "on"
+        ],
+        "off": {
+          "start_utc": "2026-11-22T16:21:00.955704+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 6.660523832775652,
+          "first_s": 0.98840717369318,
+          "second_s": 0.0,
+          "observer_s": 4.170780831832439,
+          "peak_allocated_bytes": 170410496,
+          "peak_reserved_bytes": 220200960,
+          "first_calls": 88,
+          "second_calls": 0,
+          "observer_calls": 11,
+          "fallbacks": 0,
+          "setup_s": 2.115141397342086,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:20:49.044571+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:21:09.687220+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 41,
+            "returncode": 0
+          }
+        },
+        "on": {
+          "start_utc": "2026-11-22T16:21:21.493077+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 5.629748118110001,
+          "first_s": 0.97584241938591,
+          "second_s": 0.2214311678409576,
+          "observer_s": 3.2875403900872917,
+          "peak_allocated_bytes": 170508800,
+          "peak_reserved_bytes": 220200960,
+          "first_calls": 88,
+          "second_calls": 88,
+          "observer_calls": 11,
+          "fallbacks": 0,
+          "setup_s": 1.944910990074277,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:21:09.691078+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:21:28.747941+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 38,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": -1.0307757146656513,
+        "wall_saved_percent": -18.309446409330647
+      },
+      {
+        "pair": 1,
+        "warmup": false,
+        "order": [
+          "on",
+          "off"
+        ],
+        "on": {
+          "start_utc": "2026-11-22T16:21:40.646495+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 5.5622004540637136,
+          "first_s": 0.9768323169946668,
+          "second_s": 0.22768819224834438,
+          "observer_s": 3.244230338018388,
+          "peak_allocated_bytes": 170508800,
+          "peak_reserved_bytes": 220200960,
+          "first_calls": 88,
+          "second_calls": 88,
+          "observer_calls": 11,
+          "fallbacks": 0,
+          "setup_s": 1.9427933217957616,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:21:28.754644+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:21:48.889471+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 40,
+            "returncode": 0
+          }
+        },
+        "off": {
+          "start_utc": "2026-11-22T16:22:00.254132+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 5.386611952446401,
+          "first_s": 1.0274998208880424,
+          "second_s": 0.0,
+          "observer_s": 3.2282734957262873,
+          "peak_allocated_bytes": 170410496,
+          "peak_reserved_bytes": 220200960,
+          "first_calls": 88,
+          "second_calls": 0,
+          "observer_calls": 11,
+          "fallbacks": 0,
+          "setup_s": 1.8989290883764625,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:21:48.892307+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:22:07.996388+00:00",
+              "util_pct": 3,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 38,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": 0.17558850161731243,
+        "wall_saved_percent": 3.156817217707938
+      },
+      {
+        "pair": 2,
+        "warmup": false,
+        "order": [
+          "off",
+          "on"
+        ],
+        "off": {
+          "start_utc": "2026-11-22T16:22:21.000903+00:00",
+          "propagate_error": false,
+          "log_sequential_error": false,
+          "oneshot_s": 5.44068883638829,
+          "first_s": 0.9781446935534476,
+          "second_s": 0.0,
+          "observer_s": 3.271349993873388,
+          "peak_allocated_bytes": 170410496,
+          "peak_reserved_bytes": 220200960,
+          "first_calls": 88,
+          "second_calls": 0,
+          "observer_calls": 11,
+          "fallbacks": 0,
+          "setup_s": 1.9242952624335885,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:22:09.000640+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:22:28.571185+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 39,
+            "returncode": 0
+          }
+        },
+        "on": {
+          "start_utc": "2026-11-22T16:22:40.567116+00:00",
+          "propagate_error": true,
+          "log_sequential_error": false,
+          "oneshot_s": 5.591535578481853,
+          "first_s": 0.9719836206436155,
+          "second_s": 0.2200244477987289,
+          "observer_s": 3.279665465077385,
+          "peak_allocated_bytes": 170508800,
+          "peak_reserved_bytes": 220200960,
+          "first_calls": 88,
+          "second_calls": 88,
+          "observer_calls": 11,
+          "fallbacks": 0,
+          "setup_s": 1.9563565030694008,
+          "device": {
+            "before": {
+              "utc": "2026-11-22T16:22:28.573734+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "after": {
+              "utc": "2026-11-22T16:22:48.138427+00:00",
+              "util_pct": 0,
+              "used_MiB": 483,
+              "pids": []
+            },
+            "foreign_pids": [],
+            "samples": 39,
+            "returncode": 0
+          }
+        },
+        "wall_saved_s": 0.15084674209356308,
+        "wall_saved_percent": 2.6977695120831044
+      }
+    ],
+    "quality": {
+      "identity": {
+        "format_version": 2,
+        "reference_model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+        "reference_revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+        "tokenizer": {
+          "sha256": "2c47e6bf5a948a266de4225798aec5920b747ccd617ec39893c58d6483106412",
+          "class": "TokenizersBackend",
+          "length": 32000,
+          "pad_id": 2
+        },
+        "vocab_size": 32000,
+        "rows": 32,
+        "tokens_scored": 3673,
+        "inputs_sha256": "629004a75b00ae78daf5d2789826c7028d5a1ec2f2992c4cc819c097a7e7e783",
+        "positions_sha256": "f11845baf894476c7ed95bc8cec521aa288cfa71e105be04625f8f9c83925901"
+      },
+      "source": {
+        "on": {
+          "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+          "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+          "scheme": "W4A16",
+          "calibration_sha256": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+          "propagate_error": true
+        },
+        "off": {
+          "model": "FlameF0X/TinyMoE-100m-2x8-retrained",
+          "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+          "scheme": "W4A16",
+          "calibration_sha256": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+          "propagate_error": false
+        }
+      },
+      "checkpoint_sha256": {
+        "on": "c724fa7534af494c50f8d3c296c4a0516ec537b95968996688e7bf192710c0c3",
+        "off": "e8379b70511951c427c498cc347747ca624b3da8fa45e7c5be831a68c764b2a6"
+      },
+      "backend": {
+        "on": {
+          "decoder": "compressed-tensors -> BF16; Transformers native Mixtral experts",
+          "bits": 4,
+          "packed_modules": 280,
+          "expert_projections": 240
+        },
+        "off": {
+          "decoder": "compressed-tensors -> BF16; Transformers native Mixtral experts",
+          "bits": 4,
+          "packed_modules": 280,
+          "expert_projections": 240
+        }
+      },
+      "bitwise_comparison": {
+        "changed": {
+          "weight": 0,
+          "weight_packed": 252,
+          "weight_scale": 252,
+          "weight_shape": 0
+        },
+        "total": {
+          "weight": 33,
+          "weight_packed": 280,
+          "weight_scale": 280,
+          "weight_shape": 280
+        }
+      },
+      "exact_kl_nats": {
+        "BF16": 0.0,
+        "on": 0.03990070244033882,
+        "off": 0.03967390014148943
+      },
+      "perplexity": {
+        "BF16": 166.26690650362653,
+        "on": 171.99927162622316,
+        "off": 170.4761150955344
+      },
+      "position_counts": [
+        127,
+        105,
+        127,
+        127,
+        127,
+        127,
+        127,
+        127,
+        79,
+        127,
+        101,
+        127,
+        127,
+        127,
+        66,
+        127,
+        120,
+        122,
+        127,
+        127,
+        127,
+        101,
+        127,
+        127,
+        114,
+        127,
+        127,
+        89,
+        102,
+        67,
+        67,
+        127
+      ],
+      "sequence_kl_sums": {
+        "BF16": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "on": [
+          6.512371569274567,
+          3.504596597037566,
+          4.732544376007515,
+          5.243241976920432,
+          5.259192616438087,
+          5.0301674585340965,
+          5.146291588464608,
+          4.5932516833978045,
+          3.914242081433692,
+          7.264211244634117,
+          4.319971258697336,
+          4.314291432058653,
+          3.6231342786538203,
+          3.6978629272851737,
+          3.25287894390591,
+          5.035890057325372,
+          4.839929540892081,
+          4.783115714289312,
+          4.836992707405626,
+          3.855528037287499,
+          4.98790630164421,
+          3.7179236960150384,
+          5.52155676140457,
+          4.264831116210613,
+          4.748139374967686,
+          5.034450826342311,
+          5.213823971065574,
+          4.589231012652078,
+          5.142778486202412,
+          2.951719979777051,
+          2.315341256472808,
+          4.307871190666863
+        ],
+        "off": [
+          7.265530948849963,
+          3.2886579460892102,
+          4.43633007996094,
+          5.350836036502306,
+          4.999844150656413,
+          4.763260098217238,
+          5.266082588183453,
+          4.395857160803115,
+          4.023495359643929,
+          6.244338931945681,
+          4.152295249920679,
+          4.082976739329488,
+          3.4576466545319775,
+          3.3463799689483684,
+          3.6381269405728744,
+          4.896740507882952,
+          5.9781271283706,
+          4.553144575917088,
+          4.183991517079553,
+          4.048031114161361,
+          5.497641431821086,
+          3.431063559180312,
+          5.5791445608217405,
+          4.688533114392927,
+          4.556853067794392,
+          4.728884393157972,
+          4.508116765131776,
+          4.922676423069485,
+          5.154778163026312,
+          3.530910868407142,
+          2.0426827293497523,
+          4.70925644597059
+        ]
+      },
+      "off_minus_on_kl_bootstrap95": [
+        -0.0015147160641605796,
+        0.0011377048212887412
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "torch_cuda": "13.4",
+    "torch_runtime": "2.14.0a0+4fdf77b940.nv26.08",
+    "cudnn": 92500,
+    "tf32_matmul": true,
+    "packages": {
+      "torch": "2.14.0a0+4fdf77b940.nv26.8.63802676",
+      "triton": "3.8.0+git4c7e62b7.nv26.8",
+      "llmcompressor": "0.1.dev1+gf7d824c",
+      "compressed-tensors": "0.20.2a20261103",
+      "transformers": "5.21.0",
+      "datasets": "5.0.1",
+      "huggingface-hub": "1.33.0",
+      "accelerate": "1.16.0",
+      "auto-round": "0.16.1",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.1",
+      "numpy": "2.1.0",
+      "scipy": "1.18.0",
+      "pydantic": "2.13.4",
+      "loguru": "0.8.0",
+      "pillow": "12.3.0",
+      "pyyaml": "6.0.1",
+      "requests": "2.34.2",
+      "tqdm": "4.70.0",
+      "nvidia-ml-py": "13.610.43",
+      "setuptools-scm": "8.2.0"
+    }
+  },
+  "sqnr_enabled_control": {
+    "start_utc": "2026-11-22T16:25:30.225940+00:00",
+    "propagate_error": false,
+    "log_sequential_error": true,
+    "oneshot_s": 5.058035490103066,
+    "first_s": 0.546005386710167,
+    "second_s": 0.05738415974378585,
+    "observer_s": 3.2222830793410537,
+    "peak_allocated_bytes": 170508800,
+    "peak_reserved_bytes": 220200960,
+    "first_calls": 22,
+    "second_calls": 22,
+    "observer_calls": 11,
+    "fallbacks": 0,
+    "setup_s": 1.9322500713169575
+  },
+  "sampled_forwards": [
+    {
+      "counts": {
+        "imatrix": 100,
+        "linear": 101,
+        "hessian_other": 36,
+        "hessian_gate_up": 64
+      },
+      "same_input_group_sizes": [
+        64
+      ],
+      "first_module": "model.layers.11.block_sparse_moe.experts.0.gate_proj",
+      "last_module": "model.layers.11.block_sparse_moe.experts.31.up_proj"
+    },
+    {
+      "counts": {
+        "imatrix": 100,
+        "linear": 101,
+        "hessian_other": 36,
+        "hessian_gate_up": 64
+      },
+      "same_input_group_sizes": [
+        64
+      ],
+      "first_module": "model.layers.11.block_sparse_moe.experts.0.gate_proj",
+      "last_module": "model.layers.11.block_sparse_moe.experts.31.up_proj"
+    },
+    {
+      "counts": {
+        "imatrix": 100,
+        "linear": 101,
+        "hessian_other": 36,
+        "hessian_gate_up": 64
+      },
+      "same_input_group_sizes": [
+        64
+      ],
+      "first_module": "model.layers.11.block_sparse_moe.experts.0.gate_proj",
+      "last_module": "model.layers.11.block_sparse_moe.experts.31.up_proj"
+    },
+    {
+      "counts": {
+        "imatrix": 100,
+        "linear": 101,
+        "hessian_other": 36,
+        "hessian_gate_up": 64
+      },
+      "same_input_group_sizes": [
+        64
+      ],
+      "first_module": "model.layers.11.block_sparse_moe.experts.0.gate_proj",
+      "last_module": "model.layers.11.block_sparse_moe.experts.31.up_proj"
+    },
+    {
+      "counts": {
+        "imatrix": 100,
+        "linear": 101,
+        "hessian_other": 36,
+        "hessian_gate_up": 64
+      },
+      "same_input_group_sizes": [
+        64
+      ],
+      "first_module": "model.layers.11.block_sparse_moe.experts.0.gate_proj",
+      "last_module": "model.layers.11.block_sparse_moe.experts.31.up_proj"
+    },
+    {
+      "counts": {
+        "imatrix": 100,
+        "linear": 101,
+        "hessian_other": 36,
+        "hessian_gate_up": 64
+      },
+      "same_input_group_sizes": [
+        64
+      ],
+      "first_module": "model.layers.11.block_sparse_moe.experts.0.gate_proj",
+      "last_module": "model.layers.11.block_sparse_moe.experts.31.up_proj"
+    }
+  ],
+  "trace": [
+    {
+      "file": "window-8.json",
+      "forward_cpu_wall_ms": 133.5715693359375,
+      "gpu_busy_within_forward_wall_ms": 18.4104326171875,
+      "gpu_idle_within_forward_wall_ms": 115.16113671875,
+      "cpu_range_inclusive_ms": {
+        "hessian_gate_up": 23.7745048828125,
+        "hessian_other": 14.2048115234375,
+        "imatrix": 36.5616875,
+        "model_linear": 16.4555830078125,
+        "forward": 133.5715693359375,
+        "sample": 137.325490234375,
+        "wait_next_batch": 2.8351201171875
+      },
+      "gpu_active_union_ms_by_submitter": {
+        "forward": 3.5319169921875,
+        "imatrix": 5.2118251953125,
+        "model_linear": 1.548197265625,
+        "hessian_other": 2.097927734375,
+        "hessian_gate_up": 5.6253984375,
+        "unscoped": 0.801693359375
+      },
+      "gpu_activity_counts_by_submitter": {
+        "forward": 912,
+        "imatrix": 1800,
+        "model_linear": 303,
+        "hessian_other": 636,
+        "hessian_gate_up": 960,
+        "unscoped": 15
+      },
+      "device_copy_ms": {
+        "Memset (Device)": 0.2743339999999993,
+        "Memcpy DtoD (Device -> Device)": 0.0035519999999999996,
+        "Memcpy DtoH (Device -> Pageable)": 0.007808000000000001,
+        "Memcpy HtoD (Pageable -> Device)": 0.8016920000000001
+      },
+      "device_copy_bytes": {
+        "Memset (Device)": 106476,
+        "Memcpy DtoD (Device -> Device)": 196608,
+        "Memcpy DtoH (Device -> Pageable)": 768,
+        "Memcpy HtoD (Pageable -> Device)": 13393920
+      },
+      "sync_api_host_ms_within_markers": {
+        "cudaStreamSynchronize": 0.013289000000000002
+      },
+      "copy_api_host_ms_within_markers": {
+        "cudaMemcpyAsync": 0.12037100000000003
+      },
+      "top_kernels_by_sum_ms": [
+        {
+          "range": "hessian_gate_up",
+          "kernel": "void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4>(cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4::Params)",
+          "ms": 3.3979679999999934
+        },
+        {
+          "range": "imatrix",
+          "kernel": "void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "ms": 2.2976370000000013
+        },
+        {
+          "range": "imatrix",
+          "kernel": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "ms": 1.1233549999999994
+        },
+        {
+          "range": "model_linear",
+          "kernel": "nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT",
+          "ms": 0.9961289999999995
+        },
+        {
+          "range": "hessian_other",
+          "kernel": "void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4>(cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4::Params)",
+          "ms": 0.8983469999999997
+        },
+        {
+          "range": "hessian_gate_up",
+          "kernel": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>, false>(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",
+          "ms": 0.7646790000000006
+        },
+        {
+          "range": "hessian_gate_up",
+          "kernel": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "ms": 0.7260820000000002
+        },
+        {
+          "range": "imatrix",
+          "kernel": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>, false>(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "ms": 0.6879669999999997
+        },
+        {
+          "range": "forward",
+          "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "ms": 0.6393949999999999
+        }
+      ]
+    },
+    {
+      "file": "window-40.json",
+      "forward_cpu_wall_ms": 132.639966796875,
+      "gpu_busy_within_forward_wall_ms": 18.20214453125,
+      "gpu_idle_within_forward_wall_ms": 114.437822265625,
+      "cpu_range_inclusive_ms": {
+        "hessian_gate_up": 23.752234375,
+        "hessian_other": 14.3356640625,
+        "imatrix": 36.40963671875,
+        "model_linear": 16.6505498046875,
+        "forward": 132.639966796875,
+        "sample": 151.5123388671875,
+        "wait_next_batch": 3.3235224609375
+      },
+      "gpu_active_union_ms_by_submitter": {
+        "unscoped": 0.8120322265625,
+        "forward": 3.561326171875,
+        "imatrix": 5.228068359375,
+        "model_linear": 1.55058203125,
+        "hessian_other": 2.09758984375,
+        "hessian_gate_up": 5.6328017578125
+      },
+      "gpu_activity_counts_by_submitter": {
+        "unscoped": 15,
+        "forward": 912,
+        "imatrix": 1800,
+        "model_linear": 303,
+        "hessian_other": 636,
+        "hessian_gate_up": 960
+      },
+      "device_copy_ms": {
+        "Memcpy HtoD (Pageable -> Device)": 0.812031,
+        "Memset (Device)": 0.27385699999999935,
+        "Memcpy DtoD (Device -> Device)": 0.0036170000000000004,
+        "Memcpy DtoH (Device -> Pageable)": 0.007872
+      },
+      "device_copy_bytes": {
+        "Memcpy HtoD (Pageable -> Device)": 13393920,
+        "Memset (Device)": 106476,
+        "Memcpy DtoD (Device -> Device)": 196608,
+        "Memcpy DtoH (Device -> Pageable)": 768
+      },
+      "sync_api_host_ms_within_markers": {
+        "cudaStreamSynchronize": 0.012995
+      },
+      "copy_api_host_ms_within_markers": {
+        "cudaMemcpyAsync": 0.123678
+      },
+      "top_kernels_by_sum_ms": [
+        {
+          "range": "hessian_gate_up",
+          "kernel": "void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4>(cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4::Params)",
+          "ms": 3.405211
+        },
+        {
+          "range": "imatrix",
+          "kernel": "void at::native::reduce_kernel<128, 4, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::sum_functor<float, float, float>::operator()(at::TensorIterator&)::{lambda(float, float)#1}>, unsigned int, float, 4, 4>)",
+          "ms": 2.3235530000000004
+        },
+        {
+          "range": "imatrix",
+          "kernel": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "ms": 1.1256249999999992
+        },
+        {
+          "range": "model_linear",
+          "kernel": "nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT",
+          "ms": 0.9971149999999991
+        },
+        {
+          "range": "hessian_other",
+          "kernel": "void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4>(cutlass_80_tensorop_s1688gemm_128x64_32x6_nt_align4::Params)",
+          "ms": 0.9004749999999992
+        },
+        {
+          "range": "hessian_gate_up",
+          "kernel": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>, false>(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",
+          "ms": 0.7693119999999999
+        },
+        {
+          "range": "hessian_gate_up",
+          "kernel": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+          "ms": 0.7282279999999999
+        },
+        {
+          "range": "imatrix",
+          "kernel": "void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>, false>(int, at::native::(anonymous namespace)::pow_tensor_scalar_kernel_impl<float, float>(at::TensorIteratorBase&, float)::{lambda(float)#1}, std::array<char*, 2ul>)",
+          "ms": 0.6749759999999994
+        },
+        {
+          "range": "forward",
+          "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+          "ms": 0.6422370000000004
+        }
+      ]
+    }
+  ],
+  "gram_replay": {
+    "samples": 6,
+    "input_shape": [
+      1024,
+      1024
+    ],
+    "fanout": 64,
+    "all_H_and_counts_bitwise_equal": true,
+    "pairs": [
+      {
+        "native_ms": 16.17158317565918,
+        "reuse_ms": 3.6501119136810303
+      },
+      {
+        "native_ms": 16.027328491210938,
+        "reuse_ms": 3.794879913330078
+      },
+      {
+        "native_ms": 15.952192306518555,
+        "reuse_ms": 3.549407958984375
+      },
+      {
+        "native_ms": 15.904288291931152,
+        "reuse_ms": 3.600480079650879
+      }
+    ]
+  },
+  "diagnostic_devices": {
+    "quality-granite": {
+      "before": {
+        "utc": "2026-11-22T16:25:38.191749+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:27:07.554927+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 178,
+      "returncode": 0
+    },
+    "quality-tiny-v2": {
+      "before": {
+        "utc": "2026-11-22T16:25:07.136716+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:25:20.721266+00:00",
+        "util_pct": 6,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 27,
+      "returncode": 0
+    },
+    "sqnr-check": {
+      "before": {
+        "utc": "2026-11-22T16:25:21.913647+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:25:36.940069+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 30,
+      "returncode": 0
+    },
+    "trace-granite": {
+      "before": {
+        "utc": "2026-11-22T16:32:21.132865+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:33:37.357236+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 152,
+      "returncode": 0
+    },
+    "gram-replay": {
+      "before": {
+        "utc": "2026-11-22T16:33:46.639598+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:33:58.668249+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 24,
+      "returncode": 0
+    }
+  }
+}

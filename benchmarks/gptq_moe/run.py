@@ -146,6 +146,11 @@ def main():
         action="store_true",
         help="Split observer work into its own event intervals",
     )
+    parser.add_argument(
+        "--propagate-error", action=argparse.BooleanOptionalAction, default=True
+    )
+    parser.add_argument("--log-sequential-error", action="store_true")
+    parser.add_argument("--save-checkpoint", type=Path)
     parser.add_argument("--model-dir", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
@@ -233,7 +238,8 @@ def main():
             num_calibration_samples=args.samples,
             shuffle_calibration_samples=False,
             moe_calibrate_all_experts=True,
-            propagate_error=True,
+            propagate_error=args.propagate_error,
+            log_sequential_error=args.log_sequential_error,
             tie_word_embeddings=False,
             output_dir=None,
         )
@@ -249,16 +255,17 @@ def main():
     assert len(seen) == len(expected) and set(seen) == expected
     if not args.coarse_timing:
         assert trace.calls["accumulate"] == len(seen) * args.samples
-    assert (
-        trace.calls[
-            (
-                "calib_forward_including_hooks"
-                if args.coarse_timing
-                else "calib_forward_outside_gptq_hook"
-            )
-        ]
-        == trace.calls["propagate_forward"]
+    first_label = (
+        "calib_forward_including_hooks"
+        if args.coarse_timing
+        else "calib_forward_outside_gptq_hook"
     )
+    expected_second = (
+        trace.calls[first_label]
+        if args.propagate_error or args.log_sequential_error
+        else 0
+    )
+    assert trace.calls["propagate_forward"] == expected_second
     counts = Counter()
     for batch in trace.batches:
         branch = batch["cholesky"]
@@ -314,6 +321,8 @@ def main():
         },
         "setup_wall_s": preparation,
         "oneshot_wall_s": wall,
+        "propagate_error": args.propagate_error,
+        "log_sequential_error": args.log_sequential_error,
         "cuda_event_s": measured,
         "unattributed_wall_s": wall - sum(measured.values()),
         "peak_allocated_bytes": peak,
@@ -376,6 +385,24 @@ def main():
         result["output_digests"] = output_digests(model, expected)
     if args.packed_digests:
         result["packed_digests"] = output_digests(model, expected, packed=True)
+    if args.save_checkpoint:
+        target = args.save_checkpoint
+        target.mkdir(parents=True, exist_ok=False)
+        model.save_pretrained(target, save_compressed=True, save_original_format=False)
+        tokenizer.save_pretrained(target)
+        (target / "qda_source.json").write_text(
+            json.dumps(
+                {
+                    "model": model_id,
+                    "revision": revision,
+                    "scheme": "W4A16",
+                    "calibration_sha256": input_digest,
+                    "propagate_error": args.propagate_error,
+                },
+                indent=2,
+            )
+            + "\n"
+        )
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
     print(args.out, wall, result["batch_histogram"], counts, flush=True)
