@@ -28,6 +28,17 @@ BASE = "f7d824cee12ff15bfa719ba8a7ea8ace7566df67"
 MODEL = "FlameF0X/TinyMoE-100m-2x8-retrained"
 REVISION = "0c1d097c964b949bc0092fa8e99c88c325421167"
 WEIGHTS = "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a"
+CHECKPOINTS = {
+    "tinymoe": (MODEL, REVISION, {"model.safetensors": WEIGHTS}),
+    "granite": (
+        "ibm-granite/granite-3.1-1b-a400m-base",
+        "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+        {
+            "model-00001-of-00002.safetensors": "6933b6375074dc6cc4c0b98c9e126cd5fc899ef0cd80db0a932a232c6393c9cd",
+            "model-00002-of-00002.safetensors": "271870f88e36f28ca87e86e11fa971b0b3e268fb9ac4495d42c66fdd1bc9d060",
+        },
+    ),
+}
 SEED = 42
 LENGTH = 128
 ROOT = Path(__file__).resolve().parents[2]
@@ -46,6 +57,25 @@ def data(tokenizer, sample_count):
         {"input_ids": row, "attention_mask": torch.ones_like(row)} for row in windows
     ]
     return DataLoader(rows, batch_size=1, shuffle=False), offsets, digest
+
+
+def output_digests(model, names):
+    hashes = {}
+    counts = Counter()
+    for name in sorted(names):
+        module = model.get_submodule(name)
+        for field, tensor in sorted(module.state_dict().items()):
+            digest = hashes.setdefault(field, hashlib.sha256())
+            digest.update(
+                json.dumps([name, str(tensor.dtype), list(tensor.shape)]).encode()
+            )
+            digest.update(
+                tensor.detach().cpu().contiguous().reshape(-1).view(torch.uint8).numpy()
+            )
+            counts[field] += 1
+    return {
+        k: {"tensors": counts[k], "sha256": h.hexdigest()} for k, h in hashes.items()
+    }
 
 
 def gpu_snapshot():
@@ -70,6 +100,8 @@ def gpu_snapshot():
 def main():
     parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("--mode", required=True, help="auto, none or positive integer")
+    parser.add_argument("--checkpoint", choices=CHECKPOINTS, default="tinymoe")
+    parser.add_argument("--output-digests", action="store_true")
     parser.add_argument("--samples", type=int, default=8)
     parser.add_argument(
         "--host-profile", action="store_true", help="Additional diagnostic replicate"
@@ -93,13 +125,15 @@ def main():
     # Bound only this process's PyTorch caching allocator on the shared device.
     torch.cuda.set_per_process_memory_fraction(0.045)
     pre_start = time.perf_counter()
+    model_id, revision, shards = CHECKPOINTS[args.checkpoint]
     source = args.model_dir or Path(
         snapshot_download(
-            MODEL, revision=REVISION, allow_patterns=["*.json", "model.safetensors"]
+            model_id, revision=revision, allow_patterns=["*.json", "*.safetensors"]
         )
     )
-    with (source / "model.safetensors").open("rb") as f:
-        assert hashlib.file_digest(f, "sha256").hexdigest() == WEIGHTS
+    for filename, sha in shards.items():
+        with (source / filename).open("rb") as f:
+            assert hashlib.file_digest(f, "sha256").hexdigest() == sha
     tokenizer = AutoTokenizer.from_pretrained(source, local_files_only=True)
     loader, offsets, input_digest = data(tokenizer, args.samples)
     model, info = AutoModelForCausalLM.from_pretrained(
@@ -204,9 +238,9 @@ def main():
     ]
     result = {
         "upstream": BASE,
-        "model": MODEL,
-        "revision": REVISION,
-        "weight_sha256": WEIGHTS,
+        "model": model_id,
+        "revision": revision,
+        "weight_sha256": WEIGHTS if args.checkpoint == "tinymoe" else shards,
         "seed": SEED,
         "samples": args.samples,
         "sequence_length": LENGTH,
@@ -267,6 +301,8 @@ def main():
             key: sorted(rows, key=lambda row: row[key], reverse=True)[:40]
             for key in ("own_s", "cumulative_s")
         }
+    if args.output_digests:
+        result["output_digests"] = output_digests(model, expected)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
     print(args.out, wall, result["batch_histogram"], counts, flush=True)
