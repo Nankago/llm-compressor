@@ -2,6 +2,8 @@
 
 On one idle H100, caching the BF16 reference paid for itself on the **second candidate**. Across 3,732 held-out next-token positions, the cached score ranked GPTQ W8A16 closer to BF16 than W4A16. On a 501-position exact check, the default `k=128` understated both KL values by about **14%**. The magnitude of this bias matters when comparing nearby recipes.
 
+For the follow-up comparison where **both** methods reuse the teacher, see the [paired hidden-state and top-k benchmark](PAIRED.md).
+
 ## Scores
 
 All scores are token-weighted means of KL(teacher ‖ candidate) in nats. Both models see identical unpadded token sequences, with the same right padding and attention mask inside each batch. At target index `t` the evaluator uses logits at `t−1`. It preserves the teacher's top-k identities and pools all other probabilities into one bucket on each side. The loss of information from pooling gives a lower bound on full-vocabulary KL. [QDA blog §2.1](https://mit-han-lab.github.io/qda-blog/#s2a) · [QDA paper §4.2, equation 6 and §5.2](https://arxiv.org/html/2611.23388v1#S4.SS2)

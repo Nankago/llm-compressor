@@ -1,0 +1,757 @@
+{
+  "pr_2663_head": "1ac89a7526b221b5780d91ed2e2da83a3fdf5c03",
+  "identity": {
+    "format_version": 2,
+    "reference_model": "ibm-granite/granite-3.1-1b-a400m-base",
+    "reference_revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+    "tokenizer": {
+      "sha256": "0cf8794d1adea69b9a3b49df1b915072e5fa15f95b503b989a35980966bfbe23",
+      "class": "TokenizersBackend",
+      "length": 49152,
+      "pad_id": 0
+    },
+    "vocab_size": 49152,
+    "rows": 32,
+    "tokens_scored": 3732,
+    "inputs_sha256": "6300915d39754a701ccf8e31ebbdabce52149694d7ed2feaa7105c9fb4c3d515",
+    "positions_sha256": "41805ae0b1ee4e7cad10beefd1c89e8512a9e09b8fd57281f8128031ff8faa1a",
+    "reference_weights_sha256": {
+      "model-00001-of-00002.safetensors": "6933b6375074dc6cc4c0b98c9e126cd5fc899ef0cd80db0a932a232c6393c9cd",
+      "model-00002-of-00002.safetensors": "271870f88e36f28ca87e86e11fa971b0b3e268fb9ac4495d42c66fdd1bc9d060"
+    }
+  },
+  "model_load_s": {
+    "BF16": 0.785175665281713,
+    "W4": 15.25955681502819,
+    "W8": 17.053690522909164
+  },
+  "projection_signatures": {
+    "BF16": {
+      "weight_sha256": "760606f82c51153257d2c127b48e6f01da69fb3e633021fe1c6a3df3e43be39c",
+      "shape": [
+        49152,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "bias_sha256": null,
+      "logits_scaling": 6.0
+    },
+    "W4": {
+      "weight_sha256": "760606f82c51153257d2c127b48e6f01da69fb3e633021fe1c6a3df3e43be39c",
+      "shape": [
+        49152,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "bias_sha256": null,
+      "logits_scaling": 6.0
+    },
+    "W8": {
+      "weight_sha256": "760606f82c51153257d2c127b48e6f01da69fb3e633021fe1c6a3df3e43be39c",
+      "shape": [
+        49152,
+        1024
+      ],
+      "dtype": "torch.bfloat16",
+      "bias_sha256": null,
+      "logits_scaling": 6.0
+    }
+  },
+  "checkpoint_sha256": {
+    "BF16": {
+      "model-00001-of-00002.safetensors": "6933b6375074dc6cc4c0b98c9e126cd5fc899ef0cd80db0a932a232c6393c9cd",
+      "model-00002-of-00002.safetensors": "271870f88e36f28ca87e86e11fa971b0b3e268fb9ac4495d42c66fdd1bc9d060"
+    },
+    "W4": {
+      "model.safetensors": "16dc786b9612f5ca198810c36d70335385d63ae63871c9ffe9999ecfbf9eaa44"
+    },
+    "W8": {
+      "model.safetensors": "b00cf4e18e028be5cf499277b7745e32b3416a170d85019b19dd83a6881d6c45"
+    }
+  },
+  "backend": {
+    "BF16": {
+      "decoder": "Transformers from_pretrained",
+      "class": "GraniteMoeForCausalLM"
+    },
+    "W4": {
+      "decoder": "compressed-tensors -> BF16; Transformers native Granite experts",
+      "bits": 4,
+      "packed_modules": 2400,
+      "expert_projections": 2304,
+      "source": {
+        "model": "ibm-granite/granite-3.1-1b-a400m-base",
+        "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+        "calibration_sha256": "7bb325175365a1c8280294795a5819e44cb9a2755df536704f9ad21c94da4ac0",
+        "scheme": "W4A16"
+      }
+    },
+    "W8": {
+      "decoder": "compressed-tensors -> BF16; Transformers native Granite experts",
+      "bits": 8,
+      "packed_modules": 2400,
+      "expert_projections": 2304,
+      "source": {
+        "model": "ibm-granite/granite-3.1-1b-a400m-base",
+        "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+        "calibration_sha256": "7bb325175365a1c8280294795a5819e44cb9a2755df536704f9ad21c94da4ac0",
+        "scheme": "W8A16"
+      }
+    }
+  },
+  "native_check": {
+    "native_fp64_kl": {
+      "BF16": 0.0,
+      "W4": 0.2514052509554639,
+      "W8": 0.00568195621577506
+    },
+    "positions": 3732,
+    "max_abs_logit_diff": {
+      "BF16": 0.0,
+      "W4": 0.0,
+      "W8": 0.0
+    },
+    "unequal_logit_count": {
+      "BF16": 0,
+      "W4": 0,
+      "W8": 0
+    }
+  },
+  "self_kl": {
+    "hidden": 0.0,
+    "topk": 0.0
+  },
+  "trials": [
+    {
+      "repeat": 1,
+      "mode_order": [
+        "hidden",
+        "topk"
+      ],
+      "candidate_order": [
+        "W4",
+        "W8"
+      ],
+      "hidden": {
+        "build_s": 0.5363193843513727,
+        "score_s": {
+          "W4": 0.4722949145361781,
+          "W8": 0.4055986385792494
+        },
+        "prefix_wall_s": [
+          1.0086400900036097,
+          1.4142548348754644
+        ],
+        "kl": {
+          "W4": 0.2514052741924276,
+          "W8": 0.005681958994302884
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      },
+      "topk": {
+        "build_s": 0.5516889235004783,
+        "score_s": {
+          "W4": 0.42404675856232643,
+          "W8": 0.40793359745293856
+        },
+        "prefix_wall_s": [
+          0.9757582331076264,
+          1.3837031545117497
+        ],
+        "kl": {
+          "W4": 0.2183433046800855,
+          "W8": 0.005051818347971866
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      }
+    },
+    {
+      "repeat": 2,
+      "mode_order": [
+        "topk",
+        "hidden"
+      ],
+      "candidate_order": [
+        "W4",
+        "W8"
+      ],
+      "topk": {
+        "build_s": 0.5165136437863111,
+        "score_s": {
+          "W4": 0.4241205072030425,
+          "W8": 0.41364632546901703
+        },
+        "prefix_wall_s": [
+          0.9406561115756631,
+          1.3543160622939467
+        ],
+        "kl": {
+          "W4": 0.2183433046800855,
+          "W8": 0.005051818347971866
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      },
+      "hidden": {
+        "build_s": 0.5095152473077178,
+        "score_s": {
+          "W4": 0.41997253708541393,
+          "W8": 0.40671217907220125
+        },
+        "prefix_wall_s": [
+          0.9295095754787326,
+          1.3362330459058285
+        ],
+        "kl": {
+          "W4": 0.2514052741924276,
+          "W8": 0.005681958994302884
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      }
+    },
+    {
+      "repeat": 3,
+      "mode_order": [
+        "hidden",
+        "topk"
+      ],
+      "candidate_order": [
+        "W8",
+        "W4"
+      ],
+      "hidden": {
+        "build_s": 0.5212356243282557,
+        "score_s": {
+          "W8": 0.41546993143856525,
+          "W4": 0.40405691880732775
+        },
+        "prefix_wall_s": [
+          0.9367267172783613,
+          1.3407950950786471
+        ],
+        "kl": {
+          "W8": 0.005681958994302884,
+          "W4": 0.2514052741924276
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      },
+      "topk": {
+        "build_s": 0.5349784586578608,
+        "score_s": {
+          "W8": 0.4308907696977258,
+          "W4": 0.4088123869150877
+        },
+        "prefix_wall_s": [
+          0.9658906441181898,
+          1.3747144471853971
+        ],
+        "kl": {
+          "W8": 0.005051818347971866,
+          "W4": 0.2183433046800855
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      }
+    },
+    {
+      "repeat": 4,
+      "mode_order": [
+        "topk",
+        "hidden"
+      ],
+      "candidate_order": [
+        "W8",
+        "W4"
+      ],
+      "topk": {
+        "build_s": 0.5234053498134017,
+        "score_s": {
+          "W8": 0.424442351795733,
+          "W4": 0.41415434423834085
+        },
+        "prefix_wall_s": [
+          0.947868499904871,
+          1.3620347632095218
+        ],
+        "kl": {
+          "W8": 0.005051818347971866,
+          "W4": 0.2183433046800855
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      },
+      "hidden": {
+        "build_s": 0.512873531319201,
+        "score_s": {
+          "W8": 0.4150230819359422,
+          "W4": 0.40634526684880257
+        },
+        "prefix_wall_s": [
+          0.9279182525351644,
+          1.3342749243602157
+        ],
+        "kl": {
+          "W8": 0.005681958994302884,
+          "W4": 0.2514052741924276
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      }
+    },
+    {
+      "repeat": 5,
+      "mode_order": [
+        "hidden",
+        "topk"
+      ],
+      "candidate_order": [
+        "W4",
+        "W8"
+      ],
+      "hidden": {
+        "build_s": 0.533241338096559,
+        "score_s": {
+          "W4": 0.4189989222213626,
+          "W8": 0.4039092864841223
+        },
+        "prefix_wall_s": [
+          0.9522612234577537,
+          1.3561819419264793
+        ],
+        "kl": {
+          "W4": 0.2514052741924276,
+          "W8": 0.005681958994302884
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      },
+      "topk": {
+        "build_s": 0.525111474096775,
+        "score_s": {
+          "W4": 0.43131283670663834,
+          "W8": 0.42363497614860535
+        },
+        "prefix_wall_s": [
+          0.9564490187913179,
+          1.3800952956080437
+        ],
+        "kl": {
+          "W4": 0.2183433046800855,
+          "W8": 0.005051818347971866
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      }
+    },
+    {
+      "repeat": 6,
+      "mode_order": [
+        "topk",
+        "hidden"
+      ],
+      "candidate_order": [
+        "W4",
+        "W8"
+      ],
+      "topk": {
+        "build_s": 0.5231971768662333,
+        "score_s": {
+          "W4": 0.4294413486495614,
+          "W8": 0.41379148606210947
+        },
+        "prefix_wall_s": [
+          0.9526617527008057,
+          1.3664646605029702
+        ],
+        "kl": {
+          "W4": 0.2183433046800855,
+          "W8": 0.005051818347971866
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      },
+      "hidden": {
+        "build_s": 0.532820244319737,
+        "score_s": {
+          "W4": 0.41628819797188044,
+          "W8": 0.4073271304368973
+        },
+        "prefix_wall_s": [
+          0.9491310101002455,
+          1.3564692307263613
+        ],
+        "kl": {
+          "W4": 0.2514052741924276,
+          "W8": 0.005681958994302884
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      }
+    },
+    {
+      "repeat": 7,
+      "mode_order": [
+        "hidden",
+        "topk"
+      ],
+      "candidate_order": [
+        "W8",
+        "W4"
+      ],
+      "hidden": {
+        "build_s": 0.5223877197131515,
+        "score_s": {
+          "W8": 0.42205723840743303,
+          "W4": 0.4117591120302677
+        },
+        "prefix_wall_s": [
+          0.9444679943844676,
+          1.3562379954382777
+        ],
+        "kl": {
+          "W8": 0.005681958994302884,
+          "W4": 0.2514052741924276
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      },
+      "topk": {
+        "build_s": 0.5242780223488808,
+        "score_s": {
+          "W8": 0.4195075063034892,
+          "W4": 0.40552164893597364
+        },
+        "prefix_wall_s": [
+          0.9438104666769505,
+          1.3493434796109796
+        ],
+        "kl": {
+          "W8": 0.005051818347971866,
+          "W4": 0.2183433046800855
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      }
+    },
+    {
+      "repeat": 8,
+      "mode_order": [
+        "topk",
+        "hidden"
+      ],
+      "candidate_order": [
+        "W8",
+        "W4"
+      ],
+      "topk": {
+        "build_s": 0.5302563030272722,
+        "score_s": {
+          "W8": 0.4228729847818613,
+          "W4": 0.4152934905141592
+        },
+        "prefix_wall_s": [
+          0.9531517485156655,
+          1.3684568284079432
+        ],
+        "kl": {
+          "W8": 0.005051818347971866,
+          "W4": 0.2183433046800855
+        },
+        "file_bytes": 3842530,
+        "allocated_bytes": 3847168,
+        "file_bytes_per_token": 1029.6168274383708,
+        "allocated_bytes_per_token": 1030.8595927116828
+      },
+      "hidden": {
+        "build_s": 0.529250749386847,
+        "score_s": {
+          "W8": 0.42371334601193666,
+          "W4": 0.4097737893462181
+        },
+        "prefix_wall_s": [
+          0.9529853835701942,
+          1.362769702449441
+        ],
+        "kl": {
+          "W8": 0.005681958994302884,
+          "W4": 0.2514052741924276
+        },
+        "file_bytes": 7646808,
+        "allocated_bytes": 7653888,
+        "file_bytes_per_token": 2048.983922829582,
+        "allocated_bytes_per_token": 2050.8810289389066
+      }
+    }
+  ],
+  "separate_stage_diagnostics": {
+    "hidden": {
+      "W4": {
+        "kl": 0.2514052741924276,
+        "wall_s": 0.40865405183285475,
+        "gpu_event_s": {
+          "cache_h2d": 0.002069183997809887,
+          "candidate_backbone": 0.37492281723022464,
+          "candidate_head_and_normalization": 0.0035590400025248526,
+          "reference_head_and_normalization": 0.0029759680107235907,
+          "kl_and_sum": 0.004071071997284889
+        },
+        "host_read_decode_s": 0.020591851323843002
+      },
+      "W8": {
+        "kl": 0.005681958994302884,
+        "wall_s": 0.41083734948188066,
+        "gpu_event_s": {
+          "cache_h2d": 0.0019916800037026406,
+          "candidate_backbone": 0.3782874221801758,
+          "candidate_head_and_normalization": 0.0035462719947099686,
+          "reference_head_and_normalization": 0.0029576959982514383,
+          "kl_and_sum": 0.004072703987360001
+        },
+        "host_read_decode_s": 0.01976166944950819
+      }
+    },
+    "topk": {
+      "W4": {
+        "kl": 0.2183433046800855,
+        "wall_s": 0.41939000878483057,
+        "gpu_event_s": {
+          "cache_h2d": 0.002440191999077797,
+          "candidate_backbone": 0.37863261222839356,
+          "candidate_head_and_normalization": 0.004097279995679855,
+          "kl_and_sum": 0.011196608006954193
+        },
+        "host_read_decode_s": 0.020754607394337654
+      },
+      "W8": {
+        "kl": 0.005051818347971866,
+        "wall_s": 0.4068945674225688,
+        "gpu_event_s": {
+          "cache_h2d": 0.0024143040031194686,
+          "candidate_backbone": 0.37864357948303223,
+          "candidate_head_and_normalization": 0.004075104020535946,
+          "kl_and_sum": 0.011155968070030213
+        },
+        "host_read_decode_s": 0.00851200520992279
+      }
+    }
+  },
+  "batch_size": 2,
+  "projection_chunk": 128,
+  "k": 128,
+  "device": "NVIDIA H100 80GB HBM3",
+  "torch": "2.14.0a0+4fdf77b940.nv26.08",
+  "cuda_runtime": "13.4",
+  "peak_allocated_bytes_including_diagnostics": 8594965504,
+  "pr_offline_check": {
+    "positions": 247,
+    "chunk": 128,
+    "results": {
+      "BF16": {
+        "native_fp64": 0.0,
+        "pr_temperature_1": 0.0,
+        "pr_temperature_6": 0.0,
+        "native_norm_fp32_head_and_division": 0.0,
+        "native_pre_norm_replay_max_logit_difference": 0.0
+      },
+      "W4": {
+        "native_fp64": 0.2240557851094396,
+        "pr_temperature_1": 1.5644431523372244,
+        "pr_temperature_6": 0.22427539641074346,
+        "native_norm_fp32_head_and_division": 0.2243453894613635,
+        "native_pre_norm_replay_max_logit_difference": 0.0
+      },
+      "W8": {
+        "native_fp64": 0.006169777462527524,
+        "pr_temperature_1": 0.02019557729662977,
+        "pr_temperature_6": 0.004393341488641108,
+        "native_norm_fp32_head_and_division": 0.004436011332563978,
+        "native_pre_norm_replay_max_logit_difference": 0.0
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12.3",
+    "driver": "580.126.20",
+    "gpu_uuid": "GPU-7c656bd0-6ea6-c24c-073b-436439a6bfb6",
+    "cache_filesystem": "phxnfs",
+    "packages": {
+      "transformers": "5.21.0",
+      "compressed-tensors": "0.20.2a20261103",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.1",
+      "numpy": "2.1.0",
+      "pyarrow": "25.0.1",
+      "llmcompressor": "0.1.dev1+gf7d824c",
+      "accelerate": "1.16.0"
+    }
+  },
+  "inputs": {
+    "name": "Salesforce/wikitext",
+    "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "split": "wikitext-2-raw-v1/test",
+    "seed": 42,
+    "test_parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+    "eval_jsonl_sha256": "97245443610e4d0c4f9d120ef7b47f4b0170b79d35703e9d73946e2fd8b2abd6",
+    "calibration": "train, first 8 x 128 tokens of pinned Granite calibration bank"
+  },
+  "gpu_monitor": {
+    "pair-cli-pre-hidden": {
+      "before": {
+        "utc": "2026-11-22T16:08:20.345183+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:08:34.014294+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 27,
+      "returncode": 0
+    },
+    "pair-cli-pre-topk": {
+      "before": {
+        "utc": "2026-11-22T16:08:34.183389+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:08:49.234029+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 30,
+      "returncode": 0
+    },
+    "pair-cli-score-hidden": {
+      "before": {
+        "utc": "2026-11-22T16:08:49.413373+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:09:16.970998+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 55,
+      "returncode": 0
+    },
+    "pair-cli-score-topk": {
+      "before": {
+        "utc": "2026-11-22T16:09:18.123367+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:09:46.171234+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 56,
+      "returncode": 0
+    },
+    "pair-trials": {
+      "before": {
+        "utc": "2026-11-22T16:10:45.607183+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:12:03.392097+00:00",
+        "util_pct": 25,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 155,
+      "returncode": 0
+    },
+    "pair-pr2663-final": {
+      "before": {
+        "utc": "2026-11-22T16:14:26.532361+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T16:15:12.194186+00:00",
+        "util_pct": 0,
+        "used_MiB": 483,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 91,
+      "returncode": 0
+    }
+  },
+  "independent_cli": {
+    "pair-cli-pre-hidden": {
+      "tokens": 3732,
+      "setup_s": 7.846217374317348,
+      "stage_s": 0.9727903716266155
+    },
+    "pair-cli-pre-topk": {
+      "tokens": 3732,
+      "setup_s": 9.354145308956504,
+      "stage_s": 1.0638940278440714
+    },
+    "pair-cli-score-hidden": {
+      "mean_kl_nats": 0.2514052741924276,
+      "tokens": 3732,
+      "setup_s": 22.003933565691113,
+      "stage_s": 0.694816879928112
+    },
+    "pair-cli-score-topk": {
+      "mean_kl_nats": 0.2183433046800855,
+      "tokens": 3732,
+      "setup_s": 22.616360805928707,
+      "stage_s": 0.7179140914231539
+    }
+  }
+}
