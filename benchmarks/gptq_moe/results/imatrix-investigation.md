@@ -108,3 +108,5 @@ The diagnostic controller runs the first-call profile, two short Nsight captures
 python "$bench/observer_diagnostics.py" --raw "$raw" --baseline-src "$base" --prototype-src "$proto" --model-dir "$tiny" --granite-dir "$granite" --gpu "$gpu" --libcuda-dir /usr/local/cuda/compat/lib
 python "$bench/record_investigation.py" "$raw" "$raw/imatrix-investigation.json"
 ```
+
+A [follow-up on Granite with longer WikiText calibration](granite-calibration-load.md) measures how the absolute and relative savings change as forward time grows.

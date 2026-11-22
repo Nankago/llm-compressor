@@ -4,6 +4,7 @@ import argparse
 import cProfile
 import hashlib
 import json
+import os
 import platform
 import pstats
 import random
@@ -14,6 +15,7 @@ from datetime import datetime, timezone
 from importlib.metadata import version
 from pathlib import Path
 
+import numpy as np
 import torch
 from huggingface_hub import snapshot_download
 from torch.utils.data import DataLoader
@@ -44,14 +46,30 @@ LENGTH = 128
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def data(tokenizer, sample_count):
+def data(tokenizer, sample_count, length=LENGTH, calibration_dir=None):
+    if calibration_dir is not None:
+        meta = json.loads((calibration_dir / "manifest.json").read_text())
+        master = np.load(calibration_dir / "tokens.npy", allow_pickle=False)
+        assert master.dtype == np.dtype("<i8") and master.shape == (64, 1024)
+        assert (
+            hashlib.sha256(master.tobytes()).hexdigest()
+            == meta["input_ids_sha256_le_i64"]
+        )
+        if not (0 < sample_count <= len(master) and 0 < length <= master.shape[1]):
+            raise ValueError("Requested dimensions exceed calibration bank")
+        windows = torch.from_numpy(master[:sample_count, :length].copy())
+        return make_loader(windows, meta["article_row_token_offsets"][:sample_count])
     corpus = subprocess.check_output(["git", "show", f"{BASE}:README.md"], cwd=ROOT)
     ids = tokenizer.encode(corpus.decode(), add_special_tokens=False)
-    offsets = list(range(0, len(ids) - LENGTH + 1, LENGTH))
+    offsets = list(range(0, len(ids) - length + 1, length))
     random.Random(SEED).shuffle(offsets)
     assert 0 < sample_count <= len(offsets)
     offsets = offsets[:sample_count]
-    windows = torch.tensor([ids[i : i + LENGTH] for i in offsets], dtype=torch.long)
+    windows = torch.tensor([ids[i : i + length] for i in offsets], dtype=torch.long)
+    return make_loader(windows, offsets)
+
+
+def make_loader(windows, offsets):
     digest = hashlib.sha256(windows.numpy().astype("<i8").tobytes()).hexdigest()
     rows = [
         {"input_ids": row, "attention_mask": torch.ones_like(row)} for row in windows
@@ -112,6 +130,13 @@ def main():
     parser.add_argument("--checkpoint", choices=CHECKPOINTS, default="tinymoe")
     parser.add_argument("--output-digests", action="store_true")
     parser.add_argument("--packed-digests", action="store_true")
+    parser.add_argument("--calibration-dir", type=Path)
+    parser.add_argument("--seq-length", type=int, default=LENGTH)
+    parser.add_argument(
+        "--coarse-timing",
+        action="store_true",
+        help="Time whole calibration forwards with hooks included",
+    )
     parser.add_argument("--samples", type=int, default=8)
     parser.add_argument(
         "--host-profile", action="store_true", help="Additional diagnostic replicate"
@@ -145,7 +170,16 @@ def main():
         with (source / filename).open("rb") as f:
             assert hashlib.file_digest(f, "sha256").hexdigest() == sha
     tokenizer = AutoTokenizer.from_pretrained(source, local_files_only=True)
-    loader, offsets, input_digest = data(tokenizer, args.samples)
+    manifest = None
+    if args.calibration_dir:
+        manifest = json.loads((args.calibration_dir / "manifest.json").read_text())
+        if manifest["model_revision"] != revision:
+            raise ValueError("Calibration bank was created for a different checkpoint")
+    if args.coarse_timing and args.observer_details:
+        parser.error("Choose one timing mode")
+    loader, offsets, input_digest = data(
+        tokenizer, args.samples, args.seq_length, args.calibration_dir
+    )
     model, info = AutoModelForCausalLM.from_pretrained(
         source,
         dtype=torch.bfloat16,
@@ -179,7 +213,9 @@ def main():
     datetime_utc = datetime.now(timezone.utc).isoformat()
     preparation = time.perf_counter() - pre_start
     host_profile = cProfile.Profile() if args.host_profile else None
-    with trace.install(observer_details=args.observer_details):
+    with trace.install(
+        observer_details=args.observer_details, coarse=args.coarse_timing
+    ):
         torch.cuda.synchronize()
         torch.cuda.reset_peak_memory_stats()
         start = time.perf_counter()
@@ -193,7 +229,7 @@ def main():
             pipeline="sequential",
             sequential_targets_per_subgraph=1,
             batch_size=1,
-            max_seq_length=LENGTH,
+            max_seq_length=args.seq_length,
             num_calibration_samples=args.samples,
             shuffle_calibration_samples=False,
             moe_calibrate_all_experts=True,
@@ -211,9 +247,16 @@ def main():
     measured = trace.seconds()
     seen = [n for batch in trace.batches for n in batch["modules"]]
     assert len(seen) == len(expected) and set(seen) == expected
-    assert trace.calls["accumulate"] == len(seen) * args.samples
+    if not args.coarse_timing:
+        assert trace.calls["accumulate"] == len(seen) * args.samples
     assert (
-        trace.calls["calib_forward_outside_gptq_hook"]
+        trace.calls[
+            (
+                "calib_forward_including_hooks"
+                if args.coarse_timing
+                else "calib_forward_outside_gptq_hook"
+            )
+        ]
         == trace.calls["propagate_forward"]
     )
     counts = Counter()
@@ -253,7 +296,7 @@ def main():
         "weight_sha256": WEIGHTS if args.checkpoint == "tinymoe" else shards,
         "seed": SEED,
         "samples": args.samples,
-        "sequence_length": LENGTH,
+        "sequence_length": args.seq_length,
         "token_offsets": offsets,
         "input_ids_sha256_le_i64": input_digest,
         "mode": mode,
@@ -282,6 +325,24 @@ def main():
         "caps_subgraph_representative_limit": trace.caps,
         "batches": trace.batches,
     }
+    if manifest:
+        result["calibration_bank"] = {
+            key: value
+            for key, value in manifest.items()
+            if key != "article_row_token_offsets"
+        }
+    if args.coarse_timing:
+        from llmcompressor.observers import grid_search
+
+        impl = Path(grid_search.__file__).resolve()
+        if src := os.environ.get("OBSERVER_EXPECT_SRC"):
+            assert impl.is_relative_to(Path(src).resolve())
+        result["observer_source_sha256"] = hashlib.sha256(impl.read_bytes()).hexdigest()
+        result["timing"] = "coarse"
+        assert (
+            trace.calls["calib_forward_including_hooks"]
+            == trace.calls["weight_observe"] * args.samples
+        )
     if args.observer_details:
         assert trace.calls["imatrix_input_hook"] == len(seen) * args.samples
     if host_profile:

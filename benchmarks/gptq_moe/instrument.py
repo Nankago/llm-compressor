@@ -54,7 +54,7 @@ class Trace:
         return dict(totals)
 
     @contextmanager
-    def install(self, observer_details=False):
+    def install(self, observer_details=False, coarse=False):
         original_list = base.GPTQModifier.compress_module_list
         original_cap = helpers.max_batch_size
         original_prepare = base.prepare_batch
@@ -98,12 +98,14 @@ class Trace:
             self.batches[-1]["H_shape_stacked"] = list(result[1].shape)
             return result
 
+        first_forward = (
+            "calib_forward_including_hooks"
+            if coarse
+            else "calib_forward_outside_gptq_hook"
+        )
+
         def forward(graph, *args, **kwargs):
-            stage = (
-                "propagate_forward"
-                if HooksMixin._HOOKS_DISABLED
-                else "calib_forward_outside_gptq_hook"
-            )
+            stage = "propagate_forward" if HooksMixin._HOOKS_DISABLED else first_forward
             return self.timed(original_forward, stage)(graph, *args, **kwargs)
 
         def factor(*args, **kwargs):
@@ -139,17 +141,24 @@ class Trace:
                 self.timed(base.update_batch_qparams, "writeback"),
             ),
             (Subgraph, "forward", forward),
-            (
-                base.GPTQModifier,
-                "calibrate_module",
-                self.timed(base.GPTQModifier.calibrate_module, "hook_setup"),
-            ),
-            (
-                base,
-                "accumulate_hessian",
-                self.timed(base.accumulate_hessian, "accumulate"),
-            ),
         ]
+        if not coarse:
+            probes.extend(
+                [
+                    (
+                        base.GPTQModifier,
+                        "calibrate_module",
+                        self.timed(base.GPTQModifier.calibrate_module, "hook_setup"),
+                    ),
+                    (
+                        base,
+                        "accumulate_hessian",
+                        self.timed(base.accumulate_hessian, "accumulate"),
+                    ),
+                ]
+            )
+        if observer_details or coarse:
+            probes.append((base, "observe", self.timed(base.observe, "weight_observe")))
         if observer_details:
             # The imatrix collector is a closure registered in attach(). Identify
             # that upstream closure and preserve its normal disabled-hook behavior.
@@ -168,12 +177,7 @@ class Trace:
 
                 return original_register(module, hook, *args, **kwargs)
 
-            probes.extend(
-                [
-                    (torch.nn.Module, "register_forward_pre_hook", register),
-                    (base, "observe", self.timed(base.observe, "weight_observe")),
-                ]
-            )
+            probes.append((torch.nn.Module, "register_forward_pre_hook", register))
         with ExitStack() as stack:
             for obj, name, wrapper in probes:
                 stack.enter_context(patch.object(obj, name, wrapper))
