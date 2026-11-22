@@ -42,3 +42,23 @@ guard "$GPU" gram-replay gram_replay.py "$OUT/trace" "$OUT/gram-replay.json"
 ```
 
 The archived runs use `/gemini-0/space/private/lmx/temp-restore/Vllm-Omni/llm-compressor-forward-ablation-artifacts` for `OUT`. Chrome traces are under `trace/window-8.json` and `trace/window-40.json`; real intermediate tensors for the focused replay are under `trace/replay-*.safetensors`. The per-arm model weights are under `{granite,tinymoe}/checkpoint-{on,off}/`.
+
+### Isolated Gram-reuse experiment
+
+Use the same shell variables and guard. These trials keep error propagation on and use the already primed Granite cache from P0. Each run starts a fresh process. The first reuse run exports the representative checkpoint after timing.
+
+```bash
+mkdir -p "$OUT/reuse"
+gargs=(--mode auto --coarse-timing --checkpoint granite --model-dir "$MODEL" --calibration-dir "$BANK" --samples 64 --seq-length 1024)
+for label in r1-reuse r1-base r2-base r2-reuse r3-reuse r3-base r4-base r4-reuse; do
+    driver=run.py
+    extra=()
+    if [[ $label == *-reuse ]]; then driver=try_gram_reuse.py; fi
+    if [[ $label == r1-reuse ]]; then extra=(--save-checkpoint "$OUT/reuse/checkpoint"); fi
+    guard "$GPU" "reuse/$label" "$driver" "${gargs[@]}" "${extra[@]}" --out "$OUT/reuse/$label.json"
+done
+guard "$SMALL" reuse/test-final test_gram_trial.py
+guard "$SMALL" reuse/tiny-on try_gram_reuse.py --checkpoint tinymoe --model-dir "$TINY" --mode auto --coarse-timing --samples 8 --seq-length 128 --save-checkpoint "$OUT/reuse/tiny-checkpoint" --out "$OUT/reuse/tiny-on.json"
+guard "$SMALL" reuse/granite-off try_gram_reuse.py "${gargs[@]}" --no-propagate-error --save-checkpoint "$OUT/reuse/off-checkpoint" --out "$OUT/reuse/granite-off.json"
+"$PY" record_gram_trial.py "$OUT" "$OUT/gram-trial.json"
+```
