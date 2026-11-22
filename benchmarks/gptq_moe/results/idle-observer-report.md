@@ -15,6 +15,12 @@ The earlier shared H100 weight-observation diagnostic measured 7.376 s for auto 
 | GPTQ/_get_validated_importance | 280 | 141.97 | 5.02 | 2.55 | 7.96 | 134.40 |
 | GPTQ/scale_search | 280 | 95664.43 | 58.79 | 1.71 | 6.90 | 95603.93 |
 
+### First scale search in the profiled run
+
+The first of 280 scale searches took **95.310 s**. The median across all 280 was **1.196 ms**. Inside the first range, the observer thread spent **93.922 s** in a single OS runtime `read()` (15,270,938,150 to 109,193,232,067 ns). The scheduler shows 93.922 s off CPU during that call. No traced process kernel, GPU copy or memset overlapped it. The host call chain includes `_Py_read` and `__read`. The file descriptor's source remains unresolved. [Reproduce the timeline query](../first_scale_search.sql)
+
+The capture therefore localizes its largest stall to a blocking host read on first use. Its 95.862 s inclusive observer time is much longer than the 3.311 s unprofiled median. The capture cannot apportion those 3.311 s between initialization, scheduling and steady-state scale search. The most informative follow-up is to time the first scale search separately from the remaining 279, with lightweight timers in a fresh process and on a second pass in the same process.
+
 ### Kernels in the weight-observation host windows
 
 - 40.151 ms across 280 window intersections, `_grid_search_observer_triton_packed_kernel`
@@ -32,4 +38,4 @@ During validator synchronous APIs, 0.000 ms overlapped work submitted before tha
 
 The observer issued 14840 launch API calls. Its host thread was observed on CPU for 1361.965 ms during gaps in the recorded process GPU activity. Scheduling coverage available: True. Running-leaf samples in those gaps: 1411. Native dispatch, Python execution and profiler overhead can all contribute.
 
-Inspect the longest scalar-read wait and its correlated stream first if earlier launches cover most of the validator wait. Where GPU gaps dominate, inspect the sampled running-thread leaf frames before assigning those gaps to Python. Full timestamps, top kernels, per-run device inventories and the local full-report path are in [idle-observer.json](idle-observer.json).
+The longest recorded validator sync was enclosed by `aten::item` and `aten::_local_scalar_dense` and overlapped a Device-to-Host copy on stream 7 submitted by that invocation. Full timestamps, per-run device inventories and the local full-report path are in [idle-observer.json](idle-observer.json).
