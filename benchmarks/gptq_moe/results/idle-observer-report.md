@@ -39,3 +39,5 @@ During validator synchronous APIs, 0.000 ms overlapped work submitted before tha
 The observer issued 14840 launch API calls. Its host thread was observed on CPU for 1361.965 ms during gaps in the recorded process GPU activity. Scheduling coverage available: True. Running-leaf samples in those gaps: 1411. Native dispatch, Python execution and profiler overhead can all contribute.
 
 The longest recorded validator sync was enclosed by `aten::item` and `aten::_local_scalar_dense` and overlapped a Device-to-Host copy on stream 7 submitted by that invocation. Full timestamps, per-run device inventories and the local full-report path are in [idle-observer.json](idle-observer.json).
+
+The [follow-up investigation](imatrix-investigation.md) separates the first call from steady state, identifies shared Triton initialization, and tests the repeated grid-search work on TinyMoE and Granite.

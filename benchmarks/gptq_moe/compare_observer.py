@@ -1,11 +1,10 @@
 """Compare two source trees in counterbalanced fresh processes on one idle GPU."""
 
 import argparse
-import os
 import sys
 from pathlib import Path
 
-from observer_trials import HERE, launch, nvml
+from observer_trials import HERE, cache_env, launch, nvml
 
 
 def main():
@@ -30,20 +29,7 @@ def main():
             cache = root / label
             src = sources[label].resolve()
             prefix = root / f"r{rep}-{label}"
-            env = dict(
-                os.environ,
-                CUDA_VISIBLE_DEVICES=args.gpu,
-                HF_HUB_OFFLINE="1",
-                OMP_NUM_THREADS="2",
-                MKL_NUM_THREADS="2",
-                TOKENIZERS_PARALLELISM="false",
-                PYTHONPATH=str(src),
-                OBSERVER_EXPECT_SRC=str(src),
-                TRITON_CACHE_DIR=str(cache / "triton"),
-                CUDA_CACHE_PATH=str(cache / "cuda"),
-                TORCH_EXTENSIONS_DIR=str(cache / "extensions"),
-                TORCHINDUCTOR_CACHE_DIR=str(cache / "inductor"),
-            )
+            env = cache_env(cache, src, args.gpu)
             (cache / "cuda").mkdir(parents=True, exist_ok=True)
             cmd = [
                 sys.executable,

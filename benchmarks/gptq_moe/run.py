@@ -59,12 +59,21 @@ def data(tokenizer, sample_count):
     return DataLoader(rows, batch_size=1, shuffle=False), offsets, digest
 
 
-def output_digests(model, names):
+def output_digests(model, names, packed=False):
     hashes = {}
     counts = Counter()
     for name in sorted(names):
         module = model.get_submodule(name)
-        for field, tensor in sorted(module.state_dict().items()):
+        state = module.state_dict()
+        if packed:
+            from compressed_tensors.compressors.pack_quantized import (
+                PackedQuantizationCompressor,
+            )
+
+            state = PackedQuantizationCompressor.compress(
+                state, module.quantization_scheme
+            )
+        for field, tensor in sorted(state.items()):
             digest = hashes.setdefault(field, hashlib.sha256())
             digest.update(
                 json.dumps([name, str(tensor.dtype), list(tensor.shape)]).encode()
@@ -102,6 +111,7 @@ def main():
     parser.add_argument("--mode", required=True, help="auto, none or positive integer")
     parser.add_argument("--checkpoint", choices=CHECKPOINTS, default="tinymoe")
     parser.add_argument("--output-digests", action="store_true")
+    parser.add_argument("--packed-digests", action="store_true")
     parser.add_argument("--samples", type=int, default=8)
     parser.add_argument(
         "--host-profile", action="store_true", help="Additional diagnostic replicate"
@@ -303,6 +313,8 @@ def main():
         }
     if args.output_digests:
         result["output_digests"] = output_digests(model, expected)
+    if args.packed_digests:
+        result["packed_digests"] = output_digests(model, expected, packed=True)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
     print(args.out, wall, result["batch_histogram"], counts, flush=True)

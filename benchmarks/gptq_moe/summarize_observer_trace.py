@@ -55,7 +55,7 @@ def top(stats):
     ]
 
 
-def analyze(path):
+def analyze(path, expected=None):
     db = sqlite3.connect(f"{path.resolve().as_uri()}?mode=ro", uri=True)
     tables = {
         n for (n,) in db.execute("select name from sqlite_master where type='table'")
@@ -67,11 +67,12 @@ def analyze(path):
         db.execute(nvtx + "coalesce(n.text,s.value) like 'GPTQ/%' order by n.start")
     )
     counts = Counter(r[2] for r in ranges)
-    expected = {
-        "GPTQ/weight_observe": 11,
-        "GPTQ/_get_validated_importance": 280,
-        "GPTQ/scale_search": 280,
-    }
+    if expected is None:
+        expected = {
+            "GPTQ/weight_observe": 11,
+            "GPTQ/_get_validated_importance": 280,
+            "GPTQ/scale_search": 280,
+        }
     if counts != expected or len({r[3] for r in ranges}) != 1:
         raise ValueError(f"Incomplete observer NVTX coverage: {counts}")
     tid = ranges[0][3]
@@ -289,5 +290,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("sqlite", type=Path)
     parser.add_argument("out", type=Path)
+    parser.add_argument("--warm-window", choices=["base", "proto"])
     args = parser.parse_args()
-    args.out.write_text(json.dumps(analyze(args.sqlite), indent=2) + "\n")
+    expected = None
+    if args.warm_window:
+        expected = {"GPTQ/scale_search": 28}
+        if args.warm_window == "base":
+            expected["GPTQ/base_qparams"] = 28
+    args.out.write_text(json.dumps(analyze(args.sqlite, expected), indent=2) + "\n")

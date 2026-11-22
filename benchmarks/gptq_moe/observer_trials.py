@@ -14,6 +14,25 @@ import pynvml as nvml
 HERE = Path(__file__).resolve().parent
 
 
+def cache_env(root, src, gpu):
+    env = dict(
+        os.environ,
+        CUDA_VISIBLE_DEVICES=gpu,
+        OMP_NUM_THREADS="2",
+        MKL_NUM_THREADS="2",
+        TOKENIZERS_PARALLELISM="false",
+        HF_HUB_OFFLINE="1",
+        TRITON_CACHE_DIR=str(root / "triton"),
+        CUDA_CACHE_PATH=str(root / "cuda"),
+        TORCH_EXTENSIONS_DIR=str(root / "extensions"),
+        TORCHINDUCTOR_CACHE_DIR=str(root / "inductor"),
+    )
+    if src is not None:
+        env["PYTHONPATH"] = str(src.resolve())
+        env["OBSERVER_EXPECT_SRC"] = str(src.resolve())
+    return env
+
+
 def sample(device):
     processes = nvml.nvmlDeviceGetComputeRunningProcesses(
         device
@@ -43,6 +62,10 @@ def launch(cmd, env, device, prefix):
             snap = sample(device)
             samples += 1
             foreign.update(p for p in snap["pids"] if p != process.pid)
+            if foreign:
+                process.terminate()
+                process.wait()
+                break
             time.sleep(0.5)
     after = sample(device)
     record = {
@@ -73,18 +96,7 @@ def main():
         for probe in (["reference", "split"] if rep % 2 else ["split", "reference"]):
             base = out / f"r{rep}-{probe}"
             base.mkdir()
-            env = dict(
-                os.environ,
-                CUDA_VISIBLE_DEVICES=args.gpu,
-                HF_HUB_OFFLINE="1",
-                OMP_NUM_THREADS="2",
-                MKL_NUM_THREADS="2",
-                TOKENIZERS_PARALLELISM="false",
-                TRITON_CACHE_DIR=str(base / "triton"),
-                CUDA_CACHE_PATH=str(base / "cuda"),
-                TORCH_EXTENSIONS_DIR=str(base / "extensions"),
-                TORCHINDUCTOR_CACHE_DIR=str(base / "inductor"),
-            )
+            env = cache_env(base, None, args.gpu)
             for condition, passes in (("cold", 1), ("disk", 2)):
                 prefix = base / condition
                 cmd = [

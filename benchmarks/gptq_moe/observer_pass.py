@@ -3,9 +3,9 @@
 import argparse
 import cProfile
 import gc
+import hashlib
 import json
 import os
-import hashlib
 import pstats
 import sys
 import time

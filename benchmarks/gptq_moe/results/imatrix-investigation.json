@@ -1,0 +1,3183 @@
+{
+  "models": {
+    "FlameF0X/TinyMoE-100m-2x8-retrained": {
+      "workload": {
+        "revision": "0c1d097c964b949bc0092fa8e99c88c325421167",
+        "weight_sha256": "feb1cc5a5140f3ec7c357ecb9b13f54b17575d76c792459f563ce061a1527c6a",
+        "seed": 42,
+        "samples": 8,
+        "sequence_length": 128,
+        "token_offsets": [
+          3200,
+          2944,
+          2432,
+          1408,
+          512,
+          5760,
+          3328,
+          1152
+        ],
+        "input_ids_sha256_le_i64": "b3d5839fee2d2adc20c570fe826ffd556a8f4a37c5b81fe0c9720681d4b400a0",
+        "mode": "auto",
+        "batch_histogram": {
+          "2": 20,
+          "16": 10,
+          "8": 10
+        },
+        "module_count_by_cholesky": {
+          "per_item": 120,
+          "batched": 160
+        },
+        "rtn_fallback_modules": []
+      },
+      "output_digests": {
+        "weight": {
+          "tensors": 280,
+          "sha256": "0ed3d1d93d468066dd30d41371cdbf43cca07b9cd8443f1f764201228c9ca22a"
+        },
+        "weight_scale": {
+          "tensors": 280,
+          "sha256": "17e4fef92545c26eadbbf8588f915b628b4d2990ea8d6a0b5ddb3555ab372859"
+        },
+        "weight_zero_point": {
+          "tensors": 280,
+          "sha256": "afed1b43c6b8bd0e5a1b4524666b5a2de940f5ac85a03a84d1e9f055bdf79f5f"
+        }
+      },
+      "packed_digests": {
+        "weight_packed": {
+          "tensors": 280,
+          "sha256": "4c69d75e97b5e92ff99deb4533e8c2c717937b49a63a13e00e26083f321dbc21"
+        },
+        "weight_scale": {
+          "tensors": 280,
+          "sha256": "17e4fef92545c26eadbbf8588f915b628b4d2990ea8d6a0b5ddb3555ab372859"
+        },
+        "weight_shape": {
+          "tensors": 280,
+          "sha256": "4fee03f6b788bc8616b78e1e99b8e9b6e7e3129b7a1c1e47d53be898404973a7"
+        }
+      }
+    },
+    "ibm-granite/granite-3.1-1b-a400m-base": {
+      "workload": {
+        "revision": "408b6e90baab8cf24f4aa9f8e19703ffa0a53b29",
+        "weight_sha256": {
+          "model-00001-of-00002.safetensors": "6933b6375074dc6cc4c0b98c9e126cd5fc899ef0cd80db0a932a232c6393c9cd",
+          "model-00002-of-00002.safetensors": "271870f88e36f28ca87e86e11fa971b0b3e268fb9ac4495d42c66fdd1bc9d060"
+        },
+        "seed": 42,
+        "samples": 8,
+        "sequence_length": 128,
+        "token_offsets": [
+          3712,
+          2944,
+          3072,
+          1280,
+          2688,
+          1152,
+          3840,
+          4864
+        ],
+        "input_ids_sha256_le_i64": "d4b38b5630c6a4471135cd83c14087f0ffdfbebc839bdb24e4bcde1a50c5bfe1",
+        "mode": "auto",
+        "batch_histogram": {
+          "2": 24,
+          "66": 24,
+          "32": 24
+        },
+        "module_count_by_cholesky": {
+          "per_item": 48,
+          "batched": 2352
+        },
+        "rtn_fallback_modules": []
+      },
+      "output_digests": {
+        "weight": {
+          "tensors": 2400,
+          "sha256": "1b41aa6c6c8c6097946aa756c5d3abd74fcacce9f4caafa62a8fe5cd00e6b604"
+        },
+        "weight_scale": {
+          "tensors": 2400,
+          "sha256": "2f574ef50fb9444a84416d87dd4d8f94ca7e4b96d37a45971848ec82940e3d95"
+        },
+        "weight_zero_point": {
+          "tensors": 2400,
+          "sha256": "97f8fca78293e72d5abb89cee7fa95054535364dc871b9f9fd6f16a4094cc5bf"
+        }
+      },
+      "packed_digests": {
+        "weight_packed": {
+          "tensors": 2400,
+          "sha256": "488212548e39fd0ca8c2990a6a046601a75e3533e8505b417dee7df4c0be9d3e"
+        },
+        "weight_scale": {
+          "tensors": 2400,
+          "sha256": "2f574ef50fb9444a84416d87dd4d8f94ca7e4b96d37a45971848ec82940e3d95"
+        },
+        "weight_shape": {
+          "tensors": 2400,
+          "sha256": "e893f83f5e286db4dcc5ee07a99b62f82adac8cba295e613367cea3e24868846"
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "process": "matrix/r1-reference/cold",
+      "pass": 1,
+      "start": "2026-11-22T03:14:30.547182+00:00",
+      "oneshot_s": 7.218329915776849,
+      "observer_s": 4.159160219443961,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r1-reference/disk",
+      "pass": 1,
+      "start": "2026-11-22T03:14:51.424246+00:00",
+      "oneshot_s": 6.049583409912884,
+      "observer_s": 3.272423089629039,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r1-reference/disk",
+      "pass": 2,
+      "start": "2026-11-22T03:14:59.005050+00:00",
+      "oneshot_s": 2.0567871537059546,
+      "observer_s": 0.23626556721143424,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r1-split/cold",
+      "pass": 1,
+      "start": "2026-11-22T03:15:14.587673+00:00",
+      "oneshot_s": 7.2631707694381475,
+      "observer_s": 4.153083382507786,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3856.099365234375,
+      "later_event_ms": 188.31030428409576,
+      "first_host_ms": 3856.0053585097194,
+      "later_host_ms": 170.03778368234634
+    },
+    {
+      "process": "matrix/r1-split/disk",
+      "pass": 1,
+      "start": "2026-11-22T03:15:35.904973+00:00",
+      "oneshot_s": 6.164626115001738,
+      "observer_s": 3.3892480718847366,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3103.726318359375,
+      "later_event_ms": 179.0356160402298,
+      "first_host_ms": 3103.65753993392,
+      "later_host_ms": 160.34921910613775
+    },
+    {
+      "process": "matrix/r1-split/disk",
+      "pass": 2,
+      "start": "2026-11-22T03:15:43.567946+00:00",
+      "oneshot_s": 2.108089684508741,
+      "observer_s": 0.24357449624873698,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 0.8646720051765442,
+      "later_event_ms": 178.20294386148453,
+      "first_host_ms": 0.8408976718783379,
+      "later_host_ms": 159.57597456872463
+    },
+    {
+      "process": "matrix/r2-reference/cold",
+      "pass": 1,
+      "start": "2026-11-22T03:16:41.047694+00:00",
+      "oneshot_s": 7.260458984412253,
+      "observer_s": 4.11058722625114,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r2-reference/disk",
+      "pass": 1,
+      "start": "2026-11-22T03:17:00.309997+00:00",
+      "oneshot_s": 6.078426307067275,
+      "observer_s": 3.320514959577471,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r2-reference/disk",
+      "pass": 2,
+      "start": "2026-11-22T03:17:07.901572+00:00",
+      "oneshot_s": 2.0870305029675364,
+      "observer_s": 0.24868278594687582,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r2-split/cold",
+      "pass": 1,
+      "start": "2026-11-22T03:15:59.269772+00:00",
+      "oneshot_s": 7.336729357950389,
+      "observer_s": 4.1625990541726345,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3873.701904296875,
+      "later_event_ms": 179.43644797801971,
+      "first_host_ms": 3873.6328100785613,
+      "later_host_ms": 160.3921251371503
+    },
+    {
+      "process": "matrix/r2-split/disk",
+      "pass": 1,
+      "start": "2026-11-22T03:16:16.585088+00:00",
+      "oneshot_s": 6.2154319966211915,
+      "observer_s": 3.419186082251369,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3136.050048828125,
+      "later_event_ms": 177.2347840666771,
+      "first_host_ms": 3135.9802139922976,
+      "later_host_ms": 158.17462652921677
+    },
+    {
+      "process": "matrix/r2-split/disk",
+      "pass": 2,
+      "start": "2026-11-22T03:16:24.328005+00:00",
+      "oneshot_s": 2.067054090090096,
+      "observer_s": 0.2465078392960131,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 0.8370879888534546,
+      "later_event_ms": 180.29731172323227,
+      "first_host_ms": 0.8133146911859512,
+      "later_host_ms": 161.7434909567237
+    },
+    {
+      "process": "matrix/r3-reference/cold",
+      "pass": 1,
+      "start": "2026-11-22T03:17:23.294531+00:00",
+      "oneshot_s": 7.118562031537294,
+      "observer_s": 4.086000242693349,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r3-reference/disk",
+      "pass": 1,
+      "start": "2026-11-22T03:17:43.610375+00:00",
+      "oneshot_s": 6.099600000306964,
+      "observer_s": 3.296017812943087,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r3-reference/disk",
+      "pass": 2,
+      "start": "2026-11-22T03:17:51.259061+00:00",
+      "oneshot_s": 2.106467245146632,
+      "observer_s": 0.22744371801055968,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "matrix/r3-split/cold",
+      "pass": 1,
+      "start": "2026-11-22T03:18:08.177762+00:00",
+      "oneshot_s": 7.234641068615019,
+      "observer_s": 4.194972687255589,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3909.89111328125,
+      "later_event_ms": 179.78975987434387,
+      "first_host_ms": 3909.824072383344,
+      "later_host_ms": 161.2138571217656
+    },
+    {
+      "process": "matrix/r3-split/disk",
+      "pass": 1,
+      "start": "2026-11-22T03:18:29.654555+00:00",
+      "oneshot_s": 6.135720140300691,
+      "observer_s": 3.3395046797990795,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3053.21630859375,
+      "later_event_ms": 178.47897589206696,
+      "first_host_ms": 3053.1517369672656,
+      "later_host_ms": 160.52034869790077
+    },
+    {
+      "process": "matrix/r3-split/disk",
+      "pass": 2,
+      "start": "2026-11-22T03:18:37.459008+00:00",
+      "oneshot_s": 2.064655276015401,
+      "observer_s": 0.2436167687959969,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 0.8304960131645203,
+      "later_event_ms": 178.26131165027618,
+      "first_host_ms": 0.8088015019893646,
+      "later_host_ms": 160.33245623111725
+    },
+    {
+      "process": "diagnosis/cold",
+      "pass": 1,
+      "start": "2026-11-22T03:18:57.919994+00:00",
+      "oneshot_s": 7.324464240111411,
+      "observer_s": 4.259371128315105,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3968.807373046875,
+      "later_event_ms": 181.2739525437355,
+      "first_host_ms": 3968.7315467745066,
+      "later_host_ms": 163.40487077832222,
+      "later_calculate_qparams_host_ms": 55.669836699962616
+    },
+    {
+      "process": "diagnosis/disk",
+      "pass": 1,
+      "start": "2026-11-22T03:19:15.819779+00:00",
+      "oneshot_s": 6.167529086582363,
+      "observer_s": 3.3681794705223287,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3078.259765625,
+      "later_event_ms": 182.23680025339127,
+      "first_host_ms": 3078.1822577118874,
+      "later_host_ms": 164.0787199139595,
+      "later_calculate_qparams_host_ms": 55.846380069851875
+    },
+    {
+      "process": "diagnosis/disk",
+      "pass": 2,
+      "start": "2026-11-22T03:19:23.539820+00:00",
+      "oneshot_s": 2.074935568496585,
+      "observer_s": 0.24666006156988443,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 1.2335679531097412,
+      "later_event_ms": 180.34668791294098,
+      "first_host_ms": 1.1977646499872208,
+      "later_host_ms": 162.0075087994337,
+      "later_calculate_qparams_host_ms": 55.20749092102051
+    },
+    {
+      "process": "tiny-ab/r0-base",
+      "pass": 1,
+      "start": "2026-11-22T03:23:01.437877+00:00",
+      "oneshot_s": 7.401068181730807,
+      "observer_s": 4.200823396094143,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r0-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:22:41.009012+00:00",
+      "oneshot_s": 7.198413475416601,
+      "observer_s": 4.109375367511065,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r1-base",
+      "pass": 1,
+      "start": "2026-11-22T03:23:23.384947+00:00",
+      "oneshot_s": 6.379338434897363,
+      "observer_s": 3.4493198505509644,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r1-base",
+      "pass": 2,
+      "start": "2026-11-22T03:23:31.580308+00:00",
+      "oneshot_s": 2.104717140085995,
+      "observer_s": 0.22632758339494466,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r1-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:23:45.694153+00:00",
+      "oneshot_s": 6.081329508684576,
+      "observer_s": 3.2559174406751983,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r1-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:23:53.613554+00:00",
+      "oneshot_s": 2.0606175987049937,
+      "observer_s": 0.1722631054650992,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r2-base",
+      "pass": 1,
+      "start": "2026-11-22T03:24:31.223113+00:00",
+      "oneshot_s": 6.27197240293026,
+      "observer_s": 3.395106911975891,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r2-base",
+      "pass": 2,
+      "start": "2026-11-22T03:24:39.239231+00:00",
+      "oneshot_s": 2.0511268423870206,
+      "observer_s": 0.22733590683899818,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r2-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:24:09.927318+00:00",
+      "oneshot_s": 6.199717728421092,
+      "observer_s": 3.272952886190266,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r2-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:24:17.907774+00:00",
+      "oneshot_s": 1.9794566156342626,
+      "observer_s": 0.1664677786193788,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r3-base",
+      "pass": 1,
+      "start": "2026-11-22T03:24:55.637940+00:00",
+      "oneshot_s": 6.242499685846269,
+      "observer_s": 3.4349502279702575,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r3-base",
+      "pass": 2,
+      "start": "2026-11-22T03:25:03.659689+00:00",
+      "oneshot_s": 2.064309362322092,
+      "observer_s": 0.23037715472467246,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r3-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:25:15.699628+00:00",
+      "oneshot_s": 5.987338089384139,
+      "observer_s": 3.2239999055080113,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r3-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:25:23.442103+00:00",
+      "oneshot_s": 1.973891249857843,
+      "observer_s": 0.17093772895447912,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r4-base",
+      "pass": 1,
+      "start": "2026-11-22T03:26:00.606933+00:00",
+      "oneshot_s": 6.323017769493163,
+      "observer_s": 3.398654948344454,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r4-base",
+      "pass": 2,
+      "start": "2026-11-22T03:26:08.658215+00:00",
+      "oneshot_s": 2.0583867374807596,
+      "observer_s": 0.23031145971827213,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r4-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:25:40.409049+00:00",
+      "oneshot_s": 6.289466858841479,
+      "observer_s": 3.446154604842886,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "tiny-ab/r4-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:25:48.445671+00:00",
+      "oneshot_s": 2.079450933262706,
+      "observer_s": 0.1724675229676068,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960
+    },
+    {
+      "process": "granite-ab/r0-base",
+      "pass": 1,
+      "start": "2026-11-22T03:29:14.753659+00:00",
+      "oneshot_s": 21.332547527737916,
+      "observer_s": 6.0532965556867415,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r0-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:28:33.137263+00:00",
+      "oneshot_s": 20.236883169971406,
+      "observer_s": 5.4982330784332,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r1-base",
+      "pass": 1,
+      "start": "2026-11-22T03:29:57.404605+00:00",
+      "oneshot_s": 19.59371815621853,
+      "observer_s": 5.230166682165114,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r1-base",
+      "pass": 2,
+      "start": "2026-11-22T03:30:24.899329+00:00",
+      "oneshot_s": 15.504614467732608,
+      "observer_s": 2.1663981099054213,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "granite-ab/r1-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:31:01.224821+00:00",
+      "oneshot_s": 18.922290937043726,
+      "observer_s": 4.76776246393472,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r1-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:31:27.933877+00:00",
+      "oneshot_s": 14.629470796324313,
+      "observer_s": 1.6134434111546725,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "granite-ab/r2-base",
+      "pass": 1,
+      "start": "2026-11-22T03:33:03.309315+00:00",
+      "oneshot_s": 19.62958908919245,
+      "observer_s": 5.302262422412634,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r2-base",
+      "pass": 2,
+      "start": "2026-11-22T03:33:30.841046+00:00",
+      "oneshot_s": 15.492002074606717,
+      "observer_s": 2.16328524447605,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "granite-ab/r2-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:32:03.180875+00:00",
+      "oneshot_s": 18.67319205775857,
+      "observer_s": 4.699622322551906,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r2-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:32:29.620475+00:00",
+      "oneshot_s": 14.643618292175233,
+      "observer_s": 1.624407241063193,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "granite-ab/r3-base",
+      "pass": 1,
+      "start": "2026-11-22T03:34:04.128909+00:00",
+      "oneshot_s": 19.271576477214694,
+      "observer_s": 5.267223859595134,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r3-base",
+      "pass": 2,
+      "start": "2026-11-22T03:34:31.216053+00:00",
+      "oneshot_s": 15.048911665566266,
+      "observer_s": 2.1190266450624917,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "granite-ab/r3-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:35:03.415603+00:00",
+      "oneshot_s": 18.848218034021556,
+      "observer_s": 4.732412035414949,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r3-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:35:30.189541+00:00",
+      "oneshot_s": 14.566024139523506,
+      "observer_s": 1.6065960202328857,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "granite-ab/r4-base",
+      "pass": 1,
+      "start": "2026-11-22T03:37:03.451454+00:00",
+      "oneshot_s": 19.531490464694798,
+      "observer_s": 5.210594488782805,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r4-base",
+      "pass": 2,
+      "start": "2026-11-22T03:37:30.918216+00:00",
+      "oneshot_s": 15.301196172833443,
+      "observer_s": 2.1525987746622413,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "granite-ab/r4-proto",
+      "pass": 1,
+      "start": "2026-11-22T03:36:03.167993+00:00",
+      "oneshot_s": 18.83778913319111,
+      "observer_s": 4.751148426964879,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1778384896
+    },
+    {
+      "process": "granite-ab/r4-proto",
+      "pass": 2,
+      "start": "2026-11-22T03:36:29.833963+00:00",
+      "oneshot_s": 14.689374814741313,
+      "observer_s": 1.6066736993677917,
+      "peak_allocated_bytes": 1257180672,
+      "peak_reserved_bytes": 1774190592
+    },
+    {
+      "process": "extras/0-lookup",
+      "pass": 1,
+      "start": "2026-11-22T03:42:28.290198+00:00",
+      "oneshot_s": 6.17703406047076,
+      "observer_s": 3.3921461294442414,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3105.6552734375,
+      "later_event_ms": 179.20086389780045,
+      "first_host_ms": 3105.589418672025,
+      "later_host_ms": 160.63818987458944
+    },
+    {
+      "process": "extras/1-explicit",
+      "pass": 1,
+      "start": "2026-11-22T03:42:45.496589+00:00",
+      "oneshot_s": 4.4876079224050045,
+      "observer_s": 1.7006391091272235,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 1418.6829833984375,
+      "later_event_ms": 175.9739196896553,
+      "first_host_ms": 1418.6167940497398,
+      "later_host_ms": 157.59576950222254
+    },
+    {
+      "process": "extras/2-explicit",
+      "pass": 1,
+      "start": "2026-11-22T03:43:00.262830+00:00",
+      "oneshot_s": 3.9793632570654154,
+      "observer_s": 1.170606196798384,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 893.7907104492188,
+      "later_event_ms": 173.4106566309929,
+      "first_host_ms": 893.7208680436015,
+      "later_host_ms": 153.74284517019987
+    },
+    {
+      "process": "extras/3-lookup",
+      "pass": 1,
+      "start": "2026-11-22T03:43:15.566482+00:00",
+      "oneshot_s": 6.098301347345114,
+      "observer_s": 3.3846919916514295,
+      "peak_allocated_bytes": 170383872,
+      "peak_reserved_bytes": 220200960,
+      "search_calls": 280,
+      "first_event_ms": 3106.7275390625,
+      "later_event_ms": 174.13036793470383,
+      "first_host_ms": 3106.6445922479033,
+      "later_host_ms": 154.30443733930588
+    }
+  ],
+  "device_records": {
+    "matrix/r1-reference/cold": {
+      "before": {
+        "utc": "2026-11-22T03:14:22.257739+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:14:39.409201+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 34,
+      "returncode": 0,
+      "pid": 524771
+    },
+    "matrix/r1-reference/disk": {
+      "before": {
+        "utc": "2026-11-22T03:14:39.415181+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:15:02.596403+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 46,
+      "returncode": 0,
+      "pid": 526016
+    },
+    "matrix/r1-split/cold": {
+      "before": {
+        "utc": "2026-11-22T03:15:02.600661+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:15:23.668023+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 42,
+      "returncode": 0,
+      "pid": 526726
+    },
+    "matrix/r1-split/disk": {
+      "before": {
+        "utc": "2026-11-22T03:15:23.671318+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:15:47.257787+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 47,
+      "returncode": 0,
+      "pid": 528551
+    },
+    "matrix/r2-reference/cold": {
+      "before": {
+        "utc": "2026-11-22T03:16:29.013137+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:16:50.053397+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 42,
+      "returncode": 0,
+      "pid": 532409
+    },
+    "matrix/r2-reference/disk": {
+      "before": {
+        "utc": "2026-11-22T03:16:51.056246+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:17:11.743434+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 41,
+      "returncode": 0,
+      "pid": 533654
+    },
+    "matrix/r2-split/cold": {
+      "before": {
+        "utc": "2026-11-22T03:15:47.262446+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:16:08.354745+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 42,
+      "returncode": 0,
+      "pid": 529847
+    },
+    "matrix/r2-split/disk": {
+      "before": {
+        "utc": "2026-11-22T03:16:08.357926+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:16:28.007983+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 39,
+      "returncode": 0,
+      "pid": 531119
+    },
+    "matrix/r3-reference/cold": {
+      "before": {
+        "utc": "2026-11-22T03:17:11.750707+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:17:32.367590+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 41,
+      "returncode": 0,
+      "pid": 534788
+    },
+    "matrix/r3-reference/disk": {
+      "before": {
+        "utc": "2026-11-22T03:17:32.370918+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:17:55.052933+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 45,
+      "returncode": 0,
+      "pid": 535597
+    },
+    "matrix/r3-split/cold": {
+      "before": {
+        "utc": "2026-11-22T03:17:56.057934+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:18:17.619833+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 43,
+      "returncode": 0,
+      "pid": 537458
+    },
+    "matrix/r3-split/disk": {
+      "before": {
+        "utc": "2026-11-22T03:18:17.623009+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:18:41.220716+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 47,
+      "returncode": 0,
+      "pid": 538760
+    },
+    "diagnosis/cold": {
+      "before": {
+        "utc": "2026-11-22T03:18:45.936719+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:19:07.509873+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 43,
+      "returncode": 0,
+      "pid": 540741
+    },
+    "diagnosis/disk": {
+      "before": {
+        "utc": "2026-11-22T03:19:07.513343+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:19:27.171031+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 39,
+      "returncode": 0,
+      "pid": 542126
+    },
+    "tiny-ab/r0-base": {
+      "before": {
+        "utc": "2026-11-22T03:22:50.317776+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:23:10.988258+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 41,
+      "returncode": 0,
+      "pid": 642035
+    },
+    "tiny-ab/r0-proto": {
+      "before": {
+        "utc": "2026-11-22T03:22:28.713238+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:22:50.312925+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 43,
+      "returncode": 0,
+      "pid": 629186
+    },
+    "tiny-ab/r1-base": {
+      "before": {
+        "utc": "2026-11-22T03:23:10.992658+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:23:35.640748+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 49,
+      "returncode": 0,
+      "pid": 654065
+    },
+    "tiny-ab/r1-proto": {
+      "before": {
+        "utc": "2026-11-22T03:23:35.644974+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:23:57.768012+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 44,
+      "returncode": 0,
+      "pid": 667114
+    },
+    "tiny-ab/r2-base": {
+      "before": {
+        "utc": "2026-11-22T03:24:22.865117+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:24:43.446223+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 41,
+      "returncode": 0,
+      "pid": 682827
+    },
+    "tiny-ab/r2-proto": {
+      "before": {
+        "utc": "2026-11-22T03:23:57.773783+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:24:21.858989+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 48,
+      "returncode": 0,
+      "pid": 679333
+    },
+    "tiny-ab/r3-base": {
+      "before": {
+        "utc": "2026-11-22T03:24:43.452682+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:25:07.542974+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 48,
+      "returncode": 0,
+      "pid": 684159
+    },
+    "tiny-ab/r3-proto": {
+      "before": {
+        "utc": "2026-11-22T03:25:07.550408+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:25:27.190988+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 39,
+      "returncode": 0,
+      "pid": 685446
+    },
+    "tiny-ab/r4-base": {
+      "before": {
+        "utc": "2026-11-22T03:25:52.283336+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:26:12.888996+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 41,
+      "returncode": 0,
+      "pid": 689147
+    },
+    "tiny-ab/r4-proto": {
+      "before": {
+        "utc": "2026-11-22T03:25:28.198802+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:25:52.280155+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 48,
+      "returncode": 0,
+      "pid": 686722
+    },
+    "granite-ab/r0-base": {
+      "before": {
+        "utc": "2026-11-22T03:28:59.355221+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:29:42.525976+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 86,
+      "returncode": 0,
+      "pid": 697718
+    },
+    "granite-ab/r0-proto": {
+      "before": {
+        "utc": "2026-11-22T03:28:19.647976+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:28:59.348717+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 79,
+      "returncode": 0,
+      "pid": 694126
+    },
+    "granite-ab/r1-base": {
+      "before": {
+        "utc": "2026-11-22T03:29:42.530189+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:30:46.351944+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 127,
+      "returncode": 0,
+      "pid": 699019
+    },
+    "granite-ab/r1-proto": {
+      "before": {
+        "utc": "2026-11-22T03:30:46.356089+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:31:48.071430+00:00",
+        "util_pct": 1,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 123,
+      "returncode": 0,
+      "pid": 702933
+    },
+    "granite-ab/r2-base": {
+      "before": {
+        "utc": "2026-11-22T03:32:50.229922+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:33:52.018424+00:00",
+        "util_pct": 6,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 123,
+      "returncode": 0,
+      "pid": 726590
+    },
+    "granite-ab/r2-proto": {
+      "before": {
+        "utc": "2026-11-22T03:31:49.075839+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:32:50.225595+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 122,
+      "returncode": 0,
+      "pid": 706190
+    },
+    "granite-ab/r3-base": {
+      "before": {
+        "utc": "2026-11-22T03:33:53.022588+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:34:52.176826+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 118,
+      "returncode": 0,
+      "pid": 758070
+    },
+    "granite-ab/r3-proto": {
+      "before": {
+        "utc": "2026-11-22T03:34:52.180208+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:35:50.336289+00:00",
+        "util_pct": 6,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 116,
+      "returncode": 0,
+      "pid": 761391
+    },
+    "granite-ab/r4-base": {
+      "before": {
+        "utc": "2026-11-22T03:36:50.433670+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:37:52.249273+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 123,
+      "returncode": 0,
+      "pid": 764966
+    },
+    "granite-ab/r4-proto": {
+      "before": {
+        "utc": "2026-11-22T03:35:51.341447+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:36:50.428102+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 118,
+      "returncode": 0,
+      "pid": 762990
+    },
+    "extras/0-lookup": {
+      "before": {
+        "utc": "2026-11-22T03:42:16.539768+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:42:36.642831+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 40,
+      "returncode": 0,
+      "pid": 791767
+    },
+    "extras/1-explicit": {
+      "before": {
+        "utc": "2026-11-22T03:42:36.649073+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:42:51.672036+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 30,
+      "returncode": 0,
+      "pid": 793000
+    },
+    "extras/2-explicit": {
+      "before": {
+        "utc": "2026-11-22T03:42:51.675340+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:43:05.874984+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 28,
+      "returncode": 0,
+      "pid": 793666
+    },
+    "extras/3-lookup": {
+      "before": {
+        "utc": "2026-11-22T03:43:05.880955+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:43:23.399367+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 35,
+      "returncode": 0,
+      "pid": 794318
+    },
+    "extras/tests": {
+      "before": {
+        "utc": "2026-11-22T03:43:24.401882+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:44:07.571017+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 86,
+      "returncode": 0,
+      "pid": 794981
+    },
+    "extras/base-edge": {
+      "before": {
+        "utc": "2026-11-22T03:44:12.629754+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:44:31.272085+00:00",
+        "util_pct": 2,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 37,
+      "returncode": 0,
+      "pid": 796300
+    },
+    "extras/proto-edge": {
+      "before": {
+        "utc": "2026-11-22T03:44:32.275340+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:44:50.898764+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 37,
+      "returncode": 0,
+      "pid": 798101
+    },
+    "extras/packed-tinymoe-base": {
+      "before": {
+        "utc": "2026-11-22T03:44:54.404655+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:45:14.001611+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 39,
+      "returncode": 0,
+      "pid": 799310
+    },
+    "extras/packed-tinymoe-proto": {
+      "before": {
+        "utc": "2026-11-22T03:45:15.005020+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:45:35.085962+00:00",
+        "util_pct": 3,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 40,
+      "returncode": 0,
+      "pid": 800539
+    },
+    "extras/packed-granite-base": {
+      "before": {
+        "utc": "2026-11-22T03:45:36.090135+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:46:13.244116+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 74,
+      "returncode": 0,
+      "pid": 801776
+    },
+    "extras/packed-granite-proto": {
+      "before": {
+        "utc": "2026-11-22T03:46:13.247744+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "after": {
+        "utc": "2026-11-22T03:46:51.948426+00:00",
+        "util_pct": 0,
+        "used_MiB": 480,
+        "pids": []
+      },
+      "foreign_pids": [],
+      "samples": 77,
+      "returncode": 0,
+      "pid": 802493
+    }
+  },
+  "trace": {
+    "base": {
+      "server_file": "/gemini-0/space/private/lmx/temp-restore/Vllm-Omni/llm-compressor-moe-benchmark-imatrix-investigation/extras/warm-base.nsys-rep",
+      "device": {
+        "before": {
+          "utc": "2026-11-22T03:37:55.210896+00:00",
+          "util_pct": 0,
+          "used_MiB": 480,
+          "pids": []
+        },
+        "after": {
+          "utc": "2026-11-22T03:40:06.381133+00:00",
+          "util_pct": 0,
+          "used_MiB": 482,
+          "pids": []
+        }
+      },
+      "ranges": {
+        "GPTQ/scale_search": {
+          "inclusive_host_ms": 24.841977,
+          "gpu_active_in_window_ms": 5.67334,
+          "no_gpu_activity_ms": 19.168637,
+          "kernel_active_ms": 5.500188,
+          "memcpy_active_ms": 0.173152,
+          "memset_active_ms": 0.0,
+          "on_cpu_in_gpu_gap_ms": 19.168637,
+          "sync_api_residence_ms": 0.717349,
+          "off_cpu_in_sync_api_ms": 0.0,
+          "calls": 28,
+          "launch_api_count": 1092,
+          "scheduler_available": true,
+          "top_kernels_clipped": [
+            {
+              "name": "_grid_search_observer_triton_packed_kernel",
+              "calls": 28,
+              "sum_ms": 3.964625
+            },
+            {
+              "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+              "calls": 68,
+              "sum_ms": 0.180182
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::FillFunctor<c10::BFloat16>, std::array<char *, (unsigned long)1>, (bool)0>(int, T2, T3)",
+              "calls": 140,
+              "sum_ms": 0.138272
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::maximum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+              "calls": 84,
+              "sum_ms": 0.127008
+            },
+            {
+              "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MinNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+              "calls": 28,
+              "sum_ms": 0.094144
+            },
+            {
+              "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MaxNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+              "calls": 28,
+              "sum_ms": 0.086719
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::minimum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+              "calls": 56,
+              "sum_ms": 0.085568
+            },
+            {
+              "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::MaxNanFunctor<float>>, unsigned int, float, (int)4, (int)4>>(T3)",
+              "calls": 28,
+              "sum_ms": 0.07968
+            },
+            {
+              "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(signed char) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+              "calls": 28,
+              "sum_ms": 0.072864
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+              "calls": 56,
+              "sum_ms": 0.069568
+            }
+          ],
+          "copies_clipped": [
+            {
+              "name": "Memcpy Device-to-Host",
+              "calls": 56,
+              "sum_ms": 0.128544
+            },
+            {
+              "name": "Memcpy Host-to-Device",
+              "calls": 56,
+              "sum_ms": 0.044608
+            }
+          ],
+          "gpu_gap_sampled_leaf_count": 23,
+          "gpu_gap_top_cpu_sample_leaves": [
+            [
+              "at::TensorIteratorBase::permute_dimensions(c10::ArrayRef<long>)",
+              1
+            ],
+            [
+              "0x7f351c6f8f50",
+              1
+            ],
+            [
+              "0x7f351c6f8afb",
+              1
+            ],
+            [
+              "0x7f3453ba551f",
+              1
+            ],
+            [
+              "void c10::impl::InlineOptionalDeviceGuard<c10::cuda::impl::CUDAGuardImpl>::reset_device<c10::cuda::impl::CUDAGuardImpl, void>(c10::Device)",
+              1
+            ],
+            [
+              "0x7f343955ca54",
+              1
+            ],
+            [
+              "0x7f3453c8a6cf",
+              1
+            ],
+            [
+              "std::pair<ska::detailv3::sherwood_v3_table<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*, c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*, std::hash<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*>, ska::detailv3::functor_storage<unsigned long, std::hash<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*> >, std::equal_to<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*>, ska::detailv3::functor_storage<bool, std::equal_to<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*> >, std::allocator<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*>, std::allocator<ska::detailv3::sherwood_v3_entry<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*> > >::templated_iterator<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*>, bool> ska::detailv3::sherwood_v3_table<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*, c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*, std::hash<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*>, ska::detailv3::functor_storage<unsigned long, std::hash<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*> >, std::equal_to<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*>, ska::detailv3::functor_storage<bool, std::equal_to<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*> >, std::allocator<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*>, std::allocator<ska::detailv3::sherwood_v3_entry<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block*> > >::emplace<c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block* const&>(c10::cuda::CUDACachingAllocator::Native::(anonymous namespace)::Block* const&)",
+              1
+            ],
+            [
+              "0x7f34394b54c2",
+              1
+            ],
+            [
+              "0x7f343955ca2d",
+              1
+            ]
+          ],
+          "top_sync_and_copy_apis": [
+            {
+              "name": "cudaStreamSynchronize_v3020",
+              "calls": 112,
+              "sum_ms": 0.717349
+            },
+            {
+              "name": "cudaMemcpyAsync_v3020",
+              "calls": 112,
+              "sum_ms": 0.672588
+            }
+          ],
+          "gpu_overlap_with_sync_by_launch_ms": {
+            "this_invocation": 0.171132
+          },
+          "top_work_during_sync": [
+            {
+              "origin": "this_invocation",
+              "name": "Memcpy Device-to-Host",
+              "union_ms": 0.128544
+            },
+            {
+              "origin": "this_invocation",
+              "name": "Memcpy Host-to-Device",
+              "union_ms": 0.042588
+            }
+          ]
+        },
+        "GPTQ/base_qparams": {
+          "inclusive_host_ms": 8.924967,
+          "gpu_active_in_window_ms": 0.717088,
+          "no_gpu_activity_ms": 8.207879,
+          "kernel_active_ms": 0.695264,
+          "memcpy_active_ms": 0.021824,
+          "memset_active_ms": 0.0,
+          "on_cpu_in_gpu_gap_ms": 8.207879,
+          "sync_api_residence_ms": 0.157829,
+          "off_cpu_in_sync_api_ms": 0.0,
+          "calls": 28,
+          "launch_api_count": 476,
+          "scheduler_available": true,
+          "top_kernels_clipped": [
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::maximum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+              "calls": 56,
+              "sum_ms": 0.084
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::FillFunctor<c10::BFloat16>, std::array<char *, (unsigned long)1>, (bool)0>(int, T2, T3)",
+              "calls": 84,
+              "sum_ms": 0.083488
+            },
+            {
+              "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(signed char) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+              "calls": 28,
+              "sum_ms": 0.072864
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::AbsFunctor<c10::BFloat16>, std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+              "calls": 56,
+              "sum_ms": 0.068576
+            },
+            {
+              "name": "void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::<unnamed>::where_kernel_impl(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(bool, unsigned short, unsigned short) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+              "calls": 28,
+              "sum_ms": 0.065984
+            },
+            {
+              "name": "void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::DivFunctor<c10::BFloat16>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+              "calls": 28,
+              "sum_ms": 0.06592
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::minimum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+              "calls": 28,
+              "sum_ms": 0.042688
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::<unnamed>::launch_clamp_scalar(at::TensorIteratorBase &, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 9)]::operator ()() const::[lambda(c10::BFloat16) (instance 1)], std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+              "calls": 28,
+              "sum_ms": 0.041632
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, bool, at::native::<unnamed>::CompareEqFunctor<c10::BFloat16>>, std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+              "calls": 28,
+              "sum_ms": 0.03584
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::round_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16) (instance 1)], std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+              "calls": 28,
+              "sum_ms": 0.035168
+            }
+          ],
+          "copies_clipped": [
+            {
+              "name": "Memcpy Host-to-Device",
+              "calls": 28,
+              "sum_ms": 0.021824
+            }
+          ],
+          "gpu_gap_sampled_leaf_count": 8,
+          "gpu_gap_top_cpu_sample_leaves": [
+            [
+              "at::TensorIteratorBase::permute_dimensions(c10::ArrayRef<long>)",
+              1
+            ],
+            [
+              "0x7f3453ba551f",
+              1
+            ],
+            [
+              "void c10::impl::InlineOptionalDeviceGuard<c10::cuda::impl::CUDAGuardImpl>::reset_device<c10::cuda::impl::CUDAGuardImpl, void>(c10::Device)",
+              1
+            ],
+            [
+              "0x7f343955ca54",
+              1
+            ],
+            [
+              "at::cuda::getDeviceProperties(signed char)",
+              1
+            ],
+            [
+              "0x7f3453a83120",
+              1
+            ],
+            [
+              "0x7f34394ba1c1",
+              1
+            ],
+            [
+              "0x7f3453b2afe9",
+              1
+            ]
+          ],
+          "top_sync_and_copy_apis": [
+            {
+              "name": "cudaMemcpyAsync_v3020",
+              "calls": 28,
+              "sum_ms": 0.241553
+            },
+            {
+              "name": "cudaStreamSynchronize_v3020",
+              "calls": 28,
+              "sum_ms": 0.157829
+            }
+          ],
+          "gpu_overlap_with_sync_by_launch_ms": {
+            "this_invocation": 0.020147
+          },
+          "top_work_during_sync": [
+            {
+              "origin": "this_invocation",
+              "name": "Memcpy Host-to-Device",
+              "union_ms": 0.020147
+            }
+          ]
+        }
+      }
+    },
+    "proto": {
+      "server_file": "/gemini-0/space/private/lmx/temp-restore/Vllm-Omni/llm-compressor-moe-benchmark-imatrix-investigation/extras/warm-proto.nsys-rep",
+      "device": {
+        "before": {
+          "utc": "2026-11-22T03:40:06.522478+00:00",
+          "util_pct": 0,
+          "used_MiB": 480,
+          "pids": []
+        },
+        "after": {
+          "utc": "2026-11-22T03:42:16.406486+00:00",
+          "util_pct": 0,
+          "used_MiB": 483,
+          "pids": []
+        }
+      },
+      "ranges": {
+        "GPTQ/scale_search": {
+          "inclusive_host_ms": 15.444275,
+          "gpu_active_in_window_ms": 4.75793,
+          "no_gpu_activity_ms": 10.686345,
+          "kernel_active_ms": 4.60449,
+          "memcpy_active_ms": 0.15344,
+          "memset_active_ms": 0.0,
+          "on_cpu_in_gpu_gap_ms": 8.436309,
+          "sync_api_residence_ms": 0.562685,
+          "off_cpu_in_sync_api_ms": 0.0,
+          "calls": 28,
+          "launch_api_count": 588,
+          "scheduler_available": true,
+          "top_kernels_clipped": [
+            {
+              "name": "_grid_search_observer_triton_packed_kernel",
+              "calls": 28,
+              "sum_ms": 3.868141
+            },
+            {
+              "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+              "calls": 38,
+              "sum_ms": 0.10888
+            },
+            {
+              "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MinNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+              "calls": 28,
+              "sum_ms": 0.093504
+            },
+            {
+              "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::BFloat16, at::native::func_wrapper_t<c10::BFloat16, at::native::MaxNanFunctor<c10::BFloat16>>, unsigned int, c10::BFloat16, (int)4, (int)4>>(T3)",
+              "calls": 28,
+              "sum_ms": 0.087072
+            },
+            {
+              "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::func_wrapper_t<float, at::native::MaxNanFunctor<float>>, unsigned int, float, (int)4, (int)4>>(T3)",
+              "calls": 28,
+              "sum_ms": 0.079264
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::AUnaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+              "calls": 56,
+              "sum_ms": 0.069824
+            },
+            {
+              "name": "void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+              "calls": 28,
+              "sum_ms": 0.059264
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::FillFunctor<c10::BFloat16>, std::array<char *, (unsigned long)1>, (bool)0>(int, T2, T3)",
+              "calls": 56,
+              "sum_ms": 0.055808
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)4, at::native::AbsFunctor<float>, std::array<char *, (unsigned long)2>, (bool)0>(int, T2, T3)",
+              "calls": 28,
+              "sum_ms": 0.043264
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<(int)8, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::minimum_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(c10::BFloat16, c10::BFloat16) (instance 1)]>, std::array<char *, (unsigned long)3>, (bool)0>(int, T2, T3)",
+              "calls": 28,
+              "sum_ms": 0.042592
+            }
+          ],
+          "copies_clipped": [
+            {
+              "name": "Memcpy Device-to-Host",
+              "calls": 56,
+              "sum_ms": 0.130816
+            },
+            {
+              "name": "Memcpy Host-to-Device",
+              "calls": 28,
+              "sum_ms": 0.022624
+            }
+          ],
+          "gpu_gap_sampled_leaf_count": 10,
+          "gpu_gap_top_cpu_sample_leaves": [
+            [
+              "0x550f47",
+              1
+            ],
+            [
+              "0x57aa0b",
+              1
+            ],
+            [
+              "0x6798f3",
+              1
+            ],
+            [
+              "PyObject_Malloc",
+              1
+            ],
+            [
+              "0x7fc0e5d4b44a",
+              1
+            ],
+            [
+              "PySequence_GetItem",
+              1
+            ],
+            [
+              "0x7fc0cb862900",
+              1
+            ],
+            [
+              "torch::autograd::VariableType::(anonymous namespace)::minimum(c10::DispatchKeySet, at::Tensor const&, at::Tensor const&)",
+              1
+            ],
+            [
+              "0x7fc0e5ad3540",
+              1
+            ],
+            [
+              "0x7fc0cb85ca2d",
+              1
+            ]
+          ],
+          "top_sync_and_copy_apis": [
+            {
+              "name": "cudaStreamSynchronize_v3020",
+              "calls": 84,
+              "sum_ms": 0.562685
+            },
+            {
+              "name": "cudaMemcpyAsync_v3020",
+              "calls": 84,
+              "sum_ms": 0.471788
+            }
+          ],
+          "gpu_overlap_with_sync_by_launch_ms": {
+            "this_invocation": 0.152132
+          },
+          "top_work_during_sync": [
+            {
+              "origin": "this_invocation",
+              "name": "Memcpy Device-to-Host",
+              "union_ms": 0.13034
+            },
+            {
+              "origin": "this_invocation",
+              "name": "Memcpy Host-to-Device",
+              "union_ms": 0.021792
+            }
+          ]
+        }
+      }
+    }
+  },
+  "first_search_profiles": {
+    "diagnosis/cold/pass1": [
+      {
+        "function": "triton/runtime/driver.py:36 active",
+        "calls": 17,
+        "self_s": 8.656e-06,
+        "inclusive_s": 2.8023517580000004
+      },
+      {
+        "function": "triton/runtime/driver.py:30 default",
+        "calls": 1,
+        "self_s": 5.974000000000001e-06,
+        "inclusive_s": 2.802343102
+      },
+      {
+        "function": "triton/runtime/driver.py:8 _create_driver",
+        "calls": 1,
+        "self_s": 2.3238e-05,
+        "inclusive_s": 2.802337128
+      },
+      {
+        "function": "backends/nvidia/driver.py:341 __init__",
+        "calls": 1,
+        "self_s": 1.5635000000000002e-05,
+        "inclusive_s": 2.80226745
+      },
+      {
+        "function": "backends/nvidia/driver.py:100 __init__",
+        "calls": 1,
+        "self_s": 2.3546e-05,
+        "inclusive_s": 2.8022346760000003
+      },
+      {
+        "function": "~:0 <method 'read' of '_io.BufferedReader' objects>",
+        "calls": 877,
+        "self_s": 2.4132859300000002,
+        "inclusive_s": 2.4132859300000002
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:506 run",
+        "calls": 5,
+        "self_s": 7.2093e-05,
+        "inclusive_s": 2.3364235410000003
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:1165 communicate",
+        "calls": 5,
+        "self_s": 3.2636000000000004e-05,
+        "inclusive_s": 2.324252296
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:417 check_output",
+        "calls": 4,
+        "self_s": 3.3918e-05,
+        "inclusive_s": 2.27856395
+      },
+      {
+        "function": "backends/nvidia/driver.py:49 library_dirs",
+        "calls": 1,
+        "self_s": 7.892e-06,
+        "inclusive_s": 2.25530722
+      },
+      {
+        "function": "backends/nvidia/driver.py:25 libcuda_dirs",
+        "calls": 1,
+        "self_s": 0.000132905,
+        "inclusive_s": 2.255299328
+      },
+      {
+        "function": "triton/runtime/cache.py:319 get_cache_key",
+        "calls": 1,
+        "self_s": 2.8238000000000003e-05,
+        "inclusive_s": 0.788907011
+      },
+      {
+        "function": "triton/runtime/cache.py:283 triton_key",
+        "calls": 1,
+        "self_s": 0.0009589010000000001,
+        "inclusive_s": 0.7681807030000001
+      },
+      {
+        "function": "~:0 <method 'update' of '_hashlib.HASH' objects>",
+        "calls": 882,
+        "self_s": 0.621814548,
+        "inclusive_s": 0.621814548
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:1259 wait",
+        "calls": 12,
+        "self_s": 1.81e-05,
+        "inclusive_s": 0.5717008840000001
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:2021 _wait",
+        "calls": 12,
+        "self_s": 3.6543e-05,
+        "inclusive_s": 0.571682784
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:2008 _try_wait",
+        "calls": 6,
+        "self_s": 1.0588000000000001e-05,
+        "inclusive_s": 0.571628184
+      },
+      {
+        "function": "~:0 <built-in method posix.waitpid>",
+        "calls": 6,
+        "self_s": 0.5716175960000001,
+        "inclusive_s": 0.5716175960000001
+      },
+      {
+        "function": "triton/runtime/build.py:193 compile_module_from_file",
+        "calls": 1,
+        "self_s": 6.299e-06,
+        "inclusive_s": 0.546891075
+      },
+      {
+        "function": "triton/runtime/build.py:157 _compile_so_from_file",
+        "calls": 1,
+        "self_s": 2.4717e-05,
+        "inclusive_s": 0.5468847760000001
+      },
+      {
+        "function": "triton/runtime/build.py:132 _compile_so",
+        "calls": 1,
+        "self_s": 5.2401e-05,
+        "inclusive_s": 0.546733979
+      },
+      {
+        "function": "triton/runtime/build.py:60 _build",
+        "calls": 1,
+        "self_s": 3.2112e-05,
+        "inclusive_s": 0.519108377
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:398 check_call",
+        "calls": 1,
+        "self_s": 6.367e-06,
+        "inclusive_s": 0.5182097130000001
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:381 call",
+        "calls": 1,
+        "self_s": 6.549e-06,
+        "inclusive_s": 0.518201596
+      },
+      {
+        "function": "backends/nvidia/compiler.py:607 <lambda>",
+        "calls": 1,
+        "self_s": 1.6606e-05,
+        "inclusive_s": 0.058553273
+      },
+      {
+        "function": "backends/nvidia/compiler.py:513 make_cubin",
+        "calls": 1,
+        "self_s": 6.034e-05,
+        "inclusive_s": 0.058534571
+      },
+      {
+        "function": "triton/runtime/cache.py:103 put",
+        "calls": 9,
+        "self_s": 0.003357449,
+        "inclusive_s": 0.047021408
+      },
+      {
+        "function": "benchmarks/gptq_moe/observer_pass.py:43 measured_qparams",
+        "calls": 1,
+        "self_s": 3.4163000000000005e-05,
+        "inclusive_s": 0.03969338
+      },
+      {
+        "function": "quantization/utils/helpers.py:52 calculate_qparams",
+        "calls": 1,
+        "self_s": 0.000275426,
+        "inclusive_s": 0.039652828
+      },
+      {
+        "function": "~:0 <built-in method triton._C.libtriton.llvm.link_extern_libs>",
+        "calls": 1,
+        "self_s": 0.030366723,
+        "inclusive_s": 0.030366723
+      },
+      {
+        "function": "~:0 <built-in method _io.open>",
+        "calls": 55,
+        "self_s": 0.026189481,
+        "inclusive_s": 0.026485245
+      },
+      {
+        "function": "~:0 <built-in method triton._C.libtriton.llvm.optimize_module>",
+        "calls": 1,
+        "self_s": 0.025582922,
+        "inclusive_s": 0.025582922
+      },
+      {
+        "function": "triton/runtime/build.py:117 _get_cache_manager",
+        "calls": 1,
+        "self_s": 2.7325e-05,
+        "inclusive_s": 0.01908939
+      },
+      {
+        "function": "backends/nvidia/compiler.py:606 <lambda>",
+        "calls": 1,
+        "self_s": 8.715e-06,
+        "inclusive_s": 0.018254687000000002
+      },
+      {
+        "function": "backends/nvidia/compiler.py:480 make_ptx",
+        "calls": 1,
+        "self_s": 2.8049000000000002e-05,
+        "inclusive_s": 0.018245972000000003
+      },
+      {
+        "function": "~:0 <built-in method torch.min>",
+        "calls": 1,
+        "self_s": 0.017699686000000003,
+        "inclusive_s": 0.017699686000000003
+      },
+      {
+        "function": "triton/runtime/build.py:94 platform_key",
+        "calls": 1,
+        "self_s": 1.9227e-05,
+        "inclusive_s": 0.017494657
+      },
+      {
+        "function": "lib/python3.12/platform.py:690 architecture",
+        "calls": 1,
+        "self_s": 3.8582000000000004e-05,
+        "inclusive_s": 0.017464359000000002
+      },
+      {
+        "function": "lib/python3.12/platform.py:646 _syscmd_file",
+        "calls": 1,
+        "self_s": 0.000321824,
+        "inclusive_s": 0.017422345000000002
+      },
+      {
+        "function": "~:0 <built-in method triton._C.libtriton.llvm.translate_to_asm>",
+        "calls": 1,
+        "self_s": 0.016811247,
+        "inclusive_s": 0.016811247
+      },
+      {
+        "function": "~:0 <built-in method torch.amax>",
+        "calls": 1,
+        "self_s": 0.014399018000000001,
+        "inclusive_s": 0.014399018000000001
+      },
+      {
+        "function": "~:0 <built-in method torch.amin>",
+        "calls": 1,
+        "self_s": 0.014020709000000001,
+        "inclusive_s": 0.014020709000000001
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:807 __init__",
+        "calls": 6,
+        "self_s": 8.053800000000001e-05,
+        "inclusive_s": 0.012471406
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:1791 _execute_child",
+        "calls": 6,
+        "self_s": 0.001100002,
+        "inclusive_s": 0.01212383
+      },
+      {
+        "function": "triton/runtime/jit.py:515 cache_key",
+        "calls": 55,
+        "self_s": 0.000476381,
+        "inclusive_s": 0.011910621000000001
+      },
+      {
+        "function": "triton/compiler/compiler.py:71 hash",
+        "calls": 1,
+        "self_s": 4.5096e-05,
+        "inclusive_s": 0.01091748
+      },
+      {
+        "function": "~:0 <built-in method torch.where>",
+        "calls": 1,
+        "self_s": 0.010908581,
+        "inclusive_s": 0.010908581
+      },
+      {
+        "function": "triton/runtime/jit.py:196 visit_FunctionDef",
+        "calls": 13,
+        "self_s": 2.2535e-05,
+        "inclusive_s": 0.010476296000000001
+      },
+      {
+        "function": "compressed_tensors/quantization/quant_args.py:452 round_to_quantized_type_dtype",
+        "calls": 1,
+        "self_s": 3.2853e-05,
+        "inclusive_s": 0.010320798
+      },
+      {
+        "function": "triton/compiler/compiler.py:409 __init__",
+        "calls": 1,
+        "self_s": 8.146000000000001e-05,
+        "inclusive_s": 0.010178399000000001
+      },
+      {
+        "function": "~:0 <built-in method torch.round>",
+        "calls": 1,
+        "self_s": 0.01007125,
+        "inclusive_s": 0.01007125
+      },
+      {
+        "function": "lib/python3.12/ast.py:403 visit",
+        "calls": 2153,
+        "self_s": 0.00181408,
+        "inclusive_s": 0.009750684
+      },
+      {
+        "function": "lib/python3.12/ast.py:409 generic_visit",
+        "calls": 804,
+        "self_s": 0.0014909130000000002,
+        "inclusive_s": 0.009745399
+      },
+      {
+        "function": "triton/runtime/jit.py:246 visit_Assign",
+        "calls": 81,
+        "self_s": 8.9293e-05,
+        "inclusive_s": 0.009408624
+      },
+      {
+        "function": "backends/nvidia/compiler.py:611 hash",
+        "calls": 1,
+        "self_s": 4.3240000000000004e-06,
+        "inclusive_s": 0.009242661000000001
+      },
+      {
+        "function": "backends/nvidia/compiler.py:42 get_ptxas_version",
+        "calls": 1,
+        "self_s": 8.252e-06,
+        "inclusive_s": 0.009238337000000001
+      },
+      {
+        "function": "triton/runtime/jit.py:265 visit_For",
+        "calls": 1,
+        "self_s": 1.599e-06,
+        "inclusive_s": 0.008498857
+      },
+      {
+        "function": "triton/runtime/jit.py:156 visit_Name",
+        "calls": 603,
+        "self_s": 0.000382237,
+        "inclusive_s": 0.008452232
+      },
+      {
+        "function": "triton/runtime/jit.py:116 record_reference",
+        "calls": 185,
+        "self_s": 0.000346304,
+        "inclusive_s": 0.008279179000000001
+      },
+      {
+        "function": "lib/python3.12/pathlib.py:1024 read_text",
+        "calls": 6,
+        "self_s": 1.9112000000000003e-05,
+        "inclusive_s": 0.008172209
+      }
+    ],
+    "diagnosis/disk/pass1": [
+      {
+        "function": "compressed_tensors/utils/impl_backend.py:114 wrapper",
+        "calls": 1,
+        "self_s": 1.5062e-05,
+        "inclusive_s": 3.077974074
+      },
+      {
+        "function": "torch/utils/_contextlib.py:120 decorate_context",
+        "calls": 1,
+        "self_s": 4.0782000000000004e-05,
+        "inclusive_s": 3.077934706
+      },
+      {
+        "function": "llmcompressor/observers/grid_search.py:225 _grid_search_observer_triton",
+        "calls": 1,
+        "self_s": 0.000405336,
+        "inclusive_s": 3.0778623630000004
+      },
+      {
+        "function": "triton/runtime/jit.py:374 <lambda>",
+        "calls": 1,
+        "self_s": 1.7742e-05,
+        "inclusive_s": 3.012117792
+      },
+      {
+        "function": "triton/runtime/jit.py:726 run",
+        "calls": 1,
+        "self_s": 8.152100000000001e-05,
+        "inclusive_s": 3.0121000500000004
+      },
+      {
+        "function": "~:0 <method 'read' of '_io.BufferedReader' objects>",
+        "calls": 875,
+        "self_s": 2.351344798,
+        "inclusive_s": 2.351344798
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:417 check_output",
+        "calls": 4,
+        "self_s": 3.3027e-05,
+        "inclusive_s": 2.208189306
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:506 run",
+        "calls": 4,
+        "self_s": 6.140400000000001e-05,
+        "inclusive_s": 2.208150518
+      },
+      {
+        "function": "triton/runtime/driver.py:36 active",
+        "calls": 11,
+        "self_s": 4.767e-06,
+        "inclusive_s": 2.2042587680000003
+      },
+      {
+        "function": "triton/runtime/driver.py:30 default",
+        "calls": 1,
+        "self_s": 6.95e-06,
+        "inclusive_s": 2.2042540010000002
+      },
+      {
+        "function": "triton/runtime/driver.py:8 _create_driver",
+        "calls": 1,
+        "self_s": 2.4898e-05,
+        "inclusive_s": 2.2042470510000003
+      },
+      {
+        "function": "backends/nvidia/driver.py:341 __init__",
+        "calls": 1,
+        "self_s": 1.6333e-05,
+        "inclusive_s": 2.20418162
+      },
+      {
+        "function": "backends/nvidia/driver.py:100 __init__",
+        "calls": 1,
+        "self_s": 2.1733e-05,
+        "inclusive_s": 2.204149755
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:1165 communicate",
+        "calls": 4,
+        "self_s": 2.8177e-05,
+        "inclusive_s": 2.2006447120000003
+      },
+      {
+        "function": "backends/nvidia/driver.py:49 library_dirs",
+        "calls": 1,
+        "self_s": 7.840000000000001e-06,
+        "inclusive_s": 2.184814136
+      },
+      {
+        "function": "backends/nvidia/driver.py:25 libcuda_dirs",
+        "calls": 1,
+        "self_s": 0.00013215000000000001,
+        "inclusive_s": 2.184806296
+      },
+      {
+        "function": "triton/runtime/jit.py:877 _do_compile",
+        "calls": 1,
+        "self_s": 2.9930000000000003e-05,
+        "inclusive_s": 0.802267285
+      },
+      {
+        "function": "triton/compiler/compiler.py:226 compile",
+        "calls": 1,
+        "self_s": 5.225e-05,
+        "inclusive_s": 0.8022123640000001
+      },
+      {
+        "function": "triton/runtime/cache.py:319 get_cache_key",
+        "calls": 1,
+        "self_s": 3.0116e-05,
+        "inclusive_s": 0.797564715
+      },
+      {
+        "function": "triton/runtime/cache.py:283 triton_key",
+        "calls": 1,
+        "self_s": 0.0009389120000000001,
+        "inclusive_s": 0.776203194
+      },
+      {
+        "function": "~:0 <method 'update' of '_hashlib.HASH' objects>",
+        "calls": 880,
+        "self_s": 0.621666798,
+        "inclusive_s": 0.621666798
+      },
+      {
+        "function": "benchmarks/gptq_moe/observer_pass.py:43 measured_qparams",
+        "calls": 1,
+        "self_s": 2.6737e-05,
+        "inclusive_s": 0.038392956000000006
+      },
+      {
+        "function": "quantization/utils/helpers.py:52 calculate_qparams",
+        "calls": 1,
+        "self_s": 0.000257403,
+        "inclusive_s": 0.038364434
+      },
+      {
+        "function": "triton/runtime/build.py:193 compile_module_from_file",
+        "calls": 1,
+        "self_s": 7.697000000000001e-06,
+        "inclusive_s": 0.019301132000000002
+      },
+      {
+        "function": "triton/runtime/build.py:157 _compile_so_from_file",
+        "calls": 1,
+        "self_s": 2.3549e-05,
+        "inclusive_s": 0.019293435
+      },
+      {
+        "function": "triton/runtime/build.py:132 _compile_so",
+        "calls": 1,
+        "self_s": 1.4520000000000002e-05,
+        "inclusive_s": 0.01913956
+      },
+      {
+        "function": "triton/runtime/build.py:117 _get_cache_manager",
+        "calls": 1,
+        "self_s": 2.7469e-05,
+        "inclusive_s": 0.017822316
+      },
+      {
+        "function": "triton/runtime/build.py:94 platform_key",
+        "calls": 1,
+        "self_s": 1.9412e-05,
+        "inclusive_s": 0.017031401
+      },
+      {
+        "function": "lib/python3.12/platform.py:690 architecture",
+        "calls": 1,
+        "self_s": 4.2675e-05,
+        "inclusive_s": 0.017001330000000002
+      },
+      {
+        "function": "lib/python3.12/platform.py:646 _syscmd_file",
+        "calls": 1,
+        "self_s": 0.000321668,
+        "inclusive_s": 0.016955009
+      },
+      {
+        "function": "~:0 <built-in method torch.min>",
+        "calls": 1,
+        "self_s": 0.016916393000000002,
+        "inclusive_s": 0.016916393000000002
+      },
+      {
+        "function": "~:0 <built-in method torch.amax>",
+        "calls": 1,
+        "self_s": 0.013228454,
+        "inclusive_s": 0.013228454
+      },
+      {
+        "function": "~:0 <built-in method torch.amin>",
+        "calls": 1,
+        "self_s": 0.013028071,
+        "inclusive_s": 0.013028071
+      },
+      {
+        "function": "triton/compiler/compiler.py:71 hash",
+        "calls": 1,
+        "self_s": 4.8094000000000004e-05,
+        "inclusive_s": 0.010954202000000001
+      },
+      {
+        "function": "triton/runtime/jit.py:515 cache_key",
+        "calls": 25,
+        "self_s": 0.000354928,
+        "inclusive_s": 0.010876057000000001
+      },
+      {
+        "function": "~:0 <built-in method torch.where>",
+        "calls": 1,
+        "self_s": 0.010615507000000001,
+        "inclusive_s": 0.010615507000000001
+      },
+      {
+        "function": "compressed_tensors/quantization/quant_args.py:452 round_to_quantized_type_dtype",
+        "calls": 1,
+        "self_s": 3.4145e-05,
+        "inclusive_s": 0.010165176000000001
+      },
+      {
+        "function": "~:0 <built-in method torch.round>",
+        "calls": 1,
+        "self_s": 0.009922440000000001,
+        "inclusive_s": 0.009922440000000001
+      },
+      {
+        "function": "backends/nvidia/compiler.py:611 hash",
+        "calls": 1,
+        "self_s": 4.658e-06,
+        "inclusive_s": 0.009858262000000001
+      },
+      {
+        "function": "backends/nvidia/compiler.py:42 get_ptxas_version",
+        "calls": 1,
+        "self_s": 9.268e-06,
+        "inclusive_s": 0.009853604
+      },
+      {
+        "function": "lib/python3.12/ast.py:403 visit",
+        "calls": 1440,
+        "self_s": 0.001198414,
+        "inclusive_s": 0.00975899
+      },
+      {
+        "function": "lib/python3.12/ast.py:409 generic_visit",
+        "calls": 699,
+        "self_s": 0.0012970570000000001,
+        "inclusive_s": 0.009753296
+      },
+      {
+        "function": "triton/runtime/jit.py:196 visit_FunctionDef",
+        "calls": 9,
+        "self_s": 1.6898e-05,
+        "inclusive_s": 0.009742851
+      },
+      {
+        "function": "triton/runtime/jit.py:246 visit_Assign",
+        "calls": 77,
+        "self_s": 8.582300000000001e-05,
+        "inclusive_s": 0.009293594
+      },
+      {
+        "function": "triton/runtime/jit.py:265 visit_For",
+        "calls": 1,
+        "self_s": 1.0280000000000002e-06,
+        "inclusive_s": 0.008530184
+      },
+      {
+        "function": "triton/runtime/jit.py:156 visit_Name",
+        "calls": 566,
+        "self_s": 0.00036211,
+        "inclusive_s": 0.008003256
+      },
+      {
+        "function": "triton/runtime/jit.py:116 record_reference",
+        "calls": 171,
+        "self_s": 0.00031539700000000003,
+        "inclusive_s": 0.007834827
+      },
+      {
+        "function": "triton/runtime/jit.py:98 _update_hash",
+        "calls": 24,
+        "self_s": 0.000203778,
+        "inclusive_s": 0.0077029920000000005
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:807 __init__",
+        "calls": 4,
+        "self_s": 6.393200000000001e-05,
+        "inclusive_s": 0.007423786000000001
+      },
+      {
+        "function": "lib/python3.12/subprocess.py:1791 _execute_child",
+        "calls": 4,
+        "self_s": 0.00109296,
+        "inclusive_s": 0.00715669
+      },
+      {
+        "function": "dist-packages/triton/knobs.py:76 __get__",
+        "calls": 15,
+        "self_s": 4.0441e-05,
+        "inclusive_s": 0.006250838000000001
+      },
+      {
+        "function": "backends/nvidia/compiler.py:38 get_ptxas",
+        "calls": 1,
+        "self_s": 3.1160000000000003e-06,
+        "inclusive_s": 0.006121575000000001
+      },
+      {
+        "function": "dist-packages/triton/knobs.py:203 get",
+        "calls": 1,
+        "self_s": 3.1730000000000004e-06,
+        "inclusive_s": 0.0061153250000000004
+      },
+      {
+        "function": "dist-packages/triton/knobs.py:206 transform",
+        "calls": 1,
+        "self_s": 6.088e-06,
+        "inclusive_s": 0.006107754
+      },
+      {
+        "function": "dist-packages/triton/knobs.py:181 from_path",
+        "calls": 1,
+        "self_s": 1.163e-05,
+        "inclusive_s": 0.006101666
+      },
+      {
+        "function": "~:0 <built-in method _posixsubprocess.fork_exec>",
+        "calls": 4,
+        "self_s": 0.004088286,
+        "inclusive_s": 0.004088286
+      },
+      {
+        "function": "triton/runtime/jit.py:546 parse",
+        "calls": 9,
+        "self_s": 3.0167e-05,
+        "inclusive_s": 0.0031151100000000004
+      },
+      {
+        "function": "lib/python3.12/ast.py:34 parse",
+        "calls": 9,
+        "self_s": 0.0011452390000000002,
+        "inclusive_s": 0.0030804950000000004
+      },
+      {
+        "function": "triton/runtime/cache.py:73 get_group",
+        "calls": 1,
+        "self_s": 1.5726e-05,
+        "inclusive_s": 0.0022464520000000003
+      },
+      {
+        "function": "~:0 <built-in method posix.stat>",
+        "calls": 112,
+        "self_s": 0.002109024,
+        "inclusive_s": 0.002109024
+      }
+    ],
+    "diagnosis/disk/pass2": [
+      {
+        "function": "compressed_tensors/utils/impl_backend.py:114 wrapper",
+        "calls": 1,
+        "self_s": 8.273e-06,
+        "inclusive_s": 0.0010374120000000001
+      },
+      {
+        "function": "torch/utils/_contextlib.py:120 decorate_context",
+        "calls": 1,
+        "self_s": 2.4975e-05,
+        "inclusive_s": 0.0010210430000000001
+      },
+      {
+        "function": "llmcompressor/observers/grid_search.py:225 _grid_search_observer_triton",
+        "calls": 1,
+        "self_s": 0.00016874900000000002,
+        "inclusive_s": 0.000975357
+      },
+      {
+        "function": "benchmarks/gptq_moe/observer_pass.py:43 measured_qparams",
+        "calls": 1,
+        "self_s": 1.1447e-05,
+        "inclusive_s": 0.00035043300000000004
+      },
+      {
+        "function": "quantization/utils/helpers.py:52 calculate_qparams",
+        "calls": 1,
+        "self_s": 9.210300000000001e-05,
+        "inclusive_s": 0.00033791400000000003
+      },
+      {
+        "function": "triton/runtime/jit.py:374 <lambda>",
+        "calls": 1,
+        "self_s": 1.1216e-05,
+        "inclusive_s": 0.00016941000000000002
+      },
+      {
+        "function": "triton/runtime/jit.py:726 run",
+        "calls": 1,
+        "self_s": 4.7465e-05,
+        "inclusive_s": 0.000158194
+      },
+      {
+        "function": "~:0 <method 'to' of 'torch._C.TensorBase' objects>",
+        "calls": 8,
+        "self_s": 7.3028e-05,
+        "inclusive_s": 7.3028e-05
+      },
+      {
+        "function": "~:0 <method 'disable' of '_lsprof.Profiler' objects>",
+        "calls": 1,
+        "self_s": 7.0976e-05,
+        "inclusive_s": 7.0976e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.tensor>",
+        "calls": 4,
+        "self_s": 6.1117e-05,
+        "inclusive_s": 6.1117e-05
+      },
+      {
+        "function": "compressed_tensors/quantization/quant_args.py:452 round_to_quantized_type_dtype",
+        "calls": 1,
+        "self_s": 1.111e-05,
+        "inclusive_s": 5.8682000000000005e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.zeros_like>",
+        "calls": 4,
+        "self_s": 3.531e-05,
+        "inclusive_s": 3.531e-05
+      },
+      {
+        "function": "backends/nvidia/driver.py:297 __call__",
+        "calls": 1,
+        "self_s": 9.559000000000001e-06,
+        "inclusive_s": 3.4627e-05
+      },
+      {
+        "function": "triton/runtime/jit.py:1153 __call__",
+        "calls": 3,
+        "self_s": 2.1432e-05,
+        "inclusive_s": 3.2659e-05
+      },
+      {
+        "function": "<string>:2 dynamic_func",
+        "calls": 1,
+        "self_s": 1.0297e-05,
+        "inclusive_s": 2.4017e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.amin>",
+        "calls": 1,
+        "self_s": 2.3307000000000002e-05,
+        "inclusive_s": 2.3307000000000002e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.max>",
+        "calls": 2,
+        "self_s": 2.3121e-05,
+        "inclusive_s": 2.3121e-05
+      },
+      {
+        "function": "~:0 <built-in method cuda_utils.launch>",
+        "calls": 1,
+        "self_s": 2.0605e-05,
+        "inclusive_s": 2.2792e-05
+      },
+      {
+        "function": "triton/language/core.py:300 __ne__",
+        "calls": 5,
+        "self_s": 7.435000000000001e-06,
+        "inclusive_s": 2.2394000000000003e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.abs>",
+        "calls": 2,
+        "self_s": 2.1720000000000002e-05,
+        "inclusive_s": 2.1720000000000002e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.where>",
+        "calls": 1,
+        "self_s": 2.1637e-05,
+        "inclusive_s": 2.1637e-05
+      },
+      {
+        "function": "~:0 <method 'reshape' of 'torch._C.TensorBase' objects>",
+        "calls": 7,
+        "self_s": 2.1092e-05,
+        "inclusive_s": 2.1092e-05
+      },
+      {
+        "function": "quantization/utils/helpers.py:379 _get_dtype_eps",
+        "calls": 1,
+        "self_s": 6.881000000000001e-06,
+        "inclusive_s": 1.8798000000000002e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.min>",
+        "calls": 1,
+        "self_s": 1.8551000000000002e-05,
+        "inclusive_s": 1.8551000000000002e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.amax>",
+        "calls": 1,
+        "self_s": 1.7435e-05,
+        "inclusive_s": 1.7435e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.clamp>",
+        "calls": 1,
+        "self_s": 1.6474000000000002e-05,
+        "inclusive_s": 1.6474000000000002e-05
+      },
+      {
+        "function": "triton/language/core.py:359 _unwrap_if_constexpr",
+        "calls": 9,
+        "self_s": 1.0795e-05,
+        "inclusive_s": 1.6355000000000002e-05
+      },
+      {
+        "function": "~:0 <method 'contiguous' of 'torch._C.TensorBase' objects>",
+        "calls": 6,
+        "self_s": 1.6088000000000002e-05,
+        "inclusive_s": 1.6088000000000002e-05
+      },
+      {
+        "function": "~:0 <method 'amax' of 'torch._C.TensorBase' objects>",
+        "calls": 1,
+        "self_s": 1.5088e-05,
+        "inclusive_s": 1.5088e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.round>",
+        "calls": 1,
+        "self_s": 1.4992000000000001e-05,
+        "inclusive_s": 1.4992000000000001e-05
+      },
+      {
+        "function": "~:0 <built-in method torch.zeros>",
+        "calls": 1,
+        "self_s": 1.4733000000000001e-05,
+        "inclusive_s": 1.4733000000000001e-05
+      },
+      {
+        "function": "~:0 <built-in method triton._C.libtriton.native_specialize_impl>",
+        "calls": 15,
+        "self_s": 1.372e-05,
+        "inclusive_s": 1.372e-05
+      },
+      {
+        "function": "~:0 <method 'long' of 'torch._C.TensorBase' objects>",
+        "calls": 1,
+        "self_s": 1.3078e-05,
+        "inclusive_s": 1.3078e-05
+      },
+      {
+        "function": "~:0 <method 'abs' of 'torch._C.TensorBase' objects>",
+        "calls": 1,
+        "self_s": 1.1135000000000001e-05,
+        "inclusive_s": 1.1135000000000001e-05
+      },
+      {
+        "function": "llmcompressor/observers/grid_search.py:172 _make_grid_points",
+        "calls": 1,
+        "self_s": 1.0524000000000001e-05,
+        "inclusive_s": 1.0524000000000001e-05
+      },
+      {
+        "function": "torch/utils/_contextlib.py:154 clone",
+        "calls": 1,
+        "self_s": 2.346e-06,
+        "inclusive_s": 1.0262000000000001e-05
+      },
+      {
+        "function": "~:0 <method 'float' of 'torch._C.TensorBase' objects>",
+        "calls": 1,
+        "self_s": 8.693000000000001e-06,
+        "inclusive_s": 8.693000000000001e-06
+      },
+      {
+        "function": "~:0 <built-in method torch.minimum>",
+        "calls": 1,
+        "self_s": 8.26e-06,
+        "inclusive_s": 8.26e-06
+      },
+      {
+        "function": "triton/compiler/compiler.py:493 launch_metadata",
+        "calls": 1,
+        "self_s": 7.169e-06,
+        "inclusive_s": 8.125000000000001e-06
+      },
+      {
+        "function": "quantization/utils/mxfp_utils.py:41 should_generate_mx_scales",
+        "calls": 2,
+        "self_s": 4.87e-06,
+        "inclusive_s": 7.662e-06
+      },
+      {
+        "function": "triton/runtime/jit.py:592 compute_cache_key",
+        "calls": 1,
+        "self_s": 3.9080000000000005e-06,
+        "inclusive_s": 7.553e-06
+      },
+      {
+        "function": "~:0 <built-in method torch.maximum>",
+        "calls": 1,
+        "self_s": 7.48e-06,
+        "inclusive_s": 7.48e-06
+      },
+      {
+        "function": "torch/cuda/__init__.py:1223 current_device",
+        "calls": 1,
+        "self_s": 3.7820000000000004e-06,
+        "inclusive_s": 7.236000000000001e-06
+      },
+      {
+        "function": "~:0 <method 'get' of 'dict' objects>",
+        "calls": 9,
+        "self_s": 7.174e-06,
+        "inclusive_s": 7.174e-06
+      },
+      {
+        "function": "llmcompressor/utils/triton_utils.py:50 observer_triton_req",
+        "calls": 1,
+        "self_s": 4.772e-06,
+        "inclusive_s": 7.096e-06
+      },
+      {
+        "function": "triton/language/core.py:215 __init__",
+        "calls": 5,
+        "self_s": 5.198e-06,
+        "inclusive_s": 6.732e-06
+      },
+      {
+        "function": "~:0 <built-in method builtins.isinstance>",
+        "calls": 43,
+        "self_s": 6.54e-06,
+        "inclusive_s": 6.54e-06
+      },
+      {
+        "function": "torch/autograd/grad_mode.py:81 __enter__",
+        "calls": 1,
+        "self_s": 3.3010000000000002e-06,
+        "inclusive_s": 6.35e-06
+      },
+      {
+        "function": "lib/python3.12/enum.py:202 __get__",
+        "calls": 6,
+        "self_s": 3.0210000000000004e-06,
+        "inclusive_s": 5.686e-06
+      },
+      {
+        "function": "torch/utils/_contextlib.py:167 __new__",
+        "calls": 1,
+        "self_s": 5.1260000000000006e-06,
+        "inclusive_s": 5.575e-06
+      },
+      {
+        "function": "~:0 <built-in method torch.empty>",
+        "calls": 1,
+        "self_s": 5.2720000000000005e-06,
+        "inclusive_s": 5.2720000000000005e-06
+      },
+      {
+        "function": "torch/autograd/grad_mode.py:185 __init__",
+        "calls": 2,
+        "self_s": 2.928e-06,
+        "inclusive_s": 4.855e-06
+      },
+      {
+        "function": "llmcompressor/utils/triton_utils.py:63 scale_round_config",
+        "calls": 1,
+        "self_s": 3.559e-06,
+        "inclusive_s": 4.682e-06
+      },
+      {
+        "function": "torch/autograd/grad_mode.py:85 __exit__",
+        "calls": 1,
+        "self_s": 1.794e-06,
+        "inclusive_s": 4.099e-06
+      },
+      {
+        "function": "quantization/utils/helpers.py:228 calculate_range",
+        "calls": 2,
+        "self_s": 3.282e-06,
+        "inclusive_s": 3.282e-06
+      },
+      {
+        "function": "torch/cuda/__init__.py:521 _lazy_init",
+        "calls": 1,
+        "self_s": 1.068e-06,
+        "inclusive_s": 3.044e-06
+      },
+      {
+        "function": "lib/python3.12/enum.py:1292 value",
+        "calls": 6,
+        "self_s": 2.6650000000000003e-06,
+        "inclusive_s": 2.6650000000000003e-06
+      },
+      {
+        "function": "quantization/utils/mxfp_utils.py:50 maybe_convert_from_mx_exp",
+        "calls": 1,
+        "self_s": 9.410000000000001e-07,
+        "inclusive_s": 2.593e-06
+      },
+      {
+        "function": "torch/autograd/grad_mode.py:76 __init__",
+        "calls": 1,
+        "self_s": 2.184e-06,
+        "inclusive_s": 2.341e-06
+      },
+      {
+        "function": "compressed_tensors/utils/triton.py:98 triton_req",
+        "calls": 1,
+        "self_s": 2.324e-06,
+        "inclusive_s": 2.324e-06
+      }
+    ]
+  },
+  "source_sha256": {
+    "base": "e6ef3edef0063c0995b37ad13ef9d4de9d82008d6643c3e818be4436d542c175",
+    "proto": "e3db871ad78d8fc2b72d144dac8163f028777fde347f8b71190fc3cbc1f4f228"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.39",
+    "torch_cuda": "13.4",
+    "torch_runtime": "2.14.0a0+4fdf77b940.nv26.08",
+    "cudnn": 92500,
+    "tf32_matmul": true,
+    "packages": {
+      "torch": "2.14.0a0+4fdf77b940.nv26.8.63802676",
+      "triton": "3.8.0+git4c7e62b7.nv26.8",
+      "llmcompressor": "0.1.dev1+gf7d824c",
+      "compressed-tensors": "0.20.2a20261103",
+      "transformers": "5.21.0",
+      "datasets": "5.0.1",
+      "huggingface-hub": "1.33.0",
+      "accelerate": "1.16.0",
+      "auto-round": "0.16.1",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.23.1",
+      "numpy": "2.1.0",
+      "scipy": "1.18.0",
+      "pydantic": "2.13.4",
+      "loguru": "0.8.0",
+      "pillow": "12.3.0",
+      "pyyaml": "6.0.1",
+      "requests": "2.34.2",
+      "tqdm": "4.70.0",
+      "nvidia-ml-py": "13.610.43",
+      "setuptools-scm": "8.2.0"
+    }
+  },
+  "gpu": [
+    "index, uuid, name, driver_version, memory.total [MiB], memory.free [MiB], utilization.gpu [%]",
+    "0, GPU-25dc68ae-c0e6-49b1-23b5-c4da9d63e8ef, NVIDIA H100 80GB HBM3, 580.126.20, 81559 MiB, 81076 MiB, 0 %"
+  ],
+  "edge_digests": {
+    "group128-symmetricFalse-weightedFalse-steps0": "0cfbc8b2b2cf0b1dddde1dd9d239c611ce9c42c21c2088cbec78f05955b3ef51",
+    "group128-symmetricFalse-weightedFalse-steps8": "93ba3cd6bee9c31108bef8227f5936f9266ca849b7aed059b3adc62da078d6f2",
+    "group128-symmetricFalse-weightedTrue-steps0": "0cfbc8b2b2cf0b1dddde1dd9d239c611ce9c42c21c2088cbec78f05955b3ef51",
+    "group128-symmetricFalse-weightedTrue-steps8": "93ba3cd6bee9c31108bef8227f5936f9266ca849b7aed059b3adc62da078d6f2",
+    "group128-symmetricTrue-weightedFalse-steps0": "3b590b0ee0f934d50ac4179ca742972231708712ef2a75c7af2a2ab4ed28d578",
+    "group128-symmetricTrue-weightedFalse-steps8": "0123463b63aa7ff1c64bef6790f2f437db0ad54c150a96ffcac9b6b728511b3a",
+    "group128-symmetricTrue-weightedTrue-steps0": "3b590b0ee0f934d50ac4179ca742972231708712ef2a75c7af2a2ab4ed28d578",
+    "group128-symmetricTrue-weightedTrue-steps8": "0123463b63aa7ff1c64bef6790f2f437db0ad54c150a96ffcac9b6b728511b3a",
+    "group1024-symmetricFalse-weightedFalse-steps0": "b922ce1034149718d4d5192364fc587a28918f04bb12eeb4f1c1e54c3dbd8212",
+    "group1024-symmetricFalse-weightedFalse-steps8": "1f6cf3d2880cb89b6e7e19fa48b8e1dc8b2e5a2981c1912fcbbb2006240713d8",
+    "group1024-symmetricFalse-weightedTrue-steps0": "b922ce1034149718d4d5192364fc587a28918f04bb12eeb4f1c1e54c3dbd8212",
+    "group1024-symmetricFalse-weightedTrue-steps8": "1f6cf3d2880cb89b6e7e19fa48b8e1dc8b2e5a2981c1912fcbbb2006240713d8",
+    "group1024-symmetricTrue-weightedFalse-steps0": "d8749d1f29156fee65f60ad86b73cc9f5664eb4fea8069c3880d3eaf21a0fa36",
+    "group1024-symmetricTrue-weightedFalse-steps8": "78436f7ca34c6dcf56578eeaa58821c35cc338db4528c325d1b896e20b08ffb6",
+    "group1024-symmetricTrue-weightedTrue-steps0": "d8749d1f29156fee65f60ad86b73cc9f5664eb4fea8069c3880d3eaf21a0fa36",
+    "group1024-symmetricTrue-weightedTrue-steps8": "06086434fa92231f465a058a5cde97778d821789b6fb0abb9025c19bf966e218"
+  },
+  "test_result": "105 passed, 57 skipped in 30.98s"
+}
