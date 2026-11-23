@@ -2,6 +2,14 @@
 
 **The symmetric-search prototype still saves about half a second of observer time when calibration grows 64-fold.** On 64 × 1,024 WikiText tokens, the four paired observer differences were 0.555–0.589 s (median 0.580 s). This accounted for 1.04% of baseline OneShot wall time. The measured end-to-end saving was 1.072 s (1.91%) at the median of the four pairs. [Per-process timings, device inventories and output digests](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/benchmarks/gptq_moe/results/granite-calibration-load.json)
 
+## Patch and reproducibility
+
+The Triton observer skips the base zero-point calculation for symmetric searches. The packed and split kernels load a zero-point tensor only on the asymmetric path. Candidate scale search still runs.
+
+- **Patch code** · [Observer entry point](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/src/llmcompressor/observers/grid_search.py#L250-L264) · [Packed kernel](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/src/llmcompressor/observers/grid_search.py#L454-L462) · [Split kernel](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/src/llmcompressor/observers/grid_search.py#L598-L606)
+- **Performance evidence** · [TinyMoE warm CUDA trace](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/benchmarks/gptq_moe/results/imatrix-investigation.md#warm-cuda-timeline) · [Granite per-run timings and output digests](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/benchmarks/gptq_moe/results/granite-calibration-load.json)
+- **Reproduction** · [Commands and pinned inputs](#reproduce) · [Granite paired-run script](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/benchmarks/gptq_moe/calibration_load_trials.py) · [CUDA trace script](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/benchmarks/gptq_moe/warm_search_trace.py) · [Observer edge-case check](https://github.com/Nankago/llm-compressor/blob/673b778e30a1076e8f06782848327c0923848636/benchmarks/gptq_moe/check_search_bounds.py)
+
 | WikiText workload | Observer, base → prototype (s) | OneShot, base → prototype (s) | Paired observer saving (s) | Paired OneShot saving (s) | Paired OneShot saving (%) | Peak allocated, base / prototype (MiB) |
 |---|---:|---:|---:|---:|---:|---:|
 | 8 × 128 | 5.253 → 4.703 | 17.421 → 16.714 | 0.543 [0.513–0.658] | 0.751 [0.357–0.940] | 4.29 [2.06–5.35] | 1,198.94 / 1,198.94 |
