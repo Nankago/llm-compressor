@@ -51,7 +51,3 @@ python "$bench/wikitext_calibration.py" --parquet "$raw/dataset/$shard" --model-
 python "$bench/calibration_load_trials.py" --gpu "$gpu" --model-dir "$raw/model" --calibration-dir "$raw/tokens" --base-src "$raw/base/src" --proto-src "$PWD/src" --out "$raw/trials"
 python "$bench/summarize_calibration_load.py" "$raw/trials" "$raw/summary.json"
 ```
-
-## Qwen3-30B-A3B availability
-
-An H100 was available. A name search of the user's workspace, public and shared model locations, local caches and temporary directories found scripts, tests and documentation for this model. The matching example directory contained two shell scripts. A separate search of checkpoint configs in the model stores and Hugging Face caches found no `qwen3_moe` checkpoint there. The available Granite benchmark therefore supplies the full-model evidence for this run. Qwen3-30B-A3B timing and its observer branch remain unmeasured.
