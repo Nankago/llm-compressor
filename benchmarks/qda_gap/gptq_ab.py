@@ -26,11 +26,11 @@ from llmcompressor.modifiers.gptq import GPTQModifier, gptq_quantize
 TRAIN_SHA = "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7"
 
 
-def calibration(tokenizer, path):
+def calibration(tokenizer, path, seed):
     assert hashlib.sha256(path.read_bytes()).hexdigest() == TRAIN_SHA
     texts = pq.read_table(path, columns=["text"]).column(0).to_pylist()
     order = list(range(len(texts)))
-    random.Random(13).shuffle(order)
+    random.Random(seed).shuffle(order)
     rows = []
     for i in order:
         ids = tokenizer.encode(texts[i].strip(), add_special_tokens=False)
@@ -108,10 +108,11 @@ def main():
     p.add_argument("model")
     p.add_argument("train", type=Path)
     p.add_argument("out", type=Path)
+    p.add_argument("--calibration-seed", type=int, default=13)
     a = p.parse_args()
     torch.manual_seed(13)
     tok = AutoTokenizer.from_pretrained(a.model)
-    data, digest = calibration(tok, a.train)
+    data, digest = calibration(tok, a.train, a.calibration_seed)
     start = time.perf_counter()
     model = AutoModelForCausalLM.from_pretrained(
         a.model, dtype=torch.bfloat16, device_map="cuda"
