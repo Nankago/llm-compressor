@@ -94,6 +94,27 @@ def main():
                 task[key]["paired"][sibling] = dict(
                     wins=wins, losses=losses, mcnemar_exact_p=p
                 )
+    rechecks = {}
+    for key in ("long-gptaq", "rep-gptaq"):
+        check = read(root / ("recheck-" + key + ".json"))
+        rows = check["row_ids"]
+        assert len(rows) == len(set(rows)) == check["evaluated"] == 256
+        assert check["model_sha256"] == task[key]["model_sha256"]
+        again, original = (
+            np.unpackbits(
+                np.frombuffer(bytes.fromhex(bits), dtype=np.uint8), bitorder="little"
+            )
+            for bits in (check["correct_bits"], task[key]["correct_bits"])
+        )
+        previous = original[rows]
+        assert int(again.sum()) == check["correct"]
+        rechecks[key] = dict(
+            row_ids=rows,
+            rerun_correct_bits=check["correct_bits"],
+            baseline_correct=int(previous.sum()),
+            rerun_correct=int(again.sum()),
+            changed_row_ids=np.asarray(rows)[again != previous].tolist(),
+        )
     for prefix in ("long", "rep"):
         fitted, control = prefix + "-gptaq", prefix + "-float"
         assert (
@@ -143,6 +164,7 @@ def main():
         quality=quality,
         paired=paired,
         arc_easy=task,
+        arc_subset_recheck=rechecks,
         oneshot_first_block=read(root / "native/native.json"),
         oneshot_full=read(root / "native-full/native.json"),
     )

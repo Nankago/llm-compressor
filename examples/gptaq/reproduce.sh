@@ -42,4 +42,7 @@ for name in bf16 long-stock long-float long-gptaq long-sweep rep-stock rep-float
     if [[ $name == bf16 ]]; then checkpoint="$MODEL"; fi
     python "$here/arc.py" --model "$checkpoint" --tokenizer "$MODEL" --test "$ARC" --out "$OUT/arc-$name.json"
 done
+for name in long-gptaq rep-gptaq; do
+    python "$here/arc.py" --count 256 --model "$OUT/$name" --tokenizer "$MODEL" --test "$ARC" --out "$OUT/recheck-$name.json"
+done
 python "$here/summarize.py" "$OUT" "$OUT/results.json"
