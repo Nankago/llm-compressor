@@ -153,6 +153,7 @@ def main():
         "w4_gpu_uuid": "GPU-" + operator["gpu_uuid"].removeprefix("GPU-"),
         "held_out_ids_sha256": sha(root / "tokens.json"),
         "operator": operator,
+        "pretrained_rank_local": load(root / "row-shards.json"),
         "models": {
             "Qwen/Qwen3-0.6B": {
                 "sha": "c1899de289a04d12100db370d81485cdf75e47ca",

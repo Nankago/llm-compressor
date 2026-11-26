@@ -53,6 +53,7 @@ cmp "$OUT/tokens.json" "$OUT/tokens4.json"
 for arm in scale product; do
     "$QPY" "$study/recode.py" "$M06" "$OUT/packed" "$OUT/final-$arm" --mode "$arm" > "$OUT/final-$arm.log"
 done
+"$VPY" "$study/row_shards.py" "$M06" "$OUT/packed" "$OUT/final-product" "$OUT/row-shards.json"
 for arm in main control aware; do
     "$QPY" "$study/gptq_ab.py" "$arm" "$M06" "$TRAIN" "$OUT/gptq-$arm" > "$OUT/gptq-$arm.log"
 done

@@ -48,6 +48,47 @@
     "basis_matches_both": true,
     "qda_scale_matches_loader": true
   },
+  "pretrained_rank_local": {
+    "modules": 56,
+    "shard_ranks_per_module": 2,
+    "gpu_uuid": "4c572137-e9cc-9227-b0d6-e1e1f0304b70",
+    "projections": {
+      "down_proj": {
+        "weights": 88080384,
+        "strictly_improved_over_full": 2903123,
+        "full_worse_than_stock": 1508900,
+        "changed_codes": 2912294,
+        "basis_values": 2752512,
+        "basis_differences": 6422,
+        "scales_first_differences": 5517,
+        "token_first_differences": 0,
+        "channel_first_differences": 2967,
+        "actual_local_better_than_full": 29058,
+        "actual_local_worse_than_full": 79,
+        "actual_pairs": 917504,
+        "stock_mse": 1.0782020312084396e-05,
+        "full_mse": 1.0721257273027556e-05,
+        "local_mse": 1.0181098610124526e-05
+      },
+      "o_proj": {
+        "weights": 58720256,
+        "strictly_improved_over_full": 2015714,
+        "full_worse_than_stock": 1054111,
+        "changed_codes": 2021282,
+        "basis_values": 2752512,
+        "basis_differences": 4937,
+        "scales_first_differences": 4314,
+        "token_first_differences": 0,
+        "channel_first_differences": 1960,
+        "actual_local_better_than_full": 30561,
+        "actual_local_worse_than_full": 65,
+        "actual_pairs": 917504,
+        "stock_mse": 8.703653150019014e-06,
+        "full_mse": 8.666196169969093e-06,
+        "local_mse": 8.198213648383642e-06
+      }
+    }
+  },
   "models": {
     "Qwen/Qwen3-0.6B": {
       "sha": "c1899de289a04d12100db370d81485cdf75e47ca",
